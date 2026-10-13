@@ -1,0 +1,218 @@
+[
+  {
+    "id": "cus_0001",
+    "name": "이음빌딩 관리사무소",
+    "type": "관리사무소",
+    "region": "부산광역시",
+    "contactEmail": "facility+cus0001@example.com",
+    "note": "가상 고객",
+    "createdAt": "2026-02-06T01:00:00.000Z"
+  },
+  {
+    "id": "cus_0002",
+    "name": "아라교육센터 관리사무소",
+    "type": "관리사무소",
+    "region": "서울특별시",
+    "contactEmail": "facility+cus0002@example.com",
+    "note": "가상 고객",
+    "createdAt": "2026-02-10T01:00:00.000Z"
+  },
+  {
+    "id": "cus_0003",
+    "name": "온새빌딩 관리단",
+    "type": "관리단",
+    "region": "서울특별시",
+    "contactEmail": "facility+cus0003@example.com",
+    "note": "가상 고객",
+    "createdAt": "2026-02-13T01:00:00.000Z"
+  },
+  {
+    "id": "cus_0004",
+    "name": "라온마을 운영",
+    "type": "개인사업자",
+    "region": "인천광역시",
+    "contactEmail": "facility+cus0004@example.com",
+    "note": "가상 고객",
+    "createdAt": "2026-02-09T01:00:00.000Z"
+  },
+  {
+    "id": "cus_0005",
+    "name": "푸른파크산업(주)",
+    "type": "법인",
+    "region": "서울특별시",
+    "contactEmail": "facility+cus0005@example.com",
+    "note": "가상 고객",
+    "createdAt": "2026-02-26T01:00:00.000Z"
+  },
+  {
+    "id": "cus_0006",
+    "name": "마루마을 관리단",
+    "type": "관리단",
+    "region": "부산광역시",
+    "contactEmail": "facility+cus0006@example.com",
+    "note": "가상 고객",
+    "createdAt": "2026-02-12T01:00:00.000Z"
+  },
+  {
+    "id": "cus_0007",
+    "name": "새솔연구동 관리단",
+    "type": "관리단",
+    "region": "경기도",
+    "contactEmail": "facility+cus0007@example.com",
+    "note": "가상 고객",
+    "createdAt": "2026-02-22T01:00:00.000Z"
+  },
+  {
+    "id": "cus_0008",
+    "name": "마루프라자 운영",
+    "type": "개인사업자",
+    "region": "인천광역시",
+    "contactEmail": "facility+cus0008@example.com",
+    "note": "가상 고객",
+    "createdAt": "2026-02-14T01:00:00.000Z"
+  },
+  {
+    "id": "cus_0009",
+    "name": "라온타워 관리단",
+    "type": "관리단",
+    "region": "서울특별시",
+    "contactEmail": "facility+cus0009@example.com",
+    "note": "가상 고객",
+    "createdAt": "2026-02-13T01:00:00.000Z"
+  },
+  {
+    "id": "cus_0010",
+    "name": "마루상가 관리단",
+    "type": "관리단",
+    "region": "경기도",
+    "contactEmail": "facility+cus0010@example.com",
+    "note": "가상 고객",
+    "createdAt": "2026-02-24T01:00:00.000Z"
+  },
+  {
+    "id": "cus_0011",
+    "name": "별빛제조동 운영",
+    "type": "개인사업자",
+    "region": "서울특별시",
+    "contactEmail": "facility+cus0011@example.com",
+    "note": "가상 고객",
+    "createdAt": "2026-02-15T01:00:00.000Z"
+  },
+  {
+    "id": "cus_0012",
+    "name": "미르프라자 관리단",
+    "type": "관리단",
+    "region": "경기도",
+    "contactEmail": "facility+cus0012@example.com",
+    "note": "가상 고객",
+    "createdAt": "2026-02-07T01:00:00.000Z"
+  },
+  {
+    "id": "cus_0013",
+    "name": "한결교육센터 운영",
+    "type": "개인사업자",
+    "region": "대전광역시",
+    "contactEmail": "facility+cus0013@example.com",
+    "note": "가상 고객",
+    "createdAt": "2026-02-11T01:00:00.000Z"
+  },
+  {
+    "id": "cus_0014",
+    "name": "별빛물류센터 관리단",
+    "type": "관리단",
+    "region": "서울특별시",
+    "contactEmail": "facility+cus0014@example.com",
+    "note": "가상 고객",
+    "createdAt": "2026-02-27T01:00:00.000Z"
+  },
+  {
+    "id": "cus_0015",
+    "name": "한결마을산업(주)",
+    "type": "법인",
+    "region": "서울특별시",
+    "contactEmail": "facility+cus0015@example.com",
+    "note": "가상 고객",
+    "createdAt": "2026-02-08T01:00:00.000Z"
+  },
+  {
+    "id": "cus_0016",
+    "name": "푸른빌딩산업(주)",
+    "type": "법인",
+    "region": "서울특별시",
+    "contactEmail": "facility+cus0016@example.com",
+    "note": "가상 고객",
+    "createdAt": "2026-02-06T01:00:00.000Z"
+  },
+  {
+    "id": "cus_0017",
+    "name": "바른스퀘어산업(주)",
+    "type": "법인",
+    "region": "서울특별시",
+    "contactEmail": "facility+cus0017@example.com",
+    "note": "가상 고객",
+    "createdAt": "2026-02-17T01:00:00.000Z"
+  },
+  {
+    "id": "cus_0018",
+    "name": "라온교육센터 운영",
+    "type": "개인사업자",
+    "region": "서울특별시",
+    "contactEmail": "facility+cus0018@example.com",
+    "note": "가상 고객",
+    "createdAt": "2026-02-06T01:00:00.000Z"
+  },
+  {
+    "id": "cus_0019",
+    "name": "한결메디컬산업(주)",
+    "type": "법인",
+    "region": "대전광역시",
+    "contactEmail": "facility+cus0019@example.com",
+    "note": "가상 고객",
+    "createdAt": "2026-02-22T01:00:00.000Z"
+  },
+  {
+    "id": "cus_0020",
+    "name": "라온프라자 관리사무소",
+    "type": "관리사무소",
+    "region": "경기도",
+    "contactEmail": "facility+cus0020@example.com",
+    "note": "가상 고객",
+    "createdAt": "2026-02-10T01:00:00.000Z"
+  },
+  {
+    "id": "cus_0021",
+    "name": "라온물류센터 운영",
+    "type": "개인사업자",
+    "region": "대전광역시",
+    "contactEmail": "facility+cus0021@example.com",
+    "note": "가상 고객",
+    "createdAt": "2026-02-04T01:00:00.000Z"
+  },
+  {
+    "id": "cus_0022",
+    "name": "새솔마을 운영",
+    "type": "개인사업자",
+    "region": "인천광역시",
+    "contactEmail": "facility+cus0022@example.com",
+    "note": "가상 고객",
+    "createdAt": "2026-02-11T01:00:00.000Z"
+  },
+  {
+    "id": "cus_0023",
+    "name": "온새프라자 관리사무소",
+    "type": "관리사무소",
+    "region": "서울특별시",
+    "contactEmail": "facility+cus0023@example.com",
+    "note": "가상 고객",
+    "createdAt": "2026-02-10T01:00:00.000Z"
+  },
+  {
+    "id": "cus_0024",
+    "name": "새솔제조동 관리사무소",
+    "type": "관리사무소",
+    "region": "경기도",
+    "contactEmail": "facility+cus0024@example.com",
+    "note": "가상 고객",
+    "createdAt": "2026-02-21T01:00:00.000Z"
+  }
+]

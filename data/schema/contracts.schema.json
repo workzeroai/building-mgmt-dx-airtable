@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "contracts.schema.json",
+  "title": "계약",
+  "description": "수주(won)된 견적에서 만들어지는 계약. 공통 엔티티.",
+  "type": "object",
+  "x-table": "contracts",
+  "x-idPrefix": "con",
+  "x-airtable": { "table": "계약", "primaryField": "contractNo" },
+  "x-links": { "quoteId": "quotes", "customerId": "customers", "buildingId": "buildings" },
+  "required": ["id", "contractNo", "quoteId", "buildingId", "divisionId", "startDate", "endDate", "annualAmount", "status", "createdAt"],
+  "additionalProperties": false,
+  "properties": {
+    "id": { "type": "string", "pattern": "^(stg_)?con_[0-9a-z]+$" },
+    "contractNo": { "type": "string", "pattern": "^GW-C-[0-9]{4}-[0-9]{3,}$", "description": "GW-C-{YYYY}-{일련번호}" },
+    "quoteId": { "type": "string", "description": "→ quotes.id" },
+    "customerId": { "type": ["string", "null"], "description": "→ customers.id" },
+    "buildingId": { "type": "string", "description": "→ buildings.id" },
+    "divisionId": { "type": "string", "description": "→ divisions.id" },
+    "startDate": { "type": "string", "description": "YYYY-MM-DD" },
+    "endDate": { "type": "string" },
+    "annualAmount": { "type": "integer", "description": "연간 계약 금액(원, VAT 포함)" },
+    "status": { "type": "string", "enum": ["pending", "active", "expired", "terminated"] },
+    "createdAt": { "type": "string" },
+    "updatedAt": { "type": "string" }
+  }
+}

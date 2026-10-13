@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "divisions.schema.json",
+  "title": "사업부",
+  "description": "견적 엔진 레지스트리(quote-engine/src/divisions/*/config.js)에서 만든 참조 테이블. 코드가 원본이고 저장소는 사본이다.",
+  "type": "object",
+  "x-table": "divisions",
+  "x-idPrefix": null,
+  "x-airtable": { "table": "사업부", "primaryField": "id" },
+  "x-links": {},
+  "required": ["id", "code", "name", "order"],
+  "additionalProperties": false,
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z][a-z0-9-]*$", "description": "사업부 ID = divisions/ 폴더 이름 (예: fire)" },
+    "code": { "type": "string", "pattern": "^[A-Z]{2,6}$", "description": "견적번호에 들어가는 코드 (예: FIRE)" },
+    "name": { "type": "string", "description": "표시 이름 (예: 소방시설 점검)" },
+    "order": { "type": "integer", "minimum": 1, "description": "확산 순서 (1번째, 2번째, 3번째 사업부)" },
+    "description": { "type": "string" },
+    "createdAt": { "type": "string" },
+    "updatedAt": { "type": "string" }
+  }
+}

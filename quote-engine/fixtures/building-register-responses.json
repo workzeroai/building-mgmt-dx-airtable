@@ -1,0 +1,252 @@
+{
+  "_comment": "건축물대장 표제부(getBrTitleInfo, _type=json) 응답 형식의 가짜 응답. 키: sigunguCd-bjdongCd-platGbCd-bun-ji",
+  "responses": {
+    "11140-17400-0-0045-0003": {
+      "response": {
+        "header": {
+          "resultCode": "00",
+          "resultMsg": "NORMAL SERVICE."
+        },
+        "body": {
+          "items": {
+            "item": {
+              "rnum": 1,
+              "platPlc": "서울특별시 중구 가상동 45-3번지",
+              "sigunguCd": "11140",
+              "bjdongCd": "17400",
+              "platGbCd": "0",
+              "bun": "0045",
+              "ji": "0003",
+              "mgmBldrgstPk": "11140-1001",
+              "regstrGbCdNm": "일반",
+              "regstrKindCdNm": "일반건축물",
+              "newPlatPlc": "서울특별시 중구 예시로 12",
+              "bldNm": "그리드웰 예시빌딩(가상)",
+              "dongNm": "",
+              "mainPurpsCdNm": "업무시설",
+              "etcPurps": "업무시설",
+              "strctCdNm": "철근콘크리트구조",
+              "platArea": 452.68,
+              "archArea": 404.18,
+              "totArea": 4850.12,
+              "grndFlrCnt": 12,
+              "ugrndFlrCnt": 3,
+              "heit": 43.2,
+              "hhldCnt": 0,
+              "useAprDay": "20080615"
+            }
+          },
+          "numOfRows": 50,
+          "pageNo": 1,
+          "totalCount": 1
+        }
+      }
+    },
+    "41135-10900-0-0210-0000": {
+      "response": {
+        "header": {
+          "resultCode": "00",
+          "resultMsg": "NORMAL SERVICE."
+        },
+        "body": {
+          "items": {
+            "item": [
+              {
+                "rnum": 1,
+                "platPlc": "경기도 성남시 분당구 모의동 210번지",
+                "sigunguCd": "41135",
+                "bjdongCd": "10900",
+                "platGbCd": "0",
+                "bun": "0210",
+                "ji": "0000",
+                "mgmBldrgstPk": "41135-1002",
+                "regstrGbCdNm": "일반",
+                "regstrKindCdNm": "일반건축물",
+                "newPlatPlc": "경기도 성남시 분당구 샘플로 45",
+                "bldNm": "샘플스퀘어(가상)",
+                "dongNm": "A동",
+                "mainPurpsCdNm": "판매시설",
+                "etcPurps": "판매시설",
+                "strctCdNm": "철골철근콘크리트구조",
+                "platArea": 982.39,
+                "archArea": 1052.56,
+                "totArea": 8420.5,
+                "grndFlrCnt": 8,
+                "ugrndFlrCnt": 4,
+                "heit": 28.8,
+                "hhldCnt": 0,
+                "useAprDay": "20150310"
+              },
+              {
+                "rnum": 2,
+                "platPlc": "경기도 성남시 분당구 모의동 210번지",
+                "sigunguCd": "41135",
+                "bjdongCd": "10900",
+                "platGbCd": "0",
+                "bun": "0210",
+                "ji": "0000",
+                "mgmBldrgstPk": "41135-1003",
+                "regstrGbCdNm": "일반",
+                "regstrKindCdNm": "일반건축물",
+                "newPlatPlc": "경기도 성남시 분당구 샘플로 45",
+                "bldNm": "샘플스퀘어(가상)",
+                "dongNm": "B동",
+                "mainPurpsCdNm": "제2종근린생활시설",
+                "etcPurps": "제2종근린생활시설",
+                "strctCdNm": "철골구조",
+                "platArea": 776.06,
+                "archArea": 776.06,
+                "totArea": 3880.3,
+                "grndFlrCnt": 5,
+                "ugrndFlrCnt": 2,
+                "heit": 18,
+                "hhldCnt": 0,
+                "useAprDay": "20150310"
+              }
+            ]
+          },
+          "numOfRows": 50,
+          "pageNo": 1,
+          "totalCount": 2
+        }
+      }
+    },
+    "47720-25021-0-0088-0000": {
+      "response": {
+        "header": {
+          "resultCode": "00",
+          "resultMsg": "NORMAL SERVICE."
+        },
+        "body": {
+          "items": {
+            "item": {
+              "rnum": 1,
+              "platPlc": "대구광역시 군위군 군위읍 동부리 88번지",
+              "sigunguCd": "47720",
+              "bjdongCd": "25021",
+              "platGbCd": "0",
+              "bun": "0088",
+              "ji": "0000",
+              "mgmBldrgstPk": "47720-1004",
+              "regstrGbCdNm": "일반",
+              "regstrKindCdNm": "일반건축물",
+              "newPlatPlc": "대구광역시 군위군 군위읍 가상길 7",
+              "bldNm": "가상 교육센터",
+              "dongNm": "",
+              "mainPurpsCdNm": "교육연구시설",
+              "etcPurps": "교육연구시설",
+              "strctCdNm": "철근콘크리트구조",
+              "platArea": 589.34,
+              "archArea": 526.2,
+              "totArea": 2104.8,
+              "grndFlrCnt": 4,
+              "ugrndFlrCnt": 1,
+              "heit": 14.4,
+              "hhldCnt": 0,
+              "useAprDay": "19990820"
+            }
+          },
+          "numOfRows": 50,
+          "pageNo": 1,
+          "totalCount": 1
+        }
+      }
+    },
+    "26350-10500-0-1500-0000": {
+      "response": {
+        "header": {
+          "resultCode": "00",
+          "resultMsg": "NORMAL SERVICE."
+        },
+        "body": {
+          "items": {
+            "item": {
+              "rnum": 1,
+              "platPlc": "부산광역시 해운대구 시범동 1500번지",
+              "sigunguCd": "26350",
+              "bjdongCd": "10500",
+              "platGbCd": "0",
+              "bun": "1500",
+              "ji": "0000",
+              "mgmBldrgstPk": "26350-1005",
+              "regstrGbCdNm": "일반",
+              "regstrKindCdNm": "일반건축물",
+              "newPlatPlc": "부산광역시 해운대구 데모로 88",
+              "bldNm": "데모마을(가상)",
+              "dongNm": "101동",
+              "mainPurpsCdNm": "공동주택",
+              "etcPurps": "공동주택",
+              "strctCdNm": "철근콘크리트구조",
+              "platArea": 1432,
+              "archArea": 1145.6,
+              "totArea": 28640,
+              "grndFlrCnt": 25,
+              "ugrndFlrCnt": 3,
+              "heit": 90,
+              "hhldCnt": 220,
+              "useAprDay": "20120105"
+            }
+          },
+          "numOfRows": 50,
+          "pageNo": 1,
+          "totalCount": 1
+        }
+      }
+    },
+    "28185-10600-0-0077-0001": {
+      "response": {
+        "header": {
+          "resultCode": "00",
+          "resultMsg": "NORMAL SERVICE."
+        },
+        "body": {
+          "items": {
+            "item": {
+              "rnum": 1,
+              "platPlc": "인천광역시 연수구 실험동 77-1번지",
+              "sigunguCd": "28185",
+              "bjdongCd": "10600",
+              "platGbCd": "0",
+              "bun": "0077",
+              "ji": "0001",
+              "mgmBldrgstPk": "28185-1006",
+              "regstrGbCdNm": "일반",
+              "regstrKindCdNm": "일반건축물",
+              "newPlatPlc": "인천광역시 연수구 테스트로 3",
+              "bldNm": "테스트 제조동(가상)",
+              "dongNm": "",
+              "mainPurpsCdNm": "공장",
+              "etcPurps": "공장",
+              "strctCdNm": "일반철골구조",
+              "platArea": 676.95,
+              "archArea": 483.53,
+              "totArea": 1450.6,
+              "grndFlrCnt": 3,
+              "ugrndFlrCnt": 0,
+              "heit": 10.8,
+              "hhldCnt": 0,
+              "useAprDay": "20190402"
+            }
+          },
+          "numOfRows": 50,
+          "pageNo": 1,
+          "totalCount": 1
+        }
+      }
+    }
+  },
+  "empty": {
+    "response": {
+      "header": {
+        "resultCode": "00",
+        "resultMsg": "NORMAL SERVICE."
+      },
+      "body": {
+        "items": "",
+        "numOfRows": 50,
+        "pageNo": 1,
+        "totalCount": 0
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>단가·양식 관리 · 그리드웰 빌딩서비스(가상)</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/">
+      <span class="brand-mark">GW</span>
+      <span><span class="brand-name">그리드웰 빌딩서비스</span><br><span class="brand-sub">견적 엔진 · 가상 회사 데모</span></span>
+    </a>
+    <nav class="nav"><a href="/">견적</a><a class="active" href="/admin.html">단가·양식 관리</a></nav>
+    <span class="spacer"></span>
+    <span class="pill" id="target-pill"><span class="dot"></span>저장소</span>
+  </header>
+
+  <main class="admin-layout">
+    <div class="tabs segmented" id="tabs"></div>
+    <div class="admin-grid">
+      <section class="card">
+        <h2>단가표<span class="hint">코드 수정 없이 현업이 고치는 값 · 5분 캐시</span></h2>
+        <div class="meta" id="pricing-meta"></div>
+        <textarea class="code" id="pricing-json" spellcheck="false"></textarea>
+        <div class="toolbar" style="margin-top:12px">
+          <button class="btn primary" id="save-pricing">단가 저장</button>
+          <span class="small muted">저장하면 캐시를 비우고 다음 견적부터 새 단가를 씁니다.</span>
+        </div>
+        <div id="pricing-msg"></div>
+      </section>
+
+      <section class="card">
+        <h2>엑셀 양식 버전<span class="hint">업로드 → 테스트 렌더 → 활성화</span></h2>
+        <div class="toolbar">
+          <label class="btn secondary" for="upload">양식 업로드(.xlsx)</label>
+          <input type="file" id="upload" accept=".xlsx" hidden>
+          <button class="btn ghost" id="rollback">이전 버전으로 되돌리기</button>
+        </div>
+        <div id="template-msg"></div>
+        <table class="table">
+          <thead><tr><th>버전</th><th>상태</th><th>테스트 렌더</th><th>업로드</th><th></th></tr></thead>
+          <tbody id="versions"></tbody>
+        </table>
+        <p class="small muted" style="margin-top:12px">활성 양식은 사업부마다 1개입니다. 테스트 렌더(샘플 견적으로 실제 채움)를 통과하지 못한 양식은 활성화할 수 없습니다.</p>
+      </section>
+    </div>
+  </main>
+  <script src="admin.js" type="module"></script>
+</body>
+</html>

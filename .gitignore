@@ -1,0 +1,51 @@
+# ---- 비밀값 (절대 커밋 금지) ----
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+credentials*.json
+token*.json
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# ---- Node ----
+node_modules/
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.next/
+.turbo/
+
+# ---- 실행 산출물 ----
+out/
+logs/
+*.log
+.cache/
+
+# ---- 에디터·OS ----
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---- 이 저장소 실행 산출물 ----
+# 로컬 데이터 저장소(런타임). 원본은 data/seed·data/pricing에서 다시 만든다.
+data/store/
+coverage/
+.c8_output/

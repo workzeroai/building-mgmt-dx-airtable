@@ -1,0 +1,3997 @@
+[
+  {
+    "id": "quo_0001",
+    "quoteNo": "GW-FIRE-20260301-001",
+    "divisionId": "fire",
+    "customerId": "cus_0005",
+    "buildingId": "bld_0009",
+    "conditions": {
+      "grade": "작동"
+    },
+    "items": [
+      {
+        "code": "base",
+        "name": "기본 점검료",
+        "basis": "연면적 16,063.39㎡ → 10,000~30,000㎡",
+        "amount": 1940000
+      },
+      {
+        "code": "usage",
+        "name": "용도 보정",
+        "basis": "공동주택 → 주거 계수 ×0.9",
+        "amount": -194000
+      },
+      {
+        "code": "floors",
+        "name": "고층 가산",
+        "basis": "지상 12층 중 10층 초과 2개 층 × 25,000원",
+        "amount": 50000
+      },
+      {
+        "code": "underground",
+        "name": "지하층 가산",
+        "basis": "지하 1개 층 × 40,000원",
+        "amount": 40000
+      }
+    ],
+    "subtotal": 1836000,
+    "vat": 183600,
+    "total": 2019600,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "lost",
+    "createdAt": "2026-03-01T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0002",
+    "quoteNo": "GW-FIRE-20260305-001",
+    "divisionId": "fire",
+    "customerId": "cus_0001",
+    "buildingId": "bld_0001",
+    "conditions": {
+      "grade": "종합"
+    },
+    "items": [
+      {
+        "code": "base",
+        "name": "기본 점검료",
+        "basis": "연면적 12,803.25㎡ → 10,000~30,000㎡",
+        "amount": 1940000
+      },
+      {
+        "code": "grade",
+        "name": "점검 등급 보정",
+        "basis": "종합 점검 계수 ×1.6",
+        "amount": 1164000
+      },
+      {
+        "code": "floors",
+        "name": "고층 가산",
+        "basis": "지상 17층 중 10층 초과 7개 층 × 25,000원",
+        "amount": 175000
+      },
+      {
+        "code": "underground",
+        "name": "지하층 가산",
+        "basis": "지하 5개 층 × 40,000원",
+        "amount": 200000
+      }
+    ],
+    "subtotal": 3479000,
+    "vat": 347900,
+    "total": 3826900,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "won",
+    "createdAt": "2026-03-05T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0003",
+    "quoteNo": "GW-FIRE-20260307-001",
+    "divisionId": "fire",
+    "customerId": "cus_0001",
+    "buildingId": "bld_0002",
+    "conditions": {
+      "grade": "작동"
+    },
+    "items": [
+      {
+        "code": "base",
+        "name": "기본 점검료",
+        "basis": "연면적 2,205.41㎡ → 1,000~5,000㎡",
+        "amount": 680000
+      },
+      {
+        "code": "usage",
+        "name": "용도 보정",
+        "basis": "제2종근린생활시설 → 근린 계수 ×1.05",
+        "amount": 34000
+      },
+      {
+        "code": "underground",
+        "name": "지하층 가산",
+        "basis": "지하 1개 층 × 40,000원",
+        "amount": 40000
+      }
+    ],
+    "subtotal": 754000,
+    "vat": 75400,
+    "total": 829400,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "lost",
+    "createdAt": "2026-03-07T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0004",
+    "quoteNo": "GW-FIRE-20260309-001",
+    "divisionId": "fire",
+    "customerId": "cus_0022",
+    "buildingId": "bld_0034",
+    "conditions": {
+      "grade": "작동"
+    },
+    "items": [
+      {
+        "code": "base",
+        "name": "기본 점검료",
+        "basis": "연면적 16,338.71㎡ → 10,000~30,000㎡",
+        "amount": 1940000
+      },
+      {
+        "code": "usage",
+        "name": "용도 보정",
+        "basis": "공동주택 → 주거 계수 ×0.9",
+        "amount": -194000
+      },
+      {
+        "code": "floors",
+        "name": "고층 가산",
+        "basis": "지상 28층 중 10층 초과 18개 층 × 25,000원",
+        "amount": 450000
+      },
+      {
+        "code": "underground",
+        "name": "지하층 가산",
+        "basis": "지하 3개 층 × 40,000원",
+        "amount": 120000
+      }
+    ],
+    "subtotal": 2316000,
+    "vat": 231600,
+    "total": 2547600,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "lost",
+    "createdAt": "2026-03-09T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0005",
+    "quoteNo": "GW-FIRE-20260309-002",
+    "divisionId": "fire",
+    "customerId": "cus_0009",
+    "buildingId": "bld_0017",
+    "conditions": {
+      "grade": "종합"
+    },
+    "items": [
+      {
+        "code": "base",
+        "name": "기본 점검료",
+        "basis": "연면적 20,496.57㎡ → 10,000~30,000㎡",
+        "amount": 1940000
+      },
+      {
+        "code": "grade",
+        "name": "점검 등급 보정",
+        "basis": "종합 점검 계수 ×1.6",
+        "amount": 1164000
+      },
+      {
+        "code": "floors",
+        "name": "고층 가산",
+        "basis": "지상 14층 중 10층 초과 4개 층 × 25,000원",
+        "amount": 100000
+      },
+      {
+        "code": "underground",
+        "name": "지하층 가산",
+        "basis": "지하 4개 층 × 40,000원",
+        "amount": 160000
+      }
+    ],
+    "subtotal": 3364000,
+    "vat": 336400,
+    "total": 3700400,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "lost",
+    "createdAt": "2026-03-09T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0006",
+    "quoteNo": "GW-FIRE-20260310-001",
+    "divisionId": "fire",
+    "customerId": "cus_0017",
+    "buildingId": "bld_0029",
+    "conditions": {
+      "grade": "작동"
+    },
+    "items": [
+      {
+        "code": "base",
+        "name": "기본 점검료",
+        "basis": "연면적 11,607.86㎡ → 10,000~30,000㎡",
+        "amount": 1940000
+      },
+      {
+        "code": "usage",
+        "name": "용도 보정",
+        "basis": "판매시설 → 판매 계수 ×1.2",
+        "amount": 388000
+      },
+      {
+        "code": "underground",
+        "name": "지하층 가산",
+        "basis": "지하 4개 층 × 40,000원",
+        "amount": 160000
+      }
+    ],
+    "subtotal": 2488000,
+    "vat": 248800,
+    "total": 2736800,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "won",
+    "createdAt": "2026-03-10T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0007",
+    "quoteNo": "GW-FIRE-20260311-001",
+    "divisionId": "fire",
+    "customerId": "cus_0002",
+    "buildingId": "bld_0003",
+    "conditions": {
+      "grade": "종합"
+    },
+    "items": [
+      {
+        "code": "base",
+        "name": "기본 점검료",
+        "basis": "연면적 2,842.91㎡ → 1,000~5,000㎡",
+        "amount": 680000
+      },
+      {
+        "code": "grade",
+        "name": "점검 등급 보정",
+        "basis": "종합 점검 계수 ×1.6",
+        "amount": 408000
+      }
+    ],
+    "subtotal": 1088000,
+    "vat": 108800,
+    "total": 1196800,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "won",
+    "createdAt": "2026-03-11T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0008",
+    "quoteNo": "GW-FIRE-20260321-001",
+    "divisionId": "fire",
+    "customerId": "cus_0011",
+    "buildingId": "bld_0021",
+    "conditions": {
+      "grade": "작동"
+    },
+    "items": [
+      {
+        "code": "base",
+        "name": "기본 점검료",
+        "basis": "연면적 8,589.96㎡ → 5,000~10,000㎡",
+        "amount": 1150000
+      },
+      {
+        "code": "usage",
+        "name": "용도 보정",
+        "basis": "공장 → 공장 계수 ×1.3",
+        "amount": 345000
+      }
+    ],
+    "subtotal": 1495000,
+    "vat": 149500,
+    "total": 1644500,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "won",
+    "createdAt": "2026-03-21T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0009",
+    "quoteNo": "GW-FIRE-20260401-001",
+    "divisionId": "fire",
+    "customerId": "cus_0006",
+    "buildingId": "bld_0012",
+    "conditions": {
+      "grade": "작동"
+    },
+    "items": [
+      {
+        "code": "base",
+        "name": "기본 점검료",
+        "basis": "연면적 3,109.93㎡ → 1,000~5,000㎡",
+        "amount": 680000
+      },
+      {
+        "code": "usage",
+        "name": "용도 보정",
+        "basis": "판매시설 → 판매 계수 ×1.2",
+        "amount": 136000
+      },
+      {
+        "code": "underground",
+        "name": "지하층 가산",
+        "basis": "지하 2개 층 × 40,000원",
+        "amount": 80000
+      }
+    ],
+    "subtotal": 896000,
+    "vat": 89600,
+    "total": 985600,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "sent",
+    "createdAt": "2026-04-01T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0010",
+    "quoteNo": "GW-FIRE-20260402-001",
+    "divisionId": "fire",
+    "customerId": "cus_0009",
+    "buildingId": "bld_0018",
+    "conditions": {
+      "grade": "종합"
+    },
+    "items": [
+      {
+        "code": "base",
+        "name": "기본 점검료",
+        "basis": "연면적 10,988.64㎡ → 10,000~30,000㎡",
+        "amount": 1940000
+      },
+      {
+        "code": "grade",
+        "name": "점검 등급 보정",
+        "basis": "종합 점검 계수 ×1.6",
+        "amount": 1164000
+      },
+      {
+        "code": "underground",
+        "name": "지하층 가산",
+        "basis": "지하 1개 층 × 40,000원",
+        "amount": 40000
+      }
+    ],
+    "subtotal": 3144000,
+    "vat": 314400,
+    "total": 3458400,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "lost",
+    "createdAt": "2026-04-02T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0011",
+    "quoteNo": "GW-FIRE-20260413-001",
+    "divisionId": "fire",
+    "customerId": "cus_0006",
+    "buildingId": "bld_0011",
+    "conditions": {
+      "grade": "작동"
+    },
+    "items": [
+      {
+        "code": "base",
+        "name": "기본 점검료",
+        "basis": "연면적 27,083.07㎡ → 10,000~30,000㎡",
+        "amount": 1940000
+      },
+      {
+        "code": "usage",
+        "name": "용도 보정",
+        "basis": "공동주택 → 주거 계수 ×0.9",
+        "amount": -194000
+      },
+      {
+        "code": "floors",
+        "name": "고층 가산",
+        "basis": "지상 20층 중 10층 초과 10개 층 × 25,000원",
+        "amount": 250000
+      },
+      {
+        "code": "underground",
+        "name": "지하층 가산",
+        "basis": "지하 1개 층 × 40,000원",
+        "amount": 40000
+      }
+    ],
+    "subtotal": 2036000,
+    "vat": 203600,
+    "total": 2239600,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "won",
+    "createdAt": "2026-04-13T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0012",
+    "quoteNo": "GW-FIRE-20260416-001",
+    "divisionId": "fire",
+    "customerId": "cus_0013",
+    "buildingId": "bld_0025",
+    "conditions": {
+      "grade": "작동"
+    },
+    "items": [
+      {
+        "code": "base",
+        "name": "기본 점검료",
+        "basis": "연면적 2,918.77㎡ → 1,000~5,000㎡",
+        "amount": 680000
+      },
+      {
+        "code": "underground",
+        "name": "지하층 가산",
+        "basis": "지하 2개 층 × 40,000원",
+        "amount": 80000
+      }
+    ],
+    "subtotal": 760000,
+    "vat": 76000,
+    "total": 836000,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "sent",
+    "createdAt": "2026-04-16T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0013",
+    "quoteNo": "GW-FIRE-20260420-001",
+    "divisionId": "fire",
+    "customerId": "cus_0022",
+    "buildingId": "bld_0034",
+    "conditions": {
+      "grade": "종합"
+    },
+    "items": [
+      {
+        "code": "base",
+        "name": "기본 점검료",
+        "basis": "연면적 16,338.71㎡ → 10,000~30,000㎡",
+        "amount": 1940000
+      },
+      {
+        "code": "usage",
+        "name": "용도 보정",
+        "basis": "공동주택 → 주거 계수 ×0.9",
+        "amount": -194000
+      },
+      {
+        "code": "grade",
+        "name": "점검 등급 보정",
+        "basis": "종합 점검 계수 ×1.6",
+        "amount": 1048000
+      },
+      {
+        "code": "floors",
+        "name": "고층 가산",
+        "basis": "지상 28층 중 10층 초과 18개 층 × 25,000원",
+        "amount": 450000
+      },
+      {
+        "code": "underground",
+        "name": "지하층 가산",
+        "basis": "지하 3개 층 × 40,000원",
+        "amount": 120000
+      }
+    ],
+    "subtotal": 3364000,
+    "vat": 336400,
+    "total": 3700400,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "won",
+    "createdAt": "2026-04-20T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0014",
+    "quoteNo": "GW-FIRE-20260423-001",
+    "divisionId": "fire",
+    "customerId": "cus_0006",
+    "buildingId": "bld_0012",
+    "conditions": {
+      "grade": "종합"
+    },
+    "items": [
+      {
+        "code": "base",
+        "name": "기본 점검료",
+        "basis": "연면적 3,109.93㎡ → 1,000~5,000㎡",
+        "amount": 680000
+      },
+      {
+        "code": "usage",
+        "name": "용도 보정",
+        "basis": "판매시설 → 판매 계수 ×1.2",
+        "amount": 136000
+      },
+      {
+        "code": "grade",
+        "name": "점검 등급 보정",
+        "basis": "종합 점검 계수 ×1.6",
+        "amount": 490000
+      },
+      {
+        "code": "underground",
+        "name": "지하층 가산",
+        "basis": "지하 2개 층 × 40,000원",
+        "amount": 80000
+      }
+    ],
+    "subtotal": 1386000,
+    "vat": 138600,
+    "total": 1524600,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "won",
+    "createdAt": "2026-04-23T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0015",
+    "quoteNo": "GW-FIRE-20260423-002",
+    "divisionId": "fire",
+    "customerId": "cus_0021",
+    "buildingId": "bld_0033",
+    "conditions": {
+      "grade": "작동"
+    },
+    "items": [
+      {
+        "code": "base",
+        "name": "기본 점검료",
+        "basis": "연면적 4,922.52㎡ → 1,000~5,000㎡",
+        "amount": 680000
+      },
+      {
+        "code": "usage",
+        "name": "용도 보정",
+        "basis": "창고시설 → 공장 계수 ×1.3",
+        "amount": 204000
+      },
+      {
+        "code": "underground",
+        "name": "지하층 가산",
+        "basis": "지하 1개 층 × 40,000원",
+        "amount": 40000
+      }
+    ],
+    "subtotal": 924000,
+    "vat": 92400,
+    "total": 1016400,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "won",
+    "createdAt": "2026-04-23T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0016",
+    "quoteNo": "GW-FIRE-20260426-001",
+    "divisionId": "fire",
+    "customerId": "cus_0018",
+    "buildingId": "bld_0030",
+    "conditions": {
+      "grade": "종합"
+    },
+    "items": [
+      {
+        "code": "base",
+        "name": "기본 점검료",
+        "basis": "연면적 2,710.62㎡ → 1,000~5,000㎡",
+        "amount": 680000
+      },
+      {
+        "code": "grade",
+        "name": "점검 등급 보정",
+        "basis": "종합 점검 계수 ×1.6",
+        "amount": 408000
+      }
+    ],
+    "subtotal": 1088000,
+    "vat": 108800,
+    "total": 1196800,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "won",
+    "createdAt": "2026-04-26T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0017",
+    "quoteNo": "GW-FIRE-20260427-001",
+    "divisionId": "fire",
+    "customerId": "cus_0019",
+    "buildingId": "bld_0031",
+    "conditions": {
+      "grade": "작동"
+    },
+    "items": [
+      {
+        "code": "base",
+        "name": "기본 점검료",
+        "basis": "연면적 11,268.9㎡ → 10,000~30,000㎡",
+        "amount": 1940000
+      },
+      {
+        "code": "usage",
+        "name": "용도 보정",
+        "basis": "의료시설 → 의료 계수 ×1.25",
+        "amount": 485000
+      },
+      {
+        "code": "underground",
+        "name": "지하층 가산",
+        "basis": "지하 3개 층 × 40,000원",
+        "amount": 120000
+      }
+    ],
+    "subtotal": 2545000,
+    "vat": 254500,
+    "total": 2799500,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "lost",
+    "createdAt": "2026-04-27T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0018",
+    "quoteNo": "GW-TEL-20260501-001",
+    "divisionId": "telecom",
+    "customerId": "cus_0017",
+    "buildingId": "bld_0029",
+    "conditions": {
+      "lines": 97,
+      "switches": 12,
+      "terminalBoxes": 7,
+      "contract": "연간"
+    },
+    "items": [
+      {
+        "code": "lines",
+        "name": "회선 점검",
+        "basis": "97회선 × 2,400원 × 4회",
+        "amount": 931200
+      },
+      {
+        "code": "equipment",
+        "name": "장비 점검",
+        "basis": "장비 12대 × 38,000원 + 광단자함 7개 × 26,000원 × 4회",
+        "amount": 2552000
+      },
+      {
+        "code": "scale",
+        "name": "건물 규모 보정",
+        "basis": "10,000~30,000㎡ 계수 ×1.2",
+        "amount": 697000
+      },
+      {
+        "code": "discount",
+        "name": "연간 계약 할인",
+        "basis": "연 4회 계약 12% 할인",
+        "amount": -502000
+      }
+    ],
+    "subtotal": 3678200,
+    "vat": 367820,
+    "total": 4046020,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "lost",
+    "createdAt": "2026-05-01T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0019",
+    "quoteNo": "GW-FIRE-20260502-001",
+    "divisionId": "fire",
+    "customerId": "cus_0011",
+    "buildingId": "bld_0021",
+    "conditions": {
+      "grade": "작동"
+    },
+    "items": [
+      {
+        "code": "base",
+        "name": "기본 점검료",
+        "basis": "연면적 8,589.96㎡ → 5,000~10,000㎡",
+        "amount": 1150000
+      },
+      {
+        "code": "usage",
+        "name": "용도 보정",
+        "basis": "공장 → 공장 계수 ×1.3",
+        "amount": 345000
+      }
+    ],
+    "subtotal": 1495000,
+    "vat": 149500,
+    "total": 1644500,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "lost",
+    "createdAt": "2026-05-02T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0020",
+    "quoteNo": "GW-FIRE-20260503-001",
+    "divisionId": "fire",
+    "customerId": "cus_0011",
+    "buildingId": "bld_0022",
+    "conditions": {
+      "grade": "작동"
+    },
+    "items": [
+      {
+        "code": "base",
+        "name": "기본 점검료",
+        "basis": "연면적 22,150.61㎡ → 10,000~30,000㎡",
+        "amount": 1940000
+      },
+      {
+        "code": "floors",
+        "name": "고층 가산",
+        "basis": "지상 11층 중 10층 초과 1개 층 × 25,000원",
+        "amount": 25000
+      },
+      {
+        "code": "underground",
+        "name": "지하층 가산",
+        "basis": "지하 1개 층 × 40,000원",
+        "amount": 40000
+      }
+    ],
+    "subtotal": 2005000,
+    "vat": 200500,
+    "total": 2205500,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "sent",
+    "createdAt": "2026-05-03T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0021",
+    "quoteNo": "GW-FIRE-20260509-001",
+    "divisionId": "fire",
+    "customerId": "cus_0012",
+    "buildingId": "bld_0024",
+    "conditions": {
+      "grade": "종합"
+    },
+    "items": [
+      {
+        "code": "base",
+        "name": "기본 점검료",
+        "basis": "연면적 18,251.52㎡ → 10,000~30,000㎡",
+        "amount": 1940000
+      },
+      {
+        "code": "usage",
+        "name": "용도 보정",
+        "basis": "공동주택 → 주거 계수 ×0.9",
+        "amount": -194000
+      },
+      {
+        "code": "grade",
+        "name": "점검 등급 보정",
+        "basis": "종합 점검 계수 ×1.6",
+        "amount": 1048000
+      },
+      {
+        "code": "floors",
+        "name": "고층 가산",
+        "basis": "지상 27층 중 10층 초과 17개 층 × 25,000원",
+        "amount": 425000
+      },
+      {
+        "code": "underground",
+        "name": "지하층 가산",
+        "basis": "지하 2개 층 × 40,000원",
+        "amount": 80000
+      }
+    ],
+    "subtotal": 3299000,
+    "vat": 329900,
+    "total": 3628900,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "sent",
+    "createdAt": "2026-05-09T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0022",
+    "quoteNo": "GW-FIRE-20260509-002",
+    "divisionId": "fire",
+    "customerId": "cus_0018",
+    "buildingId": "bld_0030",
+    "conditions": {
+      "grade": "종합"
+    },
+    "items": [
+      {
+        "code": "base",
+        "name": "기본 점검료",
+        "basis": "연면적 2,710.62㎡ → 1,000~5,000㎡",
+        "amount": 680000
+      },
+      {
+        "code": "grade",
+        "name": "점검 등급 보정",
+        "basis": "종합 점검 계수 ×1.6",
+        "amount": 408000
+      }
+    ],
+    "subtotal": 1088000,
+    "vat": 108800,
+    "total": 1196800,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "lost",
+    "createdAt": "2026-05-09T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0023",
+    "quoteNo": "GW-FIRE-20260510-001",
+    "divisionId": "fire",
+    "customerId": "cus_0001",
+    "buildingId": "bld_0002",
+    "conditions": {
+      "grade": "작동"
+    },
+    "items": [
+      {
+        "code": "base",
+        "name": "기본 점검료",
+        "basis": "연면적 2,205.41㎡ → 1,000~5,000㎡",
+        "amount": 680000
+      },
+      {
+        "code": "usage",
+        "name": "용도 보정",
+        "basis": "제2종근린생활시설 → 근린 계수 ×1.05",
+        "amount": 34000
+      },
+      {
+        "code": "underground",
+        "name": "지하층 가산",
+        "basis": "지하 1개 층 × 40,000원",
+        "amount": 40000
+      }
+    ],
+    "subtotal": 754000,
+    "vat": 75400,
+    "total": 829400,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "won",
+    "createdAt": "2026-05-10T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0024",
+    "quoteNo": "GW-FIRE-20260510-002",
+    "divisionId": "fire",
+    "customerId": "cus_0001",
+    "buildingId": "bld_0001",
+    "conditions": {
+      "grade": "작동"
+    },
+    "items": [
+      {
+        "code": "base",
+        "name": "기본 점검료",
+        "basis": "연면적 12,803.25㎡ → 10,000~30,000㎡",
+        "amount": 1940000
+      },
+      {
+        "code": "floors",
+        "name": "고층 가산",
+        "basis": "지상 17층 중 10층 초과 7개 층 × 25,000원",
+        "amount": 175000
+      },
+      {
+        "code": "underground",
+        "name": "지하층 가산",
+        "basis": "지하 5개 층 × 40,000원",
+        "amount": 200000
+      }
+    ],
+    "subtotal": 2315000,
+    "vat": 231500,
+    "total": 2546500,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "sent",
+    "createdAt": "2026-05-10T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0025",
+    "quoteNo": "GW-FIRE-20260511-001",
+    "divisionId": "fire",
+    "customerId": "cus_0005",
+    "buildingId": "bld_0010",
+    "conditions": {
+      "grade": "작동"
+    },
+    "items": [
+      {
+        "code": "base",
+        "name": "기본 점검료",
+        "basis": "연면적 2,963.33㎡ → 1,000~5,000㎡",
+        "amount": 680000
+      },
+      {
+        "code": "usage",
+        "name": "용도 보정",
+        "basis": "공장 → 공장 계수 ×1.3",
+        "amount": 204000
+      }
+    ],
+    "subtotal": 884000,
+    "vat": 88400,
+    "total": 972400,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "won",
+    "createdAt": "2026-05-11T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0026",
+    "quoteNo": "GW-FIRE-20260514-001",
+    "divisionId": "fire",
+    "customerId": "cus_0003",
+    "buildingId": "bld_0005",
+    "conditions": {
+      "grade": "종합"
+    },
+    "items": [
+      {
+        "code": "base",
+        "name": "기본 점검료",
+        "basis": "연면적 1,994.64㎡ → 1,000~5,000㎡",
+        "amount": 680000
+      },
+      {
+        "code": "grade",
+        "name": "점검 등급 보정",
+        "basis": "종합 점검 계수 ×1.6",
+        "amount": 408000
+      },
+      {
+        "code": "floors",
+        "name": "고층 가산",
+        "basis": "지상 13층 중 10층 초과 3개 층 × 25,000원",
+        "amount": 75000
+      },
+      {
+        "code": "underground",
+        "name": "지하층 가산",
+        "basis": "지하 1개 층 × 40,000원",
+        "amount": 40000
+      }
+    ],
+    "subtotal": 1203000,
+    "vat": 120300,
+    "total": 1323300,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "sent",
+    "createdAt": "2026-05-14T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0027",
+    "quoteNo": "GW-TEL-20260521-001",
+    "divisionId": "telecom",
+    "customerId": "cus_0019",
+    "buildingId": "bld_0031",
+    "conditions": {
+      "lines": 246,
+      "switches": 11,
+      "terminalBoxes": 3,
+      "contract": "단건"
+    },
+    "items": [
+      {
+        "code": "lines",
+        "name": "회선 점검",
+        "basis": "246회선 × 2,400원",
+        "amount": 590400
+      },
+      {
+        "code": "equipment",
+        "name": "장비 점검",
+        "basis": "장비 11대 × 38,000원 + 광단자함 3개 × 26,000원",
+        "amount": 496000
+      },
+      {
+        "code": "scale",
+        "name": "건물 규모 보정",
+        "basis": "10,000~30,000㎡ 계수 ×1.2",
+        "amount": 217000
+      }
+    ],
+    "subtotal": 1303400,
+    "vat": 130340,
+    "total": 1433740,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "won",
+    "createdAt": "2026-05-21T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0028",
+    "quoteNo": "GW-FIRE-20260524-001",
+    "divisionId": "fire",
+    "customerId": "cus_0017",
+    "buildingId": "bld_0029",
+    "conditions": {
+      "grade": "종합"
+    },
+    "items": [
+      {
+        "code": "base",
+        "name": "기본 점검료",
+        "basis": "연면적 11,607.86㎡ → 10,000~30,000㎡",
+        "amount": 1940000
+      },
+      {
+        "code": "usage",
+        "name": "용도 보정",
+        "basis": "판매시설 → 판매 계수 ×1.2",
+        "amount": 388000
+      },
+      {
+        "code": "grade",
+        "name": "점검 등급 보정",
+        "basis": "종합 점검 계수 ×1.6",
+        "amount": 1397000
+      },
+      {
+        "code": "underground",
+        "name": "지하층 가산",
+        "basis": "지하 4개 층 × 40,000원",
+        "amount": 160000
+      }
+    ],
+    "subtotal": 3885000,
+    "vat": 388500,
+    "total": 4273500,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "lost",
+    "createdAt": "2026-05-24T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0029",
+    "quoteNo": "GW-TEL-20260525-001",
+    "divisionId": "telecom",
+    "customerId": "cus_0011",
+    "buildingId": "bld_0022",
+    "conditions": {
+      "lines": 160,
+      "switches": 10,
+      "terminalBoxes": 8,
+      "contract": "연간"
+    },
+    "items": [
+      {
+        "code": "lines",
+        "name": "회선 점검",
+        "basis": "160회선 × 2,400원 × 4회",
+        "amount": 1536000
+      },
+      {
+        "code": "equipment",
+        "name": "장비 점검",
+        "basis": "장비 10대 × 38,000원 + 광단자함 8개 × 26,000원 × 4회",
+        "amount": 2352000
+      },
+      {
+        "code": "scale",
+        "name": "건물 규모 보정",
+        "basis": "10,000~30,000㎡ 계수 ×1.2",
+        "amount": 778000
+      },
+      {
+        "code": "discount",
+        "name": "연간 계약 할인",
+        "basis": "연 4회 계약 12% 할인",
+        "amount": -560000
+      }
+    ],
+    "subtotal": 4106000,
+    "vat": 410600,
+    "total": 4516600,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "lost",
+    "createdAt": "2026-05-25T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0030",
+    "quoteNo": "GW-TEL-20260527-001",
+    "divisionId": "telecom",
+    "customerId": "cus_0002",
+    "buildingId": "bld_0003",
+    "conditions": {
+      "lines": 192,
+      "switches": 5,
+      "terminalBoxes": 5,
+      "contract": "단건"
+    },
+    "items": [
+      {
+        "code": "lines",
+        "name": "회선 점검",
+        "basis": "192회선 × 2,400원",
+        "amount": 460800
+      },
+      {
+        "code": "equipment",
+        "name": "장비 점검",
+        "basis": "장비 5대 × 38,000원 + 광단자함 5개 × 26,000원",
+        "amount": 320000
+      }
+    ],
+    "subtotal": 780800,
+    "vat": 78080,
+    "total": 858880,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "won",
+    "createdAt": "2026-05-27T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0031",
+    "quoteNo": "GW-FIRE-20260608-001",
+    "divisionId": "fire",
+    "customerId": "cus_0020",
+    "buildingId": "bld_0032",
+    "conditions": {
+      "grade": "작동"
+    },
+    "items": [
+      {
+        "code": "base",
+        "name": "기본 점검료",
+        "basis": "연면적 4,793.9㎡ → 1,000~5,000㎡",
+        "amount": 680000
+      },
+      {
+        "code": "usage",
+        "name": "용도 보정",
+        "basis": "판매시설 → 판매 계수 ×1.2",
+        "amount": 136000
+      },
+      {
+        "code": "underground",
+        "name": "지하층 가산",
+        "basis": "지하 4개 층 × 40,000원",
+        "amount": 160000
+      }
+    ],
+    "subtotal": 976000,
+    "vat": 97600,
+    "total": 1073600,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "lost",
+    "createdAt": "2026-06-08T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0032",
+    "quoteNo": "GW-TEL-20260610-001",
+    "divisionId": "telecom",
+    "customerId": "cus_0006",
+    "buildingId": "bld_0011",
+    "conditions": {
+      "lines": 235,
+      "switches": 11,
+      "terminalBoxes": 4,
+      "contract": "연간"
+    },
+    "items": [
+      {
+        "code": "lines",
+        "name": "회선 점검",
+        "basis": "235회선 × 2,400원 × 4회",
+        "amount": 2256000
+      },
+      {
+        "code": "equipment",
+        "name": "장비 점검",
+        "basis": "장비 11대 × 38,000원 + 광단자함 4개 × 26,000원 × 4회",
+        "amount": 2088000
+      },
+      {
+        "code": "scale",
+        "name": "건물 규모 보정",
+        "basis": "10,000~30,000㎡ 계수 ×1.2",
+        "amount": 869000
+      },
+      {
+        "code": "discount",
+        "name": "연간 계약 할인",
+        "basis": "연 4회 계약 12% 할인",
+        "amount": -626000
+      }
+    ],
+    "subtotal": 4587000,
+    "vat": 458700,
+    "total": 5045700,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "sent",
+    "createdAt": "2026-06-10T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0033",
+    "quoteNo": "GW-TEL-20260610-002",
+    "divisionId": "telecom",
+    "customerId": "cus_0012",
+    "buildingId": "bld_0024",
+    "conditions": {
+      "lines": 266,
+      "switches": 7,
+      "terminalBoxes": 8,
+      "contract": "연간"
+    },
+    "items": [
+      {
+        "code": "lines",
+        "name": "회선 점검",
+        "basis": "266회선 × 2,400원 × 4회",
+        "amount": 2553600
+      },
+      {
+        "code": "equipment",
+        "name": "장비 점검",
+        "basis": "장비 7대 × 38,000원 + 광단자함 8개 × 26,000원 × 4회",
+        "amount": 1896000
+      },
+      {
+        "code": "scale",
+        "name": "건물 규모 보정",
+        "basis": "10,000~30,000㎡ 계수 ×1.2",
+        "amount": 890000
+      },
+      {
+        "code": "discount",
+        "name": "연간 계약 할인",
+        "basis": "연 4회 계약 12% 할인",
+        "amount": -641000
+      }
+    ],
+    "subtotal": 4698600,
+    "vat": 469860,
+    "total": 5168460,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "lost",
+    "createdAt": "2026-06-10T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0034",
+    "quoteNo": "GW-FIRE-20260618-001",
+    "divisionId": "fire",
+    "customerId": "cus_0007",
+    "buildingId": "bld_0013",
+    "conditions": {
+      "grade": "작동"
+    },
+    "items": [
+      {
+        "code": "base",
+        "name": "기본 점검료",
+        "basis": "연면적 10,697.38㎡ → 10,000~30,000㎡",
+        "amount": 1940000
+      }
+    ],
+    "subtotal": 1940000,
+    "vat": 194000,
+    "total": 2134000,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "won",
+    "createdAt": "2026-06-18T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0035",
+    "quoteNo": "GW-TEL-20260618-001",
+    "divisionId": "telecom",
+    "customerId": "cus_0017",
+    "buildingId": "bld_0029",
+    "conditions": {
+      "lines": 106,
+      "switches": 7,
+      "terminalBoxes": 6,
+      "contract": "연간"
+    },
+    "items": [
+      {
+        "code": "lines",
+        "name": "회선 점검",
+        "basis": "106회선 × 2,400원 × 4회",
+        "amount": 1017600
+      },
+      {
+        "code": "equipment",
+        "name": "장비 점검",
+        "basis": "장비 7대 × 38,000원 + 광단자함 6개 × 26,000원 × 4회",
+        "amount": 1688000
+      },
+      {
+        "code": "scale",
+        "name": "건물 규모 보정",
+        "basis": "10,000~30,000㎡ 계수 ×1.2",
+        "amount": 541000
+      },
+      {
+        "code": "discount",
+        "name": "연간 계약 할인",
+        "basis": "연 4회 계약 12% 할인",
+        "amount": -390000
+      }
+    ],
+    "subtotal": 2856600,
+    "vat": 285660,
+    "total": 3142260,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "sent",
+    "createdAt": "2026-06-18T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0036",
+    "quoteNo": "GW-TEL-20260621-001",
+    "divisionId": "telecom",
+    "customerId": "cus_0023",
+    "buildingId": "bld_0035",
+    "conditions": {
+      "lines": 222,
+      "switches": 2,
+      "terminalBoxes": 8,
+      "contract": "단건"
+    },
+    "items": [
+      {
+        "code": "lines",
+        "name": "회선 점검",
+        "basis": "222회선 × 2,400원",
+        "amount": 532800
+      },
+      {
+        "code": "equipment",
+        "name": "장비 점검",
+        "basis": "장비 2대 × 38,000원 + 광단자함 8개 × 26,000원",
+        "amount": 284000
+      }
+    ],
+    "subtotal": 816800,
+    "vat": 81680,
+    "total": 898480,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "won",
+    "createdAt": "2026-06-21T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0037",
+    "quoteNo": "GW-FIRE-20260623-001",
+    "divisionId": "fire",
+    "customerId": "cus_0004",
+    "buildingId": "bld_0007",
+    "conditions": {
+      "grade": "종합"
+    },
+    "items": [
+      {
+        "code": "base",
+        "name": "기본 점검료",
+        "basis": "연면적 36,859㎡ → 30,000㎡ 초과",
+        "amount": 2860000
+      },
+      {
+        "code": "usage",
+        "name": "용도 보정",
+        "basis": "공동주택 → 주거 계수 ×0.9",
+        "amount": -286000
+      },
+      {
+        "code": "grade",
+        "name": "점검 등급 보정",
+        "basis": "종합 점검 계수 ×1.6",
+        "amount": 1544000
+      },
+      {
+        "code": "floors",
+        "name": "고층 가산",
+        "basis": "지상 17층 중 10층 초과 7개 층 × 25,000원",
+        "amount": 175000
+      },
+      {
+        "code": "underground",
+        "name": "지하층 가산",
+        "basis": "지하 3개 층 × 40,000원",
+        "amount": 120000
+      }
+    ],
+    "subtotal": 4413000,
+    "vat": 441300,
+    "total": 4854300,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "won",
+    "createdAt": "2026-06-23T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0038",
+    "quoteNo": "GW-FIRE-20260623-002",
+    "divisionId": "fire",
+    "customerId": "cus_0021",
+    "buildingId": "bld_0033",
+    "conditions": {
+      "grade": "종합"
+    },
+    "items": [
+      {
+        "code": "base",
+        "name": "기본 점검료",
+        "basis": "연면적 4,922.52㎡ → 1,000~5,000㎡",
+        "amount": 680000
+      },
+      {
+        "code": "usage",
+        "name": "용도 보정",
+        "basis": "창고시설 → 공장 계수 ×1.3",
+        "amount": 204000
+      },
+      {
+        "code": "grade",
+        "name": "점검 등급 보정",
+        "basis": "종합 점검 계수 ×1.6",
+        "amount": 530000
+      },
+      {
+        "code": "underground",
+        "name": "지하층 가산",
+        "basis": "지하 1개 층 × 40,000원",
+        "amount": 40000
+      }
+    ],
+    "subtotal": 1454000,
+    "vat": 145400,
+    "total": 1599400,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "won",
+    "createdAt": "2026-06-23T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0039",
+    "quoteNo": "GW-FIRE-20260624-001",
+    "divisionId": "fire",
+    "customerId": "cus_0003",
+    "buildingId": "bld_0005",
+    "conditions": {
+      "grade": "종합"
+    },
+    "items": [
+      {
+        "code": "base",
+        "name": "기본 점검료",
+        "basis": "연면적 1,994.64㎡ → 1,000~5,000㎡",
+        "amount": 680000
+      },
+      {
+        "code": "grade",
+        "name": "점검 등급 보정",
+        "basis": "종합 점검 계수 ×1.6",
+        "amount": 408000
+      },
+      {
+        "code": "floors",
+        "name": "고층 가산",
+        "basis": "지상 13층 중 10층 초과 3개 층 × 25,000원",
+        "amount": 75000
+      },
+      {
+        "code": "underground",
+        "name": "지하층 가산",
+        "basis": "지하 1개 층 × 40,000원",
+        "amount": 40000
+      }
+    ],
+    "subtotal": 1203000,
+    "vat": 120300,
+    "total": 1323300,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "sent",
+    "createdAt": "2026-06-24T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0040",
+    "quoteNo": "GW-FIRE-20260627-001",
+    "divisionId": "fire",
+    "customerId": "cus_0012",
+    "buildingId": "bld_0024",
+    "conditions": {
+      "grade": "작동"
+    },
+    "items": [
+      {
+        "code": "base",
+        "name": "기본 점검료",
+        "basis": "연면적 18,251.52㎡ → 10,000~30,000㎡",
+        "amount": 1940000
+      },
+      {
+        "code": "usage",
+        "name": "용도 보정",
+        "basis": "공동주택 → 주거 계수 ×0.9",
+        "amount": -194000
+      },
+      {
+        "code": "floors",
+        "name": "고층 가산",
+        "basis": "지상 27층 중 10층 초과 17개 층 × 25,000원",
+        "amount": 425000
+      },
+      {
+        "code": "underground",
+        "name": "지하층 가산",
+        "basis": "지하 2개 층 × 40,000원",
+        "amount": 80000
+      }
+    ],
+    "subtotal": 2251000,
+    "vat": 225100,
+    "total": 2476100,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "sent",
+    "createdAt": "2026-06-27T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0041",
+    "quoteNo": "GW-TEL-20260702-001",
+    "divisionId": "telecom",
+    "customerId": "cus_0005",
+    "buildingId": "bld_0009",
+    "conditions": {
+      "lines": 219,
+      "switches": 6,
+      "terminalBoxes": 9,
+      "contract": "단건"
+    },
+    "items": [
+      {
+        "code": "lines",
+        "name": "회선 점검",
+        "basis": "219회선 × 2,400원",
+        "amount": 525600
+      },
+      {
+        "code": "equipment",
+        "name": "장비 점검",
+        "basis": "장비 6대 × 38,000원 + 광단자함 9개 × 26,000원",
+        "amount": 462000
+      },
+      {
+        "code": "scale",
+        "name": "건물 규모 보정",
+        "basis": "10,000~30,000㎡ 계수 ×1.2",
+        "amount": 198000
+      }
+    ],
+    "subtotal": 1185600,
+    "vat": 118560,
+    "total": 1304160,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "won",
+    "createdAt": "2026-07-02T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0042",
+    "quoteNo": "GW-FIRE-20260708-001",
+    "divisionId": "fire",
+    "customerId": "cus_0005",
+    "buildingId": "bld_0010",
+    "conditions": {
+      "grade": "종합"
+    },
+    "items": [
+      {
+        "code": "base",
+        "name": "기본 점검료",
+        "basis": "연면적 2,963.33㎡ → 1,000~5,000㎡",
+        "amount": 680000
+      },
+      {
+        "code": "usage",
+        "name": "용도 보정",
+        "basis": "공장 → 공장 계수 ×1.3",
+        "amount": 204000
+      },
+      {
+        "code": "grade",
+        "name": "점검 등급 보정",
+        "basis": "종합 점검 계수 ×1.6",
+        "amount": 530000
+      }
+    ],
+    "subtotal": 1414000,
+    "vat": 141400,
+    "total": 1555400,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "won",
+    "createdAt": "2026-07-08T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0043",
+    "quoteNo": "GW-FIRE-20260708-002",
+    "divisionId": "fire",
+    "customerId": "cus_0020",
+    "buildingId": "bld_0032",
+    "conditions": {
+      "grade": "종합"
+    },
+    "items": [
+      {
+        "code": "base",
+        "name": "기본 점검료",
+        "basis": "연면적 4,793.9㎡ → 1,000~5,000㎡",
+        "amount": 680000
+      },
+      {
+        "code": "usage",
+        "name": "용도 보정",
+        "basis": "판매시설 → 판매 계수 ×1.2",
+        "amount": 136000
+      },
+      {
+        "code": "grade",
+        "name": "점검 등급 보정",
+        "basis": "종합 점검 계수 ×1.6",
+        "amount": 490000
+      },
+      {
+        "code": "underground",
+        "name": "지하층 가산",
+        "basis": "지하 4개 층 × 40,000원",
+        "amount": 160000
+      }
+    ],
+    "subtotal": 1466000,
+    "vat": 146600,
+    "total": 1612600,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "lost",
+    "createdAt": "2026-07-08T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0044",
+    "quoteNo": "GW-MECH-20260708-001",
+    "divisionId": "mechanical",
+    "customerId": "cus_0001",
+    "buildingId": "bld_0001",
+    "conditions": {
+      "boilers": 4,
+      "chillers": 2,
+      "ahus": 3,
+      "pumps": 6,
+      "fans": 3,
+      "cycle": "월"
+    },
+    "items": [
+      {
+        "code": "boilers",
+        "name": "보일러 점검",
+        "basis": "4대 × 42,000원 × 연 12회",
+        "amount": 2016000
+      },
+      {
+        "code": "chillers",
+        "name": "냉동기 점검",
+        "basis": "2대 × 65,000원 × 연 12회",
+        "amount": 1560000
+      },
+      {
+        "code": "ahus",
+        "name": "공조기 점검",
+        "basis": "3대 × 28,000원 × 연 12회",
+        "amount": 1008000
+      },
+      {
+        "code": "pumps",
+        "name": "펌프 점검",
+        "basis": "6대 × 9,000원 × 연 12회",
+        "amount": 648000
+      },
+      {
+        "code": "fans",
+        "name": "급배기팬 점검",
+        "basis": "3대 × 6,000원 × 연 12회",
+        "amount": 216000
+      },
+      {
+        "code": "visit",
+        "name": "출동비",
+        "basis": "30,000원 × 연 12회",
+        "amount": 360000
+      },
+      {
+        "code": "discount",
+        "name": "방문 주기 할인",
+        "basis": "월 방문 10% 할인",
+        "amount": -581000
+      }
+    ],
+    "subtotal": 5227000,
+    "vat": 522700,
+    "total": 5749700,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "won",
+    "createdAt": "2026-07-08T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0045",
+    "quoteNo": "GW-TEL-20260709-001",
+    "divisionId": "telecom",
+    "customerId": "cus_0004",
+    "buildingId": "bld_0007",
+    "conditions": {
+      "lines": 123,
+      "switches": 9,
+      "terminalBoxes": 4,
+      "contract": "연간"
+    },
+    "items": [
+      {
+        "code": "lines",
+        "name": "회선 점검",
+        "basis": "123회선 × 2,400원 × 4회",
+        "amount": 1180800
+      },
+      {
+        "code": "equipment",
+        "name": "장비 점검",
+        "basis": "장비 9대 × 38,000원 + 광단자함 4개 × 26,000원 × 4회",
+        "amount": 1784000
+      },
+      {
+        "code": "scale",
+        "name": "건물 규모 보정",
+        "basis": "30,000㎡ 초과 계수 ×1.35",
+        "amount": 1038000
+      },
+      {
+        "code": "discount",
+        "name": "연간 계약 할인",
+        "basis": "연 4회 계약 12% 할인",
+        "amount": -480000
+      }
+    ],
+    "subtotal": 3522800,
+    "vat": 352280,
+    "total": 3875080,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "won",
+    "createdAt": "2026-07-09T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0046",
+    "quoteNo": "GW-FIRE-20260710-001",
+    "divisionId": "fire",
+    "customerId": "cus_0010",
+    "buildingId": "bld_0020",
+    "conditions": {
+      "grade": "종합"
+    },
+    "items": [
+      {
+        "code": "base",
+        "name": "기본 점검료",
+        "basis": "연면적 16,701.31㎡ → 10,000~30,000㎡",
+        "amount": 1940000
+      },
+      {
+        "code": "usage",
+        "name": "용도 보정",
+        "basis": "판매시설 → 판매 계수 ×1.2",
+        "amount": 388000
+      },
+      {
+        "code": "grade",
+        "name": "점검 등급 보정",
+        "basis": "종합 점검 계수 ×1.6",
+        "amount": 1397000
+      },
+      {
+        "code": "underground",
+        "name": "지하층 가산",
+        "basis": "지하 5개 층 × 40,000원",
+        "amount": 200000
+      }
+    ],
+    "subtotal": 3925000,
+    "vat": 392500,
+    "total": 4317500,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "sent",
+    "createdAt": "2026-07-10T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0047",
+    "quoteNo": "GW-TEL-20260712-001",
+    "divisionId": "telecom",
+    "customerId": "cus_0020",
+    "buildingId": "bld_0032",
+    "conditions": {
+      "lines": 107,
+      "switches": 5,
+      "terminalBoxes": 9,
+      "contract": "단건"
+    },
+    "items": [
+      {
+        "code": "lines",
+        "name": "회선 점검",
+        "basis": "107회선 × 2,400원",
+        "amount": 256800
+      },
+      {
+        "code": "equipment",
+        "name": "장비 점검",
+        "basis": "장비 5대 × 38,000원 + 광단자함 9개 × 26,000원",
+        "amount": 424000
+      },
+      {
+        "code": "scale",
+        "name": "건물 규모 보정",
+        "basis": "3,000~10,000㎡ 계수 ×1.1",
+        "amount": 68000
+      }
+    ],
+    "subtotal": 748800,
+    "vat": 74880,
+    "total": 823680,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "lost",
+    "createdAt": "2026-07-12T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0048",
+    "quoteNo": "GW-MECH-20260712-001",
+    "divisionId": "mechanical",
+    "customerId": "cus_0006",
+    "buildingId": "bld_0011",
+    "conditions": {
+      "boilers": 3,
+      "chillers": 1,
+      "ahus": 9,
+      "pumps": 8,
+      "fans": 4,
+      "cycle": "월"
+    },
+    "items": [
+      {
+        "code": "boilers",
+        "name": "보일러 점검",
+        "basis": "3대 × 42,000원 × 연 12회",
+        "amount": 1512000
+      },
+      {
+        "code": "chillers",
+        "name": "냉동기 점검",
+        "basis": "1대 × 65,000원 × 연 12회",
+        "amount": 780000
+      },
+      {
+        "code": "ahus",
+        "name": "공조기 점검",
+        "basis": "9대 × 28,000원 × 연 12회",
+        "amount": 3024000
+      },
+      {
+        "code": "pumps",
+        "name": "펌프 점검",
+        "basis": "8대 × 9,000원 × 연 12회",
+        "amount": 864000
+      },
+      {
+        "code": "fans",
+        "name": "급배기팬 점검",
+        "basis": "4대 × 6,000원 × 연 12회",
+        "amount": 288000
+      },
+      {
+        "code": "visit",
+        "name": "출동비",
+        "basis": "30,000원 × 연 12회",
+        "amount": 360000
+      },
+      {
+        "code": "discount",
+        "name": "방문 주기 할인",
+        "basis": "월 방문 10% 할인",
+        "amount": -683000
+      }
+    ],
+    "subtotal": 6145000,
+    "vat": 614500,
+    "total": 6759500,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "sent",
+    "createdAt": "2026-07-12T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0049",
+    "quoteNo": "GW-FIRE-20260713-001",
+    "divisionId": "fire",
+    "customerId": "cus_0016",
+    "buildingId": "bld_0028",
+    "conditions": {
+      "grade": "작동"
+    },
+    "items": [
+      {
+        "code": "base",
+        "name": "기본 점검료",
+        "basis": "연면적 14,924.41㎡ → 10,000~30,000㎡",
+        "amount": 1940000
+      },
+      {
+        "code": "floors",
+        "name": "고층 가산",
+        "basis": "지상 11층 중 10층 초과 1개 층 × 25,000원",
+        "amount": 25000
+      },
+      {
+        "code": "underground",
+        "name": "지하층 가산",
+        "basis": "지하 4개 층 × 40,000원",
+        "amount": 160000
+      }
+    ],
+    "subtotal": 2125000,
+    "vat": 212500,
+    "total": 2337500,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "sent",
+    "createdAt": "2026-07-13T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0050",
+    "quoteNo": "GW-MECH-20260713-001",
+    "divisionId": "mechanical",
+    "customerId": "cus_0015",
+    "buildingId": "bld_0027",
+    "conditions": {
+      "boilers": 3,
+      "chillers": 2,
+      "ahus": 2,
+      "pumps": 14,
+      "fans": 4,
+      "cycle": "월"
+    },
+    "items": [
+      {
+        "code": "boilers",
+        "name": "보일러 점검",
+        "basis": "3대 × 42,000원 × 연 12회",
+        "amount": 1512000
+      },
+      {
+        "code": "chillers",
+        "name": "냉동기 점검",
+        "basis": "2대 × 65,000원 × 연 12회",
+        "amount": 1560000
+      },
+      {
+        "code": "ahus",
+        "name": "공조기 점검",
+        "basis": "2대 × 28,000원 × 연 12회",
+        "amount": 672000
+      },
+      {
+        "code": "pumps",
+        "name": "펌프 점검",
+        "basis": "14대 × 9,000원 × 연 12회",
+        "amount": 1512000
+      },
+      {
+        "code": "fans",
+        "name": "급배기팬 점검",
+        "basis": "4대 × 6,000원 × 연 12회",
+        "amount": 288000
+      },
+      {
+        "code": "visit",
+        "name": "출동비",
+        "basis": "30,000원 × 연 12회",
+        "amount": 360000
+      },
+      {
+        "code": "discount",
+        "name": "방문 주기 할인",
+        "basis": "월 방문 10% 할인",
+        "amount": -590000
+      }
+    ],
+    "subtotal": 5314000,
+    "vat": 531400,
+    "total": 5845400,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "sent",
+    "createdAt": "2026-07-13T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0051",
+    "quoteNo": "GW-FIRE-20260714-001",
+    "divisionId": "fire",
+    "customerId": "cus_0015",
+    "buildingId": "bld_0027",
+    "conditions": {
+      "grade": "종합"
+    },
+    "items": [
+      {
+        "code": "base",
+        "name": "기본 점검료",
+        "basis": "연면적 24,530.36㎡ → 10,000~30,000㎡",
+        "amount": 1940000
+      },
+      {
+        "code": "usage",
+        "name": "용도 보정",
+        "basis": "공동주택 → 주거 계수 ×0.9",
+        "amount": -194000
+      },
+      {
+        "code": "grade",
+        "name": "점검 등급 보정",
+        "basis": "종합 점검 계수 ×1.6",
+        "amount": 1048000
+      },
+      {
+        "code": "floors",
+        "name": "고층 가산",
+        "basis": "지상 12층 중 10층 초과 2개 층 × 25,000원",
+        "amount": 50000
+      },
+      {
+        "code": "underground",
+        "name": "지하층 가산",
+        "basis": "지하 3개 층 × 40,000원",
+        "amount": 120000
+      }
+    ],
+    "subtotal": 2964000,
+    "vat": 296400,
+    "total": 3260400,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "lost",
+    "createdAt": "2026-07-14T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0052",
+    "quoteNo": "GW-TEL-20260714-001",
+    "divisionId": "telecom",
+    "customerId": "cus_0024",
+    "buildingId": "bld_0036",
+    "conditions": {
+      "lines": 208,
+      "switches": 13,
+      "terminalBoxes": 9,
+      "contract": "연간"
+    },
+    "items": [
+      {
+        "code": "lines",
+        "name": "회선 점검",
+        "basis": "208회선 × 2,400원 × 4회",
+        "amount": 1996800
+      },
+      {
+        "code": "equipment",
+        "name": "장비 점검",
+        "basis": "장비 13대 × 38,000원 + 광단자함 9개 × 26,000원 × 4회",
+        "amount": 2912000
+      },
+      {
+        "code": "scale",
+        "name": "건물 규모 보정",
+        "basis": "3,000~10,000㎡ 계수 ×1.1",
+        "amount": 491000
+      },
+      {
+        "code": "discount",
+        "name": "연간 계약 할인",
+        "basis": "연 4회 계약 12% 할인",
+        "amount": -648000
+      }
+    ],
+    "subtotal": 4751800,
+    "vat": 475180,
+    "total": 5226980,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "sent",
+    "createdAt": "2026-07-14T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0053",
+    "quoteNo": "GW-FIRE-20260722-001",
+    "divisionId": "fire",
+    "customerId": "cus_0003",
+    "buildingId": "bld_0006",
+    "conditions": {
+      "grade": "종합"
+    },
+    "items": [
+      {
+        "code": "base",
+        "name": "기본 점검료",
+        "basis": "연면적 3,979.08㎡ → 1,000~5,000㎡",
+        "amount": 680000
+      },
+      {
+        "code": "grade",
+        "name": "점검 등급 보정",
+        "basis": "종합 점검 계수 ×1.6",
+        "amount": 408000
+      },
+      {
+        "code": "floors",
+        "name": "고층 가산",
+        "basis": "지상 18층 중 10층 초과 8개 층 × 25,000원",
+        "amount": 200000
+      },
+      {
+        "code": "underground",
+        "name": "지하층 가산",
+        "basis": "지하 1개 층 × 40,000원",
+        "amount": 40000
+      }
+    ],
+    "subtotal": 1328000,
+    "vat": 132800,
+    "total": 1460800,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "lost",
+    "createdAt": "2026-07-22T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0054",
+    "quoteNo": "GW-MECH-20260722-001",
+    "divisionId": "mechanical",
+    "customerId": "cus_0003",
+    "buildingId": "bld_0005",
+    "conditions": {
+      "boilers": 3,
+      "chillers": 1,
+      "ahus": 9,
+      "pumps": 2,
+      "fans": 7,
+      "cycle": "분기"
+    },
+    "items": [
+      {
+        "code": "boilers",
+        "name": "보일러 점검",
+        "basis": "3대 × 42,000원 × 연 4회",
+        "amount": 504000
+      },
+      {
+        "code": "chillers",
+        "name": "냉동기 점검",
+        "basis": "1대 × 65,000원 × 연 4회",
+        "amount": 260000
+      },
+      {
+        "code": "ahus",
+        "name": "공조기 점검",
+        "basis": "9대 × 28,000원 × 연 4회",
+        "amount": 1008000
+      },
+      {
+        "code": "pumps",
+        "name": "펌프 점검",
+        "basis": "2대 × 9,000원 × 연 4회",
+        "amount": 72000
+      },
+      {
+        "code": "fans",
+        "name": "급배기팬 점검",
+        "basis": "7대 × 6,000원 × 연 4회",
+        "amount": 168000
+      },
+      {
+        "code": "visit",
+        "name": "출동비",
+        "basis": "30,000원 × 연 4회",
+        "amount": 120000
+      }
+    ],
+    "subtotal": 2132000,
+    "vat": 213200,
+    "total": 2345200,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "lost",
+    "createdAt": "2026-07-22T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0055",
+    "quoteNo": "GW-TEL-20260725-001",
+    "divisionId": "telecom",
+    "customerId": "cus_0023",
+    "buildingId": "bld_0035",
+    "conditions": {
+      "lines": 280,
+      "switches": 7,
+      "terminalBoxes": 4,
+      "contract": "연간"
+    },
+    "items": [
+      {
+        "code": "lines",
+        "name": "회선 점검",
+        "basis": "280회선 × 2,400원 × 4회",
+        "amount": 2688000
+      },
+      {
+        "code": "equipment",
+        "name": "장비 점검",
+        "basis": "장비 7대 × 38,000원 + 광단자함 4개 × 26,000원 × 4회",
+        "amount": 1480000
+      },
+      {
+        "code": "discount",
+        "name": "연간 계약 할인",
+        "basis": "연 4회 계약 12% 할인",
+        "amount": -500000
+      }
+    ],
+    "subtotal": 3668000,
+    "vat": 366800,
+    "total": 4034800,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "won",
+    "createdAt": "2026-07-25T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0056",
+    "quoteNo": "GW-FIRE-20260726-001",
+    "divisionId": "fire",
+    "customerId": "cus_0023",
+    "buildingId": "bld_0035",
+    "conditions": {
+      "grade": "종합"
+    },
+    "items": [
+      {
+        "code": "base",
+        "name": "기본 점검료",
+        "basis": "연면적 2,280.67㎡ → 1,000~5,000㎡",
+        "amount": 680000
+      },
+      {
+        "code": "usage",
+        "name": "용도 보정",
+        "basis": "제2종근린생활시설 → 근린 계수 ×1.05",
+        "amount": 34000
+      },
+      {
+        "code": "grade",
+        "name": "점검 등급 보정",
+        "basis": "종합 점검 계수 ×1.6",
+        "amount": 428000
+      },
+      {
+        "code": "underground",
+        "name": "지하층 가산",
+        "basis": "지하 1개 층 × 40,000원",
+        "amount": 40000
+      }
+    ],
+    "subtotal": 1182000,
+    "vat": 118200,
+    "total": 1300200,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "lost",
+    "createdAt": "2026-07-26T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0057",
+    "quoteNo": "GW-TEL-20260726-001",
+    "divisionId": "telecom",
+    "customerId": "cus_0005",
+    "buildingId": "bld_0009",
+    "conditions": {
+      "lines": 79,
+      "switches": 9,
+      "terminalBoxes": 8,
+      "contract": "단건"
+    },
+    "items": [
+      {
+        "code": "lines",
+        "name": "회선 점검",
+        "basis": "79회선 × 2,400원",
+        "amount": 189600
+      },
+      {
+        "code": "equipment",
+        "name": "장비 점검",
+        "basis": "장비 9대 × 38,000원 + 광단자함 8개 × 26,000원",
+        "amount": 550000
+      },
+      {
+        "code": "scale",
+        "name": "건물 규모 보정",
+        "basis": "10,000~30,000㎡ 계수 ×1.2",
+        "amount": 148000
+      }
+    ],
+    "subtotal": 887600,
+    "vat": 88760,
+    "total": 976360,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "won",
+    "createdAt": "2026-07-26T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0058",
+    "quoteNo": "GW-MECH-20260801-001",
+    "divisionId": "mechanical",
+    "customerId": "cus_0004",
+    "buildingId": "bld_0008",
+    "conditions": {
+      "boilers": 4,
+      "chillers": 0,
+      "ahus": 8,
+      "pumps": 8,
+      "fans": 5,
+      "cycle": "월"
+    },
+    "items": [
+      {
+        "code": "boilers",
+        "name": "보일러 점검",
+        "basis": "4대 × 42,000원 × 연 12회",
+        "amount": 2016000
+      },
+      {
+        "code": "ahus",
+        "name": "공조기 점검",
+        "basis": "8대 × 28,000원 × 연 12회",
+        "amount": 2688000
+      },
+      {
+        "code": "pumps",
+        "name": "펌프 점검",
+        "basis": "8대 × 9,000원 × 연 12회",
+        "amount": 864000
+      },
+      {
+        "code": "fans",
+        "name": "급배기팬 점검",
+        "basis": "5대 × 6,000원 × 연 12회",
+        "amount": 360000
+      },
+      {
+        "code": "visit",
+        "name": "출동비",
+        "basis": "30,000원 × 연 12회",
+        "amount": 360000
+      },
+      {
+        "code": "discount",
+        "name": "방문 주기 할인",
+        "basis": "월 방문 10% 할인",
+        "amount": -629000
+      }
+    ],
+    "subtotal": 5659000,
+    "vat": 565900,
+    "total": 6224900,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "lost",
+    "createdAt": "2026-08-01T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0059",
+    "quoteNo": "GW-FIRE-20260803-001",
+    "divisionId": "fire",
+    "customerId": "cus_0010",
+    "buildingId": "bld_0019",
+    "conditions": {
+      "grade": "종합"
+    },
+    "items": [
+      {
+        "code": "base",
+        "name": "기본 점검료",
+        "basis": "연면적 1,013.43㎡ → 1,000~5,000㎡",
+        "amount": 680000
+      },
+      {
+        "code": "usage",
+        "name": "용도 보정",
+        "basis": "제2종근린생활시설 → 근린 계수 ×1.05",
+        "amount": 34000
+      },
+      {
+        "code": "grade",
+        "name": "점검 등급 보정",
+        "basis": "종합 점검 계수 ×1.6",
+        "amount": 428000
+      },
+      {
+        "code": "underground",
+        "name": "지하층 가산",
+        "basis": "지하 1개 층 × 40,000원",
+        "amount": 40000
+      }
+    ],
+    "subtotal": 1182000,
+    "vat": 118200,
+    "total": 1300200,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "lost",
+    "createdAt": "2026-08-03T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0060",
+    "quoteNo": "GW-FIRE-20260806-001",
+    "divisionId": "fire",
+    "customerId": "cus_0007",
+    "buildingId": "bld_0013",
+    "conditions": {
+      "grade": "종합"
+    },
+    "items": [
+      {
+        "code": "base",
+        "name": "기본 점검료",
+        "basis": "연면적 10,697.38㎡ → 10,000~30,000㎡",
+        "amount": 1940000
+      },
+      {
+        "code": "grade",
+        "name": "점검 등급 보정",
+        "basis": "종합 점검 계수 ×1.6",
+        "amount": 1164000
+      }
+    ],
+    "subtotal": 3104000,
+    "vat": 310400,
+    "total": 3414400,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "won",
+    "createdAt": "2026-08-06T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0061",
+    "quoteNo": "GW-TEL-20260809-001",
+    "divisionId": "telecom",
+    "customerId": "cus_0023",
+    "buildingId": "bld_0035",
+    "conditions": {
+      "lines": 91,
+      "switches": 8,
+      "terminalBoxes": 10,
+      "contract": "단건"
+    },
+    "items": [
+      {
+        "code": "lines",
+        "name": "회선 점검",
+        "basis": "91회선 × 2,400원",
+        "amount": 218400
+      },
+      {
+        "code": "equipment",
+        "name": "장비 점검",
+        "basis": "장비 8대 × 38,000원 + 광단자함 10개 × 26,000원",
+        "amount": 564000
+      }
+    ],
+    "subtotal": 782400,
+    "vat": 78240,
+    "total": 860640,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "lost",
+    "createdAt": "2026-08-09T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0062",
+    "quoteNo": "GW-TEL-20260810-001",
+    "divisionId": "telecom",
+    "customerId": "cus_0011",
+    "buildingId": "bld_0021",
+    "conditions": {
+      "lines": 155,
+      "switches": 9,
+      "terminalBoxes": 2,
+      "contract": "연간"
+    },
+    "items": [
+      {
+        "code": "lines",
+        "name": "회선 점검",
+        "basis": "155회선 × 2,400원 × 4회",
+        "amount": 1488000
+      },
+      {
+        "code": "equipment",
+        "name": "장비 점검",
+        "basis": "장비 9대 × 38,000원 + 광단자함 2개 × 26,000원 × 4회",
+        "amount": 1576000
+      },
+      {
+        "code": "scale",
+        "name": "건물 규모 보정",
+        "basis": "3,000~10,000㎡ 계수 ×1.1",
+        "amount": 306000
+      },
+      {
+        "code": "discount",
+        "name": "연간 계약 할인",
+        "basis": "연 4회 계약 12% 할인",
+        "amount": -404000
+      }
+    ],
+    "subtotal": 2966000,
+    "vat": 296600,
+    "total": 3262600,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "won",
+    "createdAt": "2026-08-10T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0063",
+    "quoteNo": "GW-FIRE-20260812-001",
+    "divisionId": "fire",
+    "customerId": "cus_0018",
+    "buildingId": "bld_0030",
+    "conditions": {
+      "grade": "종합"
+    },
+    "items": [
+      {
+        "code": "base",
+        "name": "기본 점검료",
+        "basis": "연면적 2,710.62㎡ → 1,000~5,000㎡",
+        "amount": 680000
+      },
+      {
+        "code": "grade",
+        "name": "점검 등급 보정",
+        "basis": "종합 점검 계수 ×1.6",
+        "amount": 408000
+      }
+    ],
+    "subtotal": 1088000,
+    "vat": 108800,
+    "total": 1196800,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "won",
+    "createdAt": "2026-08-12T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0064",
+    "quoteNo": "GW-MECH-20260814-001",
+    "divisionId": "mechanical",
+    "customerId": "cus_0009",
+    "buildingId": "bld_0017",
+    "conditions": {
+      "boilers": 3,
+      "chillers": 1,
+      "ahus": 10,
+      "pumps": 8,
+      "fans": 8,
+      "cycle": "분기"
+    },
+    "items": [
+      {
+        "code": "boilers",
+        "name": "보일러 점검",
+        "basis": "3대 × 42,000원 × 연 4회",
+        "amount": 504000
+      },
+      {
+        "code": "chillers",
+        "name": "냉동기 점검",
+        "basis": "1대 × 65,000원 × 연 4회",
+        "amount": 260000
+      },
+      {
+        "code": "ahus",
+        "name": "공조기 점검",
+        "basis": "10대 × 28,000원 × 연 4회",
+        "amount": 1120000
+      },
+      {
+        "code": "pumps",
+        "name": "펌프 점검",
+        "basis": "8대 × 9,000원 × 연 4회",
+        "amount": 288000
+      },
+      {
+        "code": "fans",
+        "name": "급배기팬 점검",
+        "basis": "8대 × 6,000원 × 연 4회",
+        "amount": 192000
+      },
+      {
+        "code": "visit",
+        "name": "출동비",
+        "basis": "30,000원 × 연 4회",
+        "amount": 120000
+      }
+    ],
+    "subtotal": 2484000,
+    "vat": 248400,
+    "total": 2732400,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "lost",
+    "createdAt": "2026-08-14T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0065",
+    "quoteNo": "GW-FIRE-20260817-001",
+    "divisionId": "fire",
+    "customerId": "cus_0005",
+    "buildingId": "bld_0010",
+    "conditions": {
+      "grade": "종합"
+    },
+    "items": [
+      {
+        "code": "base",
+        "name": "기본 점검료",
+        "basis": "연면적 2,963.33㎡ → 1,000~5,000㎡",
+        "amount": 680000
+      },
+      {
+        "code": "usage",
+        "name": "용도 보정",
+        "basis": "공장 → 공장 계수 ×1.3",
+        "amount": 204000
+      },
+      {
+        "code": "grade",
+        "name": "점검 등급 보정",
+        "basis": "종합 점검 계수 ×1.6",
+        "amount": 530000
+      }
+    ],
+    "subtotal": 1414000,
+    "vat": 141400,
+    "total": 1555400,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "won",
+    "createdAt": "2026-08-17T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0066",
+    "quoteNo": "GW-TEL-20260818-001",
+    "divisionId": "telecom",
+    "customerId": "cus_0014",
+    "buildingId": "bld_0026",
+    "conditions": {
+      "lines": 51,
+      "switches": 10,
+      "terminalBoxes": 8,
+      "contract": "연간"
+    },
+    "items": [
+      {
+        "code": "lines",
+        "name": "회선 점검",
+        "basis": "51회선 × 2,400원 × 4회",
+        "amount": 489600
+      },
+      {
+        "code": "equipment",
+        "name": "장비 점검",
+        "basis": "장비 10대 × 38,000원 + 광단자함 8개 × 26,000원 × 4회",
+        "amount": 2352000
+      },
+      {
+        "code": "scale",
+        "name": "건물 규모 보정",
+        "basis": "3,000~10,000㎡ 계수 ×1.1",
+        "amount": 284000
+      },
+      {
+        "code": "discount",
+        "name": "연간 계약 할인",
+        "basis": "연 4회 계약 12% 할인",
+        "amount": -375000
+      }
+    ],
+    "subtotal": 2750600,
+    "vat": 275060,
+    "total": 3025660,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "lost",
+    "createdAt": "2026-08-18T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0067",
+    "quoteNo": "GW-MECH-20260821-001",
+    "divisionId": "mechanical",
+    "customerId": "cus_0011",
+    "buildingId": "bld_0022",
+    "conditions": {
+      "boilers": 2,
+      "chillers": 1,
+      "ahus": 7,
+      "pumps": 4,
+      "fans": 4,
+      "cycle": "월"
+    },
+    "items": [
+      {
+        "code": "boilers",
+        "name": "보일러 점검",
+        "basis": "2대 × 42,000원 × 연 12회",
+        "amount": 1008000
+      },
+      {
+        "code": "chillers",
+        "name": "냉동기 점검",
+        "basis": "1대 × 65,000원 × 연 12회",
+        "amount": 780000
+      },
+      {
+        "code": "ahus",
+        "name": "공조기 점검",
+        "basis": "7대 × 28,000원 × 연 12회",
+        "amount": 2352000
+      },
+      {
+        "code": "pumps",
+        "name": "펌프 점검",
+        "basis": "4대 × 9,000원 × 연 12회",
+        "amount": 432000
+      },
+      {
+        "code": "fans",
+        "name": "급배기팬 점검",
+        "basis": "4대 × 6,000원 × 연 12회",
+        "amount": 288000
+      },
+      {
+        "code": "visit",
+        "name": "출동비",
+        "basis": "30,000원 × 연 12회",
+        "amount": 360000
+      },
+      {
+        "code": "discount",
+        "name": "방문 주기 할인",
+        "basis": "월 방문 10% 할인",
+        "amount": -522000
+      }
+    ],
+    "subtotal": 4698000,
+    "vat": 469800,
+    "total": 5167800,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "lost",
+    "createdAt": "2026-08-21T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0068",
+    "quoteNo": "GW-FIRE-20260822-001",
+    "divisionId": "fire",
+    "customerId": "cus_0022",
+    "buildingId": "bld_0034",
+    "conditions": {
+      "grade": "종합"
+    },
+    "items": [
+      {
+        "code": "base",
+        "name": "기본 점검료",
+        "basis": "연면적 16,338.71㎡ → 10,000~30,000㎡",
+        "amount": 1940000
+      },
+      {
+        "code": "usage",
+        "name": "용도 보정",
+        "basis": "공동주택 → 주거 계수 ×0.9",
+        "amount": -194000
+      },
+      {
+        "code": "grade",
+        "name": "점검 등급 보정",
+        "basis": "종합 점검 계수 ×1.6",
+        "amount": 1048000
+      },
+      {
+        "code": "floors",
+        "name": "고층 가산",
+        "basis": "지상 28층 중 10층 초과 18개 층 × 25,000원",
+        "amount": 450000
+      },
+      {
+        "code": "underground",
+        "name": "지하층 가산",
+        "basis": "지하 3개 층 × 40,000원",
+        "amount": 120000
+      }
+    ],
+    "subtotal": 3364000,
+    "vat": 336400,
+    "total": 3700400,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "won",
+    "createdAt": "2026-08-22T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0069",
+    "quoteNo": "GW-FIRE-20260823-001",
+    "divisionId": "fire",
+    "customerId": "cus_0002",
+    "buildingId": "bld_0003",
+    "conditions": {
+      "grade": "종합"
+    },
+    "items": [
+      {
+        "code": "base",
+        "name": "기본 점검료",
+        "basis": "연면적 2,842.91㎡ → 1,000~5,000㎡",
+        "amount": 680000
+      },
+      {
+        "code": "grade",
+        "name": "점검 등급 보정",
+        "basis": "종합 점검 계수 ×1.6",
+        "amount": 408000
+      }
+    ],
+    "subtotal": 1088000,
+    "vat": 108800,
+    "total": 1196800,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "lost",
+    "createdAt": "2026-08-23T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0070",
+    "quoteNo": "GW-TEL-20260824-001",
+    "divisionId": "telecom",
+    "customerId": "cus_0006",
+    "buildingId": "bld_0011",
+    "conditions": {
+      "lines": 106,
+      "switches": 8,
+      "terminalBoxes": 5,
+      "contract": "단건"
+    },
+    "items": [
+      {
+        "code": "lines",
+        "name": "회선 점검",
+        "basis": "106회선 × 2,400원",
+        "amount": 254400
+      },
+      {
+        "code": "equipment",
+        "name": "장비 점검",
+        "basis": "장비 8대 × 38,000원 + 광단자함 5개 × 26,000원",
+        "amount": 434000
+      },
+      {
+        "code": "scale",
+        "name": "건물 규모 보정",
+        "basis": "10,000~30,000㎡ 계수 ×1.2",
+        "amount": 138000
+      }
+    ],
+    "subtotal": 826400,
+    "vat": 82640,
+    "total": 909040,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "won",
+    "createdAt": "2026-08-24T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0071",
+    "quoteNo": "GW-FIRE-20260828-001",
+    "divisionId": "fire",
+    "customerId": "cus_0002",
+    "buildingId": "bld_0003",
+    "conditions": {
+      "grade": "종합"
+    },
+    "items": [
+      {
+        "code": "base",
+        "name": "기본 점검료",
+        "basis": "연면적 2,842.91㎡ → 1,000~5,000㎡",
+        "amount": 680000
+      },
+      {
+        "code": "grade",
+        "name": "점검 등급 보정",
+        "basis": "종합 점검 계수 ×1.6",
+        "amount": 408000
+      }
+    ],
+    "subtotal": 1088000,
+    "vat": 108800,
+    "total": 1196800,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "won",
+    "createdAt": "2026-08-28T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0072",
+    "quoteNo": "GW-FIRE-20260901-001",
+    "divisionId": "fire",
+    "customerId": "cus_0003",
+    "buildingId": "bld_0005",
+    "conditions": {
+      "grade": "종합"
+    },
+    "items": [
+      {
+        "code": "base",
+        "name": "기본 점검료",
+        "basis": "연면적 1,994.64㎡ → 1,000~5,000㎡",
+        "amount": 680000
+      },
+      {
+        "code": "grade",
+        "name": "점검 등급 보정",
+        "basis": "종합 점검 계수 ×1.6",
+        "amount": 408000
+      },
+      {
+        "code": "floors",
+        "name": "고층 가산",
+        "basis": "지상 13층 중 10층 초과 3개 층 × 25,000원",
+        "amount": 75000
+      },
+      {
+        "code": "underground",
+        "name": "지하층 가산",
+        "basis": "지하 1개 층 × 40,000원",
+        "amount": 40000
+      }
+    ],
+    "subtotal": 1203000,
+    "vat": 120300,
+    "total": 1323300,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "won",
+    "createdAt": "2026-09-01T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0073",
+    "quoteNo": "GW-FIRE-20260905-001",
+    "divisionId": "fire",
+    "customerId": "cus_0006",
+    "buildingId": "bld_0012",
+    "conditions": {
+      "grade": "종합"
+    },
+    "items": [
+      {
+        "code": "base",
+        "name": "기본 점검료",
+        "basis": "연면적 3,109.93㎡ → 1,000~5,000㎡",
+        "amount": 680000
+      },
+      {
+        "code": "usage",
+        "name": "용도 보정",
+        "basis": "판매시설 → 판매 계수 ×1.2",
+        "amount": 136000
+      },
+      {
+        "code": "grade",
+        "name": "점검 등급 보정",
+        "basis": "종합 점검 계수 ×1.6",
+        "amount": 490000
+      },
+      {
+        "code": "underground",
+        "name": "지하층 가산",
+        "basis": "지하 2개 층 × 40,000원",
+        "amount": 80000
+      }
+    ],
+    "subtotal": 1386000,
+    "vat": 138600,
+    "total": 1524600,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "lost",
+    "createdAt": "2026-09-05T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0074",
+    "quoteNo": "GW-TEL-20260906-001",
+    "divisionId": "telecom",
+    "customerId": "cus_0021",
+    "buildingId": "bld_0033",
+    "conditions": {
+      "lines": 294,
+      "switches": 13,
+      "terminalBoxes": 2,
+      "contract": "단건"
+    },
+    "items": [
+      {
+        "code": "lines",
+        "name": "회선 점검",
+        "basis": "294회선 × 2,400원",
+        "amount": 705600
+      },
+      {
+        "code": "equipment",
+        "name": "장비 점검",
+        "basis": "장비 13대 × 38,000원 + 광단자함 2개 × 26,000원",
+        "amount": 546000
+      },
+      {
+        "code": "scale",
+        "name": "건물 규모 보정",
+        "basis": "3,000~10,000㎡ 계수 ×1.1",
+        "amount": 125000
+      }
+    ],
+    "subtotal": 1376600,
+    "vat": 137660,
+    "total": 1514260,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "lost",
+    "createdAt": "2026-09-06T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0075",
+    "quoteNo": "GW-MECH-20260906-001",
+    "divisionId": "mechanical",
+    "customerId": "cus_0015",
+    "buildingId": "bld_0027",
+    "conditions": {
+      "boilers": 5,
+      "chillers": 1,
+      "ahus": 7,
+      "pumps": 3,
+      "fans": 11,
+      "cycle": "분기"
+    },
+    "items": [
+      {
+        "code": "boilers",
+        "name": "보일러 점검",
+        "basis": "5대 × 42,000원 × 연 4회",
+        "amount": 840000
+      },
+      {
+        "code": "chillers",
+        "name": "냉동기 점검",
+        "basis": "1대 × 65,000원 × 연 4회",
+        "amount": 260000
+      },
+      {
+        "code": "ahus",
+        "name": "공조기 점검",
+        "basis": "7대 × 28,000원 × 연 4회",
+        "amount": 784000
+      },
+      {
+        "code": "pumps",
+        "name": "펌프 점검",
+        "basis": "3대 × 9,000원 × 연 4회",
+        "amount": 108000
+      },
+      {
+        "code": "fans",
+        "name": "급배기팬 점검",
+        "basis": "11대 × 6,000원 × 연 4회",
+        "amount": 264000
+      },
+      {
+        "code": "visit",
+        "name": "출동비",
+        "basis": "30,000원 × 연 4회",
+        "amount": 120000
+      }
+    ],
+    "subtotal": 2376000,
+    "vat": 237600,
+    "total": 2613600,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "sent",
+    "createdAt": "2026-09-06T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0076",
+    "quoteNo": "GW-MECH-20260909-001",
+    "divisionId": "mechanical",
+    "customerId": "cus_0008",
+    "buildingId": "bld_0016",
+    "conditions": {
+      "boilers": 4,
+      "chillers": 2,
+      "ahus": 4,
+      "pumps": 7,
+      "fans": 14,
+      "cycle": "월"
+    },
+    "items": [
+      {
+        "code": "boilers",
+        "name": "보일러 점검",
+        "basis": "4대 × 42,000원 × 연 12회",
+        "amount": 2016000
+      },
+      {
+        "code": "chillers",
+        "name": "냉동기 점검",
+        "basis": "2대 × 65,000원 × 연 12회",
+        "amount": 1560000
+      },
+      {
+        "code": "ahus",
+        "name": "공조기 점검",
+        "basis": "4대 × 28,000원 × 연 12회",
+        "amount": 1344000
+      },
+      {
+        "code": "pumps",
+        "name": "펌프 점검",
+        "basis": "7대 × 9,000원 × 연 12회",
+        "amount": 756000
+      },
+      {
+        "code": "fans",
+        "name": "급배기팬 점검",
+        "basis": "14대 × 6,000원 × 연 12회",
+        "amount": 1008000
+      },
+      {
+        "code": "visit",
+        "name": "출동비",
+        "basis": "30,000원 × 연 12회",
+        "amount": 360000
+      },
+      {
+        "code": "discount",
+        "name": "방문 주기 할인",
+        "basis": "월 방문 10% 할인",
+        "amount": -704000
+      }
+    ],
+    "subtotal": 6340000,
+    "vat": 634000,
+    "total": 6974000,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "lost",
+    "createdAt": "2026-09-09T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0077",
+    "quoteNo": "GW-TEL-20260910-001",
+    "divisionId": "telecom",
+    "customerId": "cus_0010",
+    "buildingId": "bld_0019",
+    "conditions": {
+      "lines": 75,
+      "switches": 5,
+      "terminalBoxes": 3,
+      "contract": "단건"
+    },
+    "items": [
+      {
+        "code": "lines",
+        "name": "회선 점검",
+        "basis": "75회선 × 2,400원",
+        "amount": 180000
+      },
+      {
+        "code": "equipment",
+        "name": "장비 점검",
+        "basis": "장비 5대 × 38,000원 + 광단자함 3개 × 26,000원",
+        "amount": 268000
+      }
+    ],
+    "subtotal": 448000,
+    "vat": 44800,
+    "total": 492800,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "lost",
+    "createdAt": "2026-09-10T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0078",
+    "quoteNo": "GW-TEL-20260912-001",
+    "divisionId": "telecom",
+    "customerId": "cus_0006",
+    "buildingId": "bld_0012",
+    "conditions": {
+      "lines": 122,
+      "switches": 14,
+      "terminalBoxes": 10,
+      "contract": "단건"
+    },
+    "items": [
+      {
+        "code": "lines",
+        "name": "회선 점검",
+        "basis": "122회선 × 2,400원",
+        "amount": 292800
+      },
+      {
+        "code": "equipment",
+        "name": "장비 점검",
+        "basis": "장비 14대 × 38,000원 + 광단자함 10개 × 26,000원",
+        "amount": 792000
+      },
+      {
+        "code": "scale",
+        "name": "건물 규모 보정",
+        "basis": "3,000~10,000㎡ 계수 ×1.1",
+        "amount": 108000
+      }
+    ],
+    "subtotal": 1192800,
+    "vat": 119280,
+    "total": 1312080,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "lost",
+    "createdAt": "2026-09-12T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0079",
+    "quoteNo": "GW-MECH-20260916-001",
+    "divisionId": "mechanical",
+    "customerId": "cus_0006",
+    "buildingId": "bld_0012",
+    "conditions": {
+      "boilers": 2,
+      "chillers": 2,
+      "ahus": 9,
+      "pumps": 7,
+      "fans": 15,
+      "cycle": "분기"
+    },
+    "items": [
+      {
+        "code": "boilers",
+        "name": "보일러 점검",
+        "basis": "2대 × 42,000원 × 연 4회",
+        "amount": 336000
+      },
+      {
+        "code": "chillers",
+        "name": "냉동기 점검",
+        "basis": "2대 × 65,000원 × 연 4회",
+        "amount": 520000
+      },
+      {
+        "code": "ahus",
+        "name": "공조기 점검",
+        "basis": "9대 × 28,000원 × 연 4회",
+        "amount": 1008000
+      },
+      {
+        "code": "pumps",
+        "name": "펌프 점검",
+        "basis": "7대 × 9,000원 × 연 4회",
+        "amount": 252000
+      },
+      {
+        "code": "fans",
+        "name": "급배기팬 점검",
+        "basis": "15대 × 6,000원 × 연 4회",
+        "amount": 360000
+      },
+      {
+        "code": "visit",
+        "name": "출동비",
+        "basis": "30,000원 × 연 4회",
+        "amount": 120000
+      }
+    ],
+    "subtotal": 2596000,
+    "vat": 259600,
+    "total": 2855600,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "lost",
+    "createdAt": "2026-09-16T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0080",
+    "quoteNo": "GW-FIRE-20260919-001",
+    "divisionId": "fire",
+    "customerId": "cus_0011",
+    "buildingId": "bld_0021",
+    "conditions": {
+      "grade": "종합"
+    },
+    "items": [
+      {
+        "code": "base",
+        "name": "기본 점검료",
+        "basis": "연면적 8,589.96㎡ → 5,000~10,000㎡",
+        "amount": 1150000
+      },
+      {
+        "code": "usage",
+        "name": "용도 보정",
+        "basis": "공장 → 공장 계수 ×1.3",
+        "amount": 345000
+      },
+      {
+        "code": "grade",
+        "name": "점검 등급 보정",
+        "basis": "종합 점검 계수 ×1.6",
+        "amount": 897000
+      }
+    ],
+    "subtotal": 2392000,
+    "vat": 239200,
+    "total": 2631200,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "lost",
+    "createdAt": "2026-09-19T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0081",
+    "quoteNo": "GW-TEL-20260921-001",
+    "divisionId": "telecom",
+    "customerId": "cus_0002",
+    "buildingId": "bld_0004",
+    "conditions": {
+      "lines": 97,
+      "switches": 5,
+      "terminalBoxes": 6,
+      "contract": "단건"
+    },
+    "items": [
+      {
+        "code": "lines",
+        "name": "회선 점검",
+        "basis": "97회선 × 2,400원",
+        "amount": 232800
+      },
+      {
+        "code": "equipment",
+        "name": "장비 점검",
+        "basis": "장비 5대 × 38,000원 + 광단자함 6개 × 26,000원",
+        "amount": 346000
+      },
+      {
+        "code": "scale",
+        "name": "건물 규모 보정",
+        "basis": "10,000~30,000㎡ 계수 ×1.2",
+        "amount": 116000
+      }
+    ],
+    "subtotal": 694800,
+    "vat": 69480,
+    "total": 764280,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "lost",
+    "createdAt": "2026-09-21T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0082",
+    "quoteNo": "GW-FIRE-20260924-001",
+    "divisionId": "fire",
+    "customerId": "cus_0023",
+    "buildingId": "bld_0035",
+    "conditions": {
+      "grade": "작동"
+    },
+    "items": [
+      {
+        "code": "base",
+        "name": "기본 점검료",
+        "basis": "연면적 2,280.67㎡ → 1,000~5,000㎡",
+        "amount": 680000
+      },
+      {
+        "code": "usage",
+        "name": "용도 보정",
+        "basis": "제2종근린생활시설 → 근린 계수 ×1.05",
+        "amount": 34000
+      },
+      {
+        "code": "underground",
+        "name": "지하층 가산",
+        "basis": "지하 1개 층 × 40,000원",
+        "amount": 40000
+      }
+    ],
+    "subtotal": 754000,
+    "vat": 75400,
+    "total": 829400,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "draft",
+    "createdAt": "2026-09-24T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0083",
+    "quoteNo": "GW-MECH-20260924-001",
+    "divisionId": "mechanical",
+    "customerId": "cus_0008",
+    "buildingId": "bld_0016",
+    "conditions": {
+      "boilers": 3,
+      "chillers": 0,
+      "ahus": 3,
+      "pumps": 2,
+      "fans": 14,
+      "cycle": "분기"
+    },
+    "items": [
+      {
+        "code": "boilers",
+        "name": "보일러 점검",
+        "basis": "3대 × 42,000원 × 연 4회",
+        "amount": 504000
+      },
+      {
+        "code": "ahus",
+        "name": "공조기 점검",
+        "basis": "3대 × 28,000원 × 연 4회",
+        "amount": 336000
+      },
+      {
+        "code": "pumps",
+        "name": "펌프 점검",
+        "basis": "2대 × 9,000원 × 연 4회",
+        "amount": 72000
+      },
+      {
+        "code": "fans",
+        "name": "급배기팬 점검",
+        "basis": "14대 × 6,000원 × 연 4회",
+        "amount": 336000
+      },
+      {
+        "code": "visit",
+        "name": "출동비",
+        "basis": "30,000원 × 연 4회",
+        "amount": 120000
+      }
+    ],
+    "subtotal": 1368000,
+    "vat": 136800,
+    "total": 1504800,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "draft",
+    "createdAt": "2026-09-24T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0084",
+    "quoteNo": "GW-FIRE-20260925-001",
+    "divisionId": "fire",
+    "customerId": "cus_0004",
+    "buildingId": "bld_0007",
+    "conditions": {
+      "grade": "작동"
+    },
+    "items": [
+      {
+        "code": "base",
+        "name": "기본 점검료",
+        "basis": "연면적 36,859㎡ → 30,000㎡ 초과",
+        "amount": 2860000
+      },
+      {
+        "code": "usage",
+        "name": "용도 보정",
+        "basis": "공동주택 → 주거 계수 ×0.9",
+        "amount": -286000
+      },
+      {
+        "code": "floors",
+        "name": "고층 가산",
+        "basis": "지상 17층 중 10층 초과 7개 층 × 25,000원",
+        "amount": 175000
+      },
+      {
+        "code": "underground",
+        "name": "지하층 가산",
+        "basis": "지하 3개 층 × 40,000원",
+        "amount": 120000
+      }
+    ],
+    "subtotal": 2869000,
+    "vat": 286900,
+    "total": 3155900,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "sent",
+    "createdAt": "2026-09-25T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0085",
+    "quoteNo": "GW-FIRE-20260925-002",
+    "divisionId": "fire",
+    "customerId": "cus_0012",
+    "buildingId": "bld_0024",
+    "conditions": {
+      "grade": "작동"
+    },
+    "items": [
+      {
+        "code": "base",
+        "name": "기본 점검료",
+        "basis": "연면적 18,251.52㎡ → 10,000~30,000㎡",
+        "amount": 1940000
+      },
+      {
+        "code": "usage",
+        "name": "용도 보정",
+        "basis": "공동주택 → 주거 계수 ×0.9",
+        "amount": -194000
+      },
+      {
+        "code": "floors",
+        "name": "고층 가산",
+        "basis": "지상 27층 중 10층 초과 17개 층 × 25,000원",
+        "amount": 425000
+      },
+      {
+        "code": "underground",
+        "name": "지하층 가산",
+        "basis": "지하 2개 층 × 40,000원",
+        "amount": 80000
+      }
+    ],
+    "subtotal": 2251000,
+    "vat": 225100,
+    "total": 2476100,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "sent",
+    "createdAt": "2026-09-25T01:00:00.000Z"
+  },
+  {
+    "id": "quo_0086",
+    "quoteNo": "GW-FIRE-20260925-003",
+    "divisionId": "fire",
+    "customerId": "cus_0014",
+    "buildingId": "bld_0026",
+    "conditions": {
+      "grade": "작동"
+    },
+    "items": [
+      {
+        "code": "base",
+        "name": "기본 점검료",
+        "basis": "연면적 7,430.41㎡ → 5,000~10,000㎡",
+        "amount": 1150000
+      },
+      {
+        "code": "usage",
+        "name": "용도 보정",
+        "basis": "창고시설 → 공장 계수 ×1.3",
+        "amount": 345000
+      }
+    ],
+    "subtotal": 1495000,
+    "vat": 149500,
+    "total": 1644500,
+    "pricingSource": "store",
+    "pricingVersion": null,
+    "templateVersionId": null,
+    "templateVersion": null,
+    "files": null,
+    "pdfStatus": null,
+    "status": "sent",
+    "createdAt": "2026-09-25T01:00:00.000Z"
+  }
+]

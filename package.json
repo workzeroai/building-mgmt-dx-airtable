@@ -1,0 +1,34 @@
+{
+  "name": "building-mgmt-dx-airtable",
+  "version": "0.1.0",
+  "private": true,
+  "description": "가상 건물관리 회사(그리드웰 빌딩서비스)의 견적 엔진·에어테이블 데이터 설계·자동화 재구현",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node quote-engine/src/server.js",
+    "setup": "node quote-engine/scripts/setup.js",
+    "quote:demo": "node quote-engine/scripts/demo.js",
+    "data:generate": "node quote-engine/scripts/generate-data.js",
+    "lint": "eslint .",
+    "test": "node --test \"quote-engine/test/**/*.test.js\"",
+    "coverage": "c8 --check-coverage --lines 80 --functions 80 --branches 70 node --test \"quote-engine/test/**/*.test.js\""
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.133.0",
+    "exceljs": "^4.4.0",
+    "express": "^4.22.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.5",
+    "c8": "^12.0.0",
+    "eslint": "^9.39.5",
+    "globals": "^17.13.0"
+  },
+  "overrides": {
+    "uuid": "^11.1.1"
+  }
+}

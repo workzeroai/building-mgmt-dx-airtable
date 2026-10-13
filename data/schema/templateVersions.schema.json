@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "templateVersions.schema.json",
+  "title": "양식 버전",
+  "description": "엑셀 견적 양식의 버전 메타데이터. 업로드(uploaded) → 테스트 렌더 통과(tested)/실패(failed) → 활성화(active). 사업부별 active는 1개.",
+  "type": "object",
+  "x-table": "templateVersions",
+  "x-idPrefix": "tpl",
+  "x-airtable": { "table": "양식 버전", "primaryField": "id", "jsonFields": ["testReport"] },
+  "x-links": {},
+  "required": ["id", "divisionId", "version", "status", "sha256", "filePath", "uploadedAt"],
+  "additionalProperties": false,
+  "properties": {
+    "id": { "type": "string", "pattern": "^(stg_)?tpl_[0-9a-z]+$" },
+    "divisionId": { "type": "string", "description": "→ divisions.id" },
+    "version": { "type": "integer", "minimum": 1 },
+    "status": { "type": "string", "enum": ["uploaded", "tested", "failed", "active", "inactive"] },
+    "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "size": { "type": "integer" },
+    "filePath": { "type": "string", "description": "저장소 폴더 기준 상대 경로" },
+    "note": { "type": ["string", "null"] },
+    "uploadedBy": { "type": ["string", "null"] },
+    "uploadedAt": { "type": "string" },
+    "testReport": { "type": ["object", "null"], "description": "{ok, errors[], warnings[], testedAt}" },
+    "activatedAt": { "type": ["string", "null"] },
+    "deactivatedAt": { "type": ["string", "null"] },
+    "createdAt": { "type": "string" },
+    "updatedAt": { "type": "string" }
+  }
+}

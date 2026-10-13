@@ -1,0 +1,212 @@
+{
+  "_comment": "도로명주소 검색 API(addrLinkApi.do, resultType=json) 응답 형식의 가짜 응답. 주소·건물은 모두 가상.",
+  "responses": {
+    "fire-demo": {
+      "results": {
+        "common": {
+          "errorMessage": "정상",
+          "countPerPage": "5",
+          "totalCount": "1",
+          "errorCode": "0",
+          "currentPage": "1"
+        },
+        "juso": [
+          {
+            "roadAddr": "서울특별시 중구 예시로 12 (가상동)",
+            "roadAddrPart1": "서울특별시 중구 예시로 12",
+            "roadAddrPart2": " (가상동)",
+            "jibunAddr": "서울특별시 중구 가상동 45-3",
+            "engAddr": "",
+            "zipNo": "04500",
+            "admCd": "1114017400",
+            "rnMgtSn": "111400000001",
+            "bdMgtSn": "1114017400100450003000001",
+            "detBdNmList": "",
+            "bdNm": "그리드웰 예시빌딩(가상)",
+            "bdKdcd": "0",
+            "siNm": "서울특별시",
+            "sggNm": "중구",
+            "emdNm": "가상동",
+            "liNm": "",
+            "rn": "예시로",
+            "udrtYn": "0",
+            "buldMnnm": 12,
+            "buldSlno": 0,
+            "mtYn": "0",
+            "lnbrMnnm": 45,
+            "lnbrSlno": 3,
+            "emdNo": "01"
+          }
+        ]
+      }
+    },
+    "telecom-demo": {
+      "results": {
+        "common": {
+          "errorMessage": "정상",
+          "countPerPage": "5",
+          "totalCount": "1",
+          "errorCode": "0",
+          "currentPage": "1"
+        },
+        "juso": [
+          {
+            "roadAddr": "경기도 성남시 분당구 샘플로 45 (모의동)",
+            "roadAddrPart1": "경기도 성남시 분당구 샘플로 45",
+            "roadAddrPart2": " (모의동)",
+            "jibunAddr": "경기도 성남시 분당구 모의동 210",
+            "engAddr": "",
+            "zipNo": "13500",
+            "admCd": "4113510900",
+            "rnMgtSn": "411350000001",
+            "bdMgtSn": "4113510900102100000000001",
+            "detBdNmList": "",
+            "bdNm": "샘플스퀘어(가상)",
+            "bdKdcd": "0",
+            "siNm": "경기도",
+            "sggNm": "성남시 분당구",
+            "emdNm": "모의동",
+            "liNm": "",
+            "rn": "샘플로",
+            "udrtYn": "0",
+            "buldMnnm": 45,
+            "buldSlno": 0,
+            "mtYn": "0",
+            "lnbrMnnm": 210,
+            "lnbrSlno": 0,
+            "emdNo": "01"
+          }
+        ]
+      }
+    },
+    "mechanical-demo-legacy-code": {
+      "results": {
+        "common": {
+          "errorMessage": "정상",
+          "countPerPage": "5",
+          "totalCount": "1",
+          "errorCode": "0",
+          "currentPage": "1"
+        },
+        "juso": [
+          {
+            "roadAddr": "대구광역시 군위군 군위읍 가상길 7 (군위읍)",
+            "roadAddrPart1": "대구광역시 군위군 군위읍 가상길 7",
+            "roadAddrPart2": " (군위읍)",
+            "jibunAddr": "대구광역시 군위군 군위읍 동부리 88",
+            "engAddr": "",
+            "zipNo": "43100",
+            "admCd": "2772025021",
+            "rnMgtSn": "277200000001",
+            "bdMgtSn": "2772025021100880000000001",
+            "detBdNmList": "",
+            "bdNm": "가상 교육센터",
+            "bdKdcd": "0",
+            "siNm": "대구광역시",
+            "sggNm": "군위군",
+            "emdNm": "군위읍",
+            "liNm": "동부리",
+            "rn": "가상길",
+            "udrtYn": "0",
+            "buldMnnm": 7,
+            "buldSlno": 0,
+            "mtYn": "0",
+            "lnbrMnnm": 88,
+            "lnbrSlno": 0,
+            "emdNo": "01"
+          }
+        ]
+      }
+    },
+    "apartment": {
+      "results": {
+        "common": {
+          "errorMessage": "정상",
+          "countPerPage": "5",
+          "totalCount": "1",
+          "errorCode": "0",
+          "currentPage": "1"
+        },
+        "juso": [
+          {
+            "roadAddr": "부산광역시 해운대구 데모로 88 (시범동)",
+            "roadAddrPart1": "부산광역시 해운대구 데모로 88",
+            "roadAddrPart2": " (시범동)",
+            "jibunAddr": "부산광역시 해운대구 시범동 1500",
+            "engAddr": "",
+            "zipNo": "48000",
+            "admCd": "2635010500",
+            "rnMgtSn": "263500000001",
+            "bdMgtSn": "2635010500115000000000001",
+            "detBdNmList": "",
+            "bdNm": "데모마을(가상)",
+            "bdKdcd": "1",
+            "siNm": "부산광역시",
+            "sggNm": "해운대구",
+            "emdNm": "시범동",
+            "liNm": "",
+            "rn": "데모로",
+            "udrtYn": "0",
+            "buldMnnm": 88,
+            "buldSlno": 0,
+            "mtYn": "0",
+            "lnbrMnnm": 1500,
+            "lnbrSlno": 0,
+            "emdNo": "01"
+          }
+        ]
+      }
+    },
+    "factory": {
+      "results": {
+        "common": {
+          "errorMessage": "정상",
+          "countPerPage": "5",
+          "totalCount": "1",
+          "errorCode": "0",
+          "currentPage": "1"
+        },
+        "juso": [
+          {
+            "roadAddr": "인천광역시 연수구 테스트로 3 (실험동)",
+            "roadAddrPart1": "인천광역시 연수구 테스트로 3",
+            "roadAddrPart2": " (실험동)",
+            "jibunAddr": "인천광역시 연수구 실험동 77-1",
+            "engAddr": "",
+            "zipNo": "21900",
+            "admCd": "2818510600",
+            "rnMgtSn": "281850000001",
+            "bdMgtSn": "2818510600100770001000001",
+            "detBdNmList": "",
+            "bdNm": "테스트 제조동(가상)",
+            "bdKdcd": "0",
+            "siNm": "인천광역시",
+            "sggNm": "연수구",
+            "emdNm": "실험동",
+            "liNm": "",
+            "rn": "테스트로",
+            "udrtYn": "0",
+            "buldMnnm": 3,
+            "buldSlno": 0,
+            "mtYn": "0",
+            "lnbrMnnm": 77,
+            "lnbrSlno": 1,
+            "emdNo": "01"
+          }
+        ]
+      }
+    }
+  },
+  "empty": {
+    "results": {
+      "common": {
+        "errorMessage": "정상",
+        "countPerPage": "5",
+        "totalCount": "0",
+        "errorCode": "0",
+        "currentPage": "1"
+      },
+      "juso": []
+    }
+  }
+}

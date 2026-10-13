@@ -1,0 +1,54 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: 의존성 설치
+        run: npm ci
+
+      - name: 린트 (ESLint)
+        run: npm run lint
+
+      - name: 테스트 + 커버리지 (node:test, c8 80% 기준)
+        run: npm run coverage
+
+      # LibreOffice 설치가 실패해도 데모는 xlsx만 만들고 통과한다
+      - name: LibreOffice·한글 글꼴 설치 (PDF 시연용)
+        continue-on-error: true
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq --no-install-recommends libreoffice-calc-nogui fonts-noto-cjk
+
+      - name: 견적 데모 (가짜 모드, 3개 사업부)
+        env:
+          DEMO_MODE: fake
+          NO_COLOR: "1"
+        run: npm run quote:demo
+
+      - name: 데모 산출물 보관
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: quote-demo
+          path: |
+            out/demo/*.xlsx
+            out/demo/*.pdf
+          if-no-files-found: warn
+          retention-days: 7

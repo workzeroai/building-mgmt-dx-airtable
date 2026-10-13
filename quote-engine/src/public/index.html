@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>견적 엔진 · 그리드웰 빌딩서비스(가상)</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/">
+      <span class="brand-mark">GW</span>
+      <span><span class="brand-name">그리드웰 빌딩서비스</span><br><span class="brand-sub">견적 엔진 · 가상 회사 데모</span></span>
+    </a>
+    <nav class="nav"><a class="active" href="/">견적</a><a href="/admin.html">단가·양식 관리</a></nav>
+    <span class="spacer"></span>
+    <span class="pill" id="api-pill"><span class="dot"></span>공공 API</span>
+    <span class="pill" id="pdf-pill"><span class="dot"></span>PDF</span>
+  </header>
+
+  <main class="layout">
+    <section class="stack">
+      <div class="card">
+        <h2><span class="num">1</span>사업부 선택<span class="hint">공통 엔진 하나 + 사업부 설정 파일</span></h2>
+        <div class="division-grid" id="divisions"></div>
+      </div>
+
+      <div class="card">
+        <h2><span class="num">2</span>건물 확인<span class="hint">도로명주소 → 건축물대장 표제부</span></h2>
+        <form class="input-row" id="address-form">
+          <input class="input" id="address" placeholder="도로명주소를 입력하세요 (예: 서울 중구 예시로 12)" autocomplete="off">
+          <button class="btn primary" type="submit">조회</button>
+        </form>
+        <div class="chips" id="examples"></div>
+        <div id="building"><div class="empty" style="margin-top:16px">주소를 조회하면 연면적·층수·주용도가 채워집니다.</div></div>
+      </div>
+
+      <div class="card">
+        <h2><span class="num">3</span>조건 입력<span class="hint" id="inputs-hint"></span></h2>
+        <div class="form-grid" id="inputs"></div>
+      </div>
+    </section>
+
+    <aside class="card sticky" id="summary-card">
+      <h2><span class="num">4</span>금액 요약<span class="hint" id="summary-division"></span></h2>
+      <div id="summary"><div class="empty">사업부와 건물을 고르면 금액이 바로 계산됩니다.</div></div>
+      <div class="field" style="margin-top:14px">
+        <label for="customer">고객</label>
+        <select class="input" id="customer"></select>
+      </div>
+      <button class="btn primary block" id="create" style="margin-top:12px" disabled>견적서 만들기 (엑셀 · PDF)</button>
+      <div id="result"></div>
+    </aside>
+  </main>
+  <p class="footer">가상 회사·가상 단가·가상 건물로 만든 데모입니다. 공공 API는 키가 없으면 실제 응답 형식을 따른 가짜 응답을 씁니다.</p>
+  <script src="app.js" type="module"></script>
+</body>
+</html>

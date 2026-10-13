@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pricing.schema.json",
+  "title": "단가",
+  "description": "사업부별 단가표 1건. data는 사업부마다 모양이 다르다(data/pricing/<id>.json이 번들 기본값). 현업이 코드 수정 없이 고치는 대상.",
+  "type": "object",
+  "x-table": "pricing",
+  "x-idPrefix": "prc",
+  "x-airtable": { "table": "단가", "primaryField": "id", "jsonFields": ["data"] },
+  "x-links": {},
+  "required": ["id", "divisionId", "version", "source", "data", "updatedAt"],
+  "additionalProperties": false,
+  "properties": {
+    "id": { "type": "string", "pattern": "^(stg_)?prc_[0-9a-z]+$" },
+    "divisionId": { "type": "string", "description": "→ divisions.id" },
+    "version": { "type": "string", "description": "단가표 버전(날짜 문자열 권장)" },
+    "source": { "type": "string", "enum": ["가상"], "description": "모든 단가는 지어낸 값" },
+    "data": { "type": "object" },
+    "updatedBy": { "type": ["string", "null"] },
+    "createdAt": { "type": "string" },
+    "updatedAt": { "type": "string" }
+  }
+}

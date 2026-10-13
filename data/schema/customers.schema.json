@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "customers.schema.json",
+  "title": "고객",
+  "description": "견적·계약의 상대방(건물 소유주·관리단·관리사무소). 모든 사업부가 공유하는 공통 엔티티.",
+  "type": "object",
+  "x-table": "customers",
+  "x-idPrefix": "cus",
+  "x-airtable": { "table": "고객", "primaryField": "id" },
+  "x-links": {},
+  "required": ["id", "name", "type", "createdAt"],
+  "additionalProperties": false,
+  "properties": {
+    "id": { "type": "string", "pattern": "^(stg_)?cus_[0-9a-z]+$" },
+    "name": { "type": "string", "description": "고객명(가상)" },
+    "type": { "type": "string", "enum": ["법인", "관리단", "관리사무소", "개인사업자"] },
+    "region": { "type": ["string", "null"], "description": "시도" },
+    "contactEmail": { "type": ["string", "null"], "description": "example.com 도메인만 사용" },
+    "note": { "type": ["string", "null"] },
+    "createdAt": { "type": "string", "description": "ISO 8601" },
+    "updatedAt": { "type": "string" }
+  }
+}

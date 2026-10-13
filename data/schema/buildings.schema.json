@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "buildings.schema.json",
+  "title": "건물",
+  "description": "주소 1건 = 건물 1건. 건축물대장 표제부를 요약해 저장한다(여러 동은 연면적 합계·층수 최댓값). 공통 엔티티.",
+  "type": "object",
+  "x-table": "buildings",
+  "x-idPrefix": "bld",
+  "x-airtable": { "table": "건물", "primaryField": "id", "jsonFields": ["adminCodeFallback"] },
+  "x-links": { "customerId": "customers" },
+  "required": ["id", "roadAddress", "admCd", "name", "mainPurpose", "totalArea", "groundFloors", "undergroundFloors", "source", "createdAt"],
+  "additionalProperties": false,
+  "properties": {
+    "id": { "type": "string", "pattern": "^(stg_)?bld_[0-9a-z]+$" },
+    "customerId": { "type": ["string", "null"], "description": "→ customers.id" },
+    "roadAddress": { "type": "string", "description": "도로명주소(건물 단위)" },
+    "jibunAddress": { "type": ["string", "null"] },
+    "admCd": { "type": "string", "pattern": "^[0-9]{10}$", "description": "법정동코드 10자리(시군구 5 + 법정동 5)" },
+    "registerKey": { "type": ["string", "null"], "description": "대장 조회 키 sigunguCd-bjdongCd-platGbCd-bun-ji" },
+    "adminCodeFallback": { "type": ["object", "null"], "description": "구 행정코드로 재조회한 경우 {from, to, reason}" },
+    "name": { "type": "string" },
+    "mainPurpose": { "type": "string", "description": "주용도(대장 mainPurpsCdNm)" },
+    "totalArea": { "type": "number", "minimum": 0, "description": "연면적 ㎡" },
+    "groundFloors": { "type": "integer", "minimum": 0 },
+    "undergroundFloors": { "type": "integer", "minimum": 0 },
+    "dongCount": { "type": "integer", "minimum": 1 },
+    "approvalDate": { "type": ["string", "null"], "description": "사용승인일 YYYYMMDD" },
+    "source": { "type": "string", "enum": ["fixture", "live", "seed"] },
+    "createdAt": { "type": "string" },
+    "updatedAt": { "type": "string" }
+  }
+}

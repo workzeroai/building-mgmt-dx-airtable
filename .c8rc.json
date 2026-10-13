@@ -1,0 +1,7 @@
+{
+  "all": true,
+  "include": ["quote-engine/src/**/*.js"],
+  "exclude": ["quote-engine/src/public/**", "quote-engine/test/**"],
+  "reporter": ["text", "text-summary"],
+  "report-dir": "coverage"
+}
