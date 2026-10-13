@@ -1,0 +1,225 @@
+# 자동 생성: npm run airtable:build (airtable/lib/erd.js ← airtable/schema/gridwell.yaml). 직접 고치지 않는다.
+# 그림: python ../../../_design/excalidraw_kit.py erd-overview.yaml --out . --export
+name: erd-overview
+title: 허브 1 + 사업부 Base 3 — 공통 엔티티와 사업부 확장
+subtitle: Base 4 · 테이블 41 (가상 회사 그리드웰 빌딩서비스). 사업부 Base는 같은 틀 + 확장 필드만 다르다
+layout: manual
+nodes:
+  - id: hub-customers
+    label: |-
+      고객 · customers
+      id (기본)
+      businessNo · type
+    role: primary
+    x: 340
+    y: -40
+    width: 260
+    fontSize: 16
+  - id: hub-buildings
+    label: |-
+      건물 · buildings
+      id (기본)
+      roadAddress · totalArea
+      연결 customer
+    role: primary
+    x: 340
+    y: 220
+    width: 260
+    fontSize: 16
+  - id: hub-staff
+    label: |-
+      담당자 · staff
+      id (기본)
+      role · divisionId
+      연결 division
+    role: primary
+    x: 340
+    y: 480
+    width: 260
+    fontSize: 16
+  - id: hub-divisions
+    label: |-
+      사업부 · divisions
+      id (기본)
+      code · name
+    role: primary
+    x: 0
+    y: 480
+    width: 260
+    fontSize: 16
+  - id: sync
+    role: info
+    x: 720
+    y: 200
+    width: 280
+    fontSize: 16
+    label: |-
+      동기화 안전장치
+      허브 → 사업부 단방향
+      급감 30% 초과 시 중단
+      실패 건은 건너뛰고 기록
+  - id: fire-copy
+    role: info
+    x: 1180
+    y: -80
+    width: 260
+    fontSize: 16
+    label: |-
+      허브 사본 3
+      고객 · 건물 · 담당자
+      읽기 전용
+  - id: fire-work
+    role: secondary
+    x: 1540
+    y: -80
+    width: 300
+    fontSize: 16
+    label: |-
+      업무 7
+      견적 → 계약 → 점검 일정
+      → 점검 결과 → 청구
+      단가 · 양식 버전
+  - id: fire-ext
+    role: accent
+    x: 1940
+    y: -80
+    width: 260
+    fontSize: 16
+    label: |-
+      확장 필드 3
+      점검 등급 · extinguisherCount
+      detectorFaults
+  - id: telecom-copy
+    role: info
+    x: 1180
+    y: 220
+    width: 260
+    fontSize: 16
+    label: |-
+      허브 사본 3
+      고객 · 건물 · 담당자
+      읽기 전용
+  - id: telecom-work
+    role: secondary
+    x: 1540
+    y: 220
+    width: 300
+    fontSize: 16
+    label: |-
+      업무 7
+      견적 → 계약 → 점검 일정
+      → 점검 결과 → 청구
+      단가 · 양식 버전
+  - id: telecom-ext
+    role: accent
+    x: 1940
+    y: 220
+    width: 260
+    fontSize: 16
+    label: |-
+      확장 필드 4
+      회선 수 · 계약 형태 · linesTested
+      linePassRate
+  - id: mechanical-copy
+    role: info
+    x: 1180
+    y: 520
+    width: 260
+    fontSize: 16
+    label: |-
+      허브 사본 3
+      고객 · 건물 · 담당자
+      읽기 전용
+  - id: mechanical-work
+    role: secondary
+    x: 1540
+    y: 520
+    width: 300
+    fontSize: 16
+    label: |-
+      업무 7
+      견적 → 계약 → 점검 일정
+      → 점검 결과 → 청구
+      단가 · 양식 버전
+  - id: mechanical-ext
+    role: accent
+    x: 1940
+    y: 520
+    width: 260
+    fontSize: 16
+    label: |-
+      확장 필드 4
+      방문 주기 · filterReplaced
+      refrigerantChecked
+      boilerEfficiency
+edges:
+  - from: hub-customers
+    to: hub-buildings
+  - from: hub-divisions
+    to: hub-staff
+  - from: hub-customers
+    to: sync
+    style: dashed
+    route: elbow
+  - from: hub-buildings
+    to: sync
+    style: dashed
+  - from: hub-staff
+    to: sync
+    style: dashed
+    route: elbow
+  - from: sync
+    to: fire-copy
+    curve: 0.25
+  - from: fire-copy
+    to: fire-work
+    label: 연결
+  - from: fire-work
+    to: fire-ext
+    style: dashed
+  - from: sync
+    to: telecom-copy
+    label: 사본
+  - from: telecom-copy
+    to: telecom-work
+  - from: telecom-work
+    to: telecom-ext
+    style: dashed
+  - from: sync
+    to: mechanical-copy
+    curve: -0.25
+  - from: mechanical-copy
+    to: mechanical-work
+  - from: mechanical-work
+    to: mechanical-ext
+    style: dashed
+zones:
+  - id: hub
+    label: GW 허브 — 원본(공통 엔티티)
+    nodes:
+      - hub-customers
+      - hub-buildings
+      - hub-staff
+      - hub-divisions
+    role: primary
+  - id: zone-fire
+    label: GW 소방시설 점검 — 사업부 Base 1
+    nodes:
+      - fire-copy
+      - fire-work
+      - fire-ext
+    role: secondary
+  - id: zone-telecom
+    label: GW 통신설비 점검 — 사업부 Base 2
+    nodes:
+      - telecom-copy
+      - telecom-work
+      - telecom-ext
+    role: secondary
+  - id: zone-mechanical
+    label: GW 기계설비 유지관리 — 사업부 Base 3
+    nodes:
+      - mechanical-copy
+      - mechanical-work
+      - mechanical-ext
+    role: secondary

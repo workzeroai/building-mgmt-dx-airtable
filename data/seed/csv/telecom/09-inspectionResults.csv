@@ -1,0 +1,11 @@
+id,divisionId,inspectionId,contractId,inspectedAt,result,defects,findings,createdAt,linesTested,linePassRate,inspection
+res_0015,telecom,ins_0023,con_0012,2026-06-04,pass,0,지적 사항 없음,2026-06-04T09:00:00.000Z,246,1,ins_0023
+res_0016,telecom,ins_0026,con_0013,2026-06-10,pass,1,접지 저항 기준 초과,2026-06-10T09:00:00.000Z,192,1,ins_0026
+res_0018,telecom,ins_0030,con_0015,2026-07-05,pass,1,회선 감쇠 기준 초과,2026-07-05T09:00:00.000Z,222,1,ins_0030
+res_0019,telecom,ins_0031,con_0015,2026-10-05,pass,0,지적 사항 없음,2026-10-05T09:00:00.000Z,222,1,ins_0031
+res_0022,telecom,ins_0034,con_0018,2026-07-16,actionRequired,2,"단자함 결선 표시 누락, 접지 저항 기준 초과",2026-07-16T09:00:00.000Z,219,0.914,ins_0034
+res_0027,telecom,ins_0043,con_0021,2026-07-23,pass,0,지적 사항 없음,2026-07-23T09:00:00.000Z,123,1,ins_0043
+res_0028,telecom,ins_0045,con_0022,2026-08-08,pass,1,접지 저항 기준 초과,2026-08-08T09:00:00.000Z,280,1,ins_0045
+res_0029,telecom,ins_0047,con_0023,2026-08-09,fail,4,"단자함 결선 표시 누락, 접지 저항 기준 초과, 회선 감쇠 기준 초과",2026-08-09T09:00:00.000Z,79,0.94,ins_0047
+res_0031,telecom,ins_0050,con_0025,2026-08-24,pass,0,지적 사항 없음,2026-08-24T09:00:00.000Z,155,1,ins_0050
+res_0035,telecom,ins_0055,con_0029,2026-09-07,pass,0,지적 사항 없음,2026-09-07T09:00:00.000Z,106,1,ins_0055

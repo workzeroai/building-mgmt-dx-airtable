@@ -40,12 +40,12 @@ const DONGS = ['가상동', '모의동', '시범동', '견본동', '예시동'];
 const PREFIX = ['가온', '누리', '다솜', '라온', '마루', '바른', '새솔', '아라', '한결', '해든', '온새', '미르', '별빛', '푸른', '도담', '이음'];
 const PURPOSES = [
   { purpose: '업무시설', w: 5, area: [1800, 26000], floors: [6, 22], under: [1, 5], suffix: ['타워', '오피스', '빌딩'] },
-  { purpose: '공동주택', w: 3, area: [6000, 42000], floors: [12, 30], under: [1, 3], suffix: ['마을', '하이츠', '파크'] },
+  { purpose: '공동주택', w: 3, area: [6000, 42000], floors: [12, 30], under: [1, 3], suffix: ['빌리지', '하이츠', '파크'] },
   { purpose: '판매시설', w: 3, area: [3000, 30000], floors: [4, 10], under: [2, 5], suffix: ['스퀘어', '몰', '프라자'] },
-  { purpose: '공장', w: 2, area: [900, 9000], floors: [1, 4], under: [0, 1], suffix: ['제조동', '산업'] },
-  { purpose: '교육연구시설', w: 2, area: [1500, 12000], floors: [3, 8], under: [0, 2], suffix: ['교육센터', '연구동'] },
+  { purpose: '공장', w: 2, area: [900, 9000], floors: [1, 4], under: [0, 1], suffix: ['정밀 제1공장', '테크 공장'] },
+  { purpose: '교육연구시설', w: 2, area: [1500, 12000], floors: [3, 8], under: [0, 2], suffix: ['교육센터', '연구소'] },
   { purpose: '제2종근린생활시설', w: 2, area: [600, 3500], floors: [3, 7], under: [0, 2], suffix: ['상가', '프라자'] },
-  { purpose: '의료시설', w: 1, area: [3000, 15000], floors: [5, 12], under: [1, 3], suffix: ['메디컬', '병원동'] },
+  { purpose: '의료시설', w: 1, area: [3000, 15000], floors: [5, 12], under: [1, 3], suffix: ['메디컬센터', '병원'] },
   { purpose: '창고시설', w: 1, area: [2000, 14000], floors: [1, 4], under: [0, 1], suffix: ['물류센터'] },
 ];
 const weighted = (list) => {
@@ -53,12 +53,59 @@ const weighted = (list) => {
   let r = rand() * total;
   return list.find((x) => (r -= x.w) < 0) ?? list.at(-1);
 };
-const CUSTOMER_TYPES = [
-  { type: '관리단', name: (b) => `${b} 관리단` },
-  { type: '관리사무소', name: (b) => `${b} 관리사무소` },
-  { type: '법인', name: (b) => `${b.replace(/\s.*$/u, '')}산업(주)` },
-  { type: '개인사업자', name: (b) => `${b} 운영` },
+// 고객 이름: 첫 건물의 용도에 맞는 유형·이름을 고른다(모두 지어낸 조합).
+// 예) 업무시설 → "온새빌딩 관리단", 공장 → "(주)새솔정밀", 의료시설 → "의료법인 한결의료재단"
+// 건물 suffix의 첫 단어(정밀·테크 등)를 회사 이름 줄기로 쓴다.
+const stemOf = (suffix) => suffix.split(' ')[0];
+const CUSTOMER_STYLES = {
+  업무시설: [
+    { type: '관리단', name: ({ full }) => `${full} 관리단` },
+    { type: '관리사무소', name: ({ full }) => `${full} 관리사무소` },
+    { type: '법인', name: ({ prefix }) => `(주)${prefix}자산관리` },
+  ],
+  공동주택: [{ type: '관리사무소', name: ({ full }) => `${full} 관리사무소` }],
+  판매시설: [
+    { type: '관리단', name: ({ full }) => `${full} 관리단` },
+    { type: '관리사무소', name: ({ full }) => `${full} 관리사무소` },
+    { type: '법인', name: ({ prefix }) => `(주)${prefix}리테일` },
+  ],
+  공장: [
+    { type: '법인', name: ({ prefix, suffix }) => `(주)${prefix}${stemOf(suffix)}` },
+    { type: '개인사업자', name: ({ prefix, suffix }) => `${prefix}${stemOf(suffix)}` },
+  ],
+  교육연구시설: [{ type: '법인', name: ({ prefix, suffix }) => (suffix === '교육센터' ? `(재)${prefix}교육재단` : `(주)${prefix}연구소`) }],
+  제2종근린생활시설: [
+    { type: '개인사업자', name: ({ prefix }) => `${prefix}상사` },
+    { type: '관리단', name: ({ full }) => `${full} 관리단` },
+  ],
+  의료시설: [{ type: '법인', name: ({ prefix }) => `의료법인 ${prefix}의료재단` }],
+  창고시설: [{ type: '법인', name: ({ prefix }) => `(주)${prefix}로지스` }],
+};
+
+// 건물을 2개 이상 가진 고객은 주로 여러 건물을 맡기는 자산관리·개발 법인이다.
+const MULTI_BUILDING_STYLES = [
+  { type: '법인', name: ({ prefix }) => `(주)${prefix}자산관리` },
+  { type: '법인', name: ({ prefix }) => `${prefix}개발(주)` },
+  { type: '법인', name: ({ prefix }) => `(주)${prefix}에셋` },
+  { type: '법인', name: ({ prefix }) => `${prefix}물산(주)` },
 ];
+
+const COLLECTIVE = new Set(['업무시설', '판매시설', '제2종근린생활시설']); // 집합건물이 많은 용도 → 관리단
+
+/** roll(0~1)로 스타일을 고르고, 이미 쓴 이름이면 다음 스타일 → 그래도 겹치면 건물 관리사무소로. */
+function customerIdentity(meta, roll, used, multi = false) {
+  // 여러 건물 고객: 자산관리·개발 법인, 또는 집합건물 관리단·관리사무소(부속 건물까지 맡김)
+  const styles = multi
+    ? [...MULTI_BUILDING_STYLES, ...(COLLECTIVE.has(meta.purpose) ? CUSTOMER_STYLES[meta.purpose].filter((x) => x.type !== '법인') : [])]
+    : CUSTOMER_STYLES[meta.purpose];
+  const start = Math.floor(roll * styles.length);
+  for (let k = 0; k < styles.length; k += 1) {
+    const style = styles[(start + k) % styles.length];
+    const name = style.name(meta);
+    if (!used.has(name)) return { type: style.type, name };
+  }
+  return { type: '관리사무소', name: `${meta.full} 관리사무소` };
+}
 
 const iso = (y, m, d) => new Date(Date.UTC(y, m - 1, d, 1, 0, 0)).toISOString();
 const addDays = (isoStr, days) => new Date(new Date(isoStr).getTime() + days * 86_400_000).toISOString();
@@ -72,12 +119,20 @@ export async function generate() {
   // 건물 36개(고객 24명, 일부 고객은 건물 2개)
   const buildings = [];
   const usedNames = new Set();
+  const meta = new Map(); // 건물 ID → 이름 재료(고객 이름 만들 때만 쓰고 저장하지 않음)
   for (let i = 1; i <= 36; i += 1) {
     const kind = weighted(PURPOSES);
     const region = pick(REGIONS);
     let name;
-    do name = `${pick(PREFIX)}${pick(kind.suffix)}`; while (usedNames.has(name));
+    let prefix;
+    let suffix;
+    do {
+      prefix = pick(PREFIX);
+      suffix = pick(kind.suffix);
+      name = `${prefix}${suffix}`;
+    } while (usedNames.has(name));
     usedNames.add(name);
+    meta.set(`bld_${pad(i, 4)}`, { purpose: kind.purpose, prefix, suffix, full: name });
     const bun = between(10, 980);
     buildings.push({
       id: `bld_${pad(i, 4)}`,
@@ -100,14 +155,16 @@ export async function generate() {
   }
 
   const customers = [];
+  const usedCustomerNames = new Set();
   let b = 0;
   for (let i = 1; i <= 24; i += 1) {
     const owned = i <= 12 ? 2 : 1;
     const first = buildings[b];
-    const t = pick(CUSTOMER_TYPES);
+    const t = customerIdentity(meta.get(first.id), rand(), usedCustomerNames, owned > 1);
+    usedCustomerNames.add(t.name);
     const id = `cus_${pad(i, 4)}`;
     customers.push({
-      id, name: t.name(first.name.replace('(가상)', '')), type: t.type,
+      id, name: t.name, type: t.type,
       region: first.roadAddress.split(' ')[0], contactEmail: `facility+${id.replace('_', '')}@example.com`,
       note: '가상 고객', createdAt: first.createdAt,
     });

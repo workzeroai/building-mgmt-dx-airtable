@@ -6,7 +6,7 @@
   "type": "object",
   "x-table": "divisions",
   "x-idPrefix": null,
-  "x-airtable": { "table": "사업부", "primaryField": "id" },
+  "x-airtable": { "table": "사업부", "base": "hub", "primaryField": "id" },
   "x-links": {},
   "required": ["id", "code", "name", "order"],
   "additionalProperties": false,

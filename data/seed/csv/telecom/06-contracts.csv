@@ -1,0 +1,10 @@
+contractNo,id,quoteId,customerId,buildingId,divisionId,startDate,endDate,annualAmount,status,createdAt,updatedAt,visitsPerYear,statusConfirmed,statusNote,quote,customer,building
+GW-C-2026-012,con_0012,quo_0027,cus_0019,bld_0031,telecom,2026-06-04,2027-06-03,1433740,active,2026-05-31T01:00:00.000Z,,4,active,,GW-TEL-20260521-001,cus_0019,bld_0031
+GW-C-2026-013,con_0013,quo_0030,cus_0002,bld_0003,telecom,2026-06-10,2027-06-09,858880,active,2026-06-06T01:00:00.000Z,,4,active,,GW-TEL-20260527-001,cus_0002,bld_0003
+GW-C-2026-015,con_0015,quo_0036,cus_0023,bld_0035,telecom,2026-07-05,2027-07-04,898480,active,2026-07-01T01:00:00.000Z,,4,active,,GW-TEL-20260621-001,cus_0023,bld_0035
+GW-C-2026-018,con_0018,quo_0041,cus_0005,bld_0009,telecom,2026-07-16,2027-07-15,1304160,active,2026-07-12T01:00:00.000Z,,4,active,,GW-TEL-20260702-001,cus_0005,bld_0009
+GW-C-2026-021,con_0021,quo_0045,cus_0004,bld_0007,telecom,2026-07-23,2027-07-22,3875080,active,2026-07-19T01:00:00.000Z,,4,active,,GW-TEL-20260709-001,cus_0004,bld_0007
+GW-C-2026-022,con_0022,quo_0055,cus_0023,bld_0035,telecom,2026-08-08,2027-08-07,4034800,active,2026-08-04T01:00:00.000Z,,4,active,,GW-TEL-20260725-001,cus_0023,bld_0035
+GW-C-2026-023,con_0023,quo_0057,cus_0005,bld_0009,telecom,2026-08-09,2027-08-08,976360,active,2026-08-05T01:00:00.000Z,,4,active,,GW-TEL-20260726-001,cus_0005,bld_0009
+GW-C-2026-025,con_0025,quo_0062,cus_0011,bld_0021,telecom,2026-08-24,2027-08-23,3262600,active,2026-08-20T01:00:00.000Z,,4,active,,GW-TEL-20260810-001,cus_0011,bld_0021
+GW-C-2026-029,con_0029,quo_0070,cus_0006,bld_0011,telecom,2026-09-07,2027-09-06,909040,active,2026-09-03T01:00:00.000Z,,4,active,,GW-TEL-20260824-001,cus_0006,bld_0011

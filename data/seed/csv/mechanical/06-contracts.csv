@@ -1,0 +1,2 @@
+contractNo,id,quoteId,customerId,buildingId,divisionId,startDate,endDate,annualAmount,status,createdAt,updatedAt,visitsPerYear,statusConfirmed,statusNote,quote,customer,building
+GW-C-2026-020,con_0020,quo_0044,cus_0001,bld_0001,mechanical,2026-07-22,2027-07-21,5749700,active,2026-07-18T01:00:00.000Z,,12,active,,GW-MECH-20260708-001,cus_0001,bld_0001

@@ -6,7 +6,7 @@
   "type": "object",
   "x-table": "buildings",
   "x-idPrefix": "bld",
-  "x-airtable": { "table": "건물", "primaryField": "id", "jsonFields": ["adminCodeFallback"] },
+  "x-airtable": { "table": "건물", "base": "hub", "primaryField": "id", "jsonFields": ["adminCodeFallback"] },
   "x-links": { "customerId": "customers" },
   "required": ["id", "roadAddress", "admCd", "name", "mainPurpose", "totalArea", "groundFloors", "undergroundFloors", "source", "createdAt"],
   "additionalProperties": false,

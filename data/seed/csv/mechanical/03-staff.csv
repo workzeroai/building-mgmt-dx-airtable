@@ -1,0 +1,11 @@
+id,name,divisionId,role,active,syncedAt,syncHash,hubMissing
+stf_0001,소방 점검원 A,fire,점검원,checked,2026-10-13T01:00:20.000Z,044f2208,
+stf_0002,소방 점검원 B,fire,점검원,checked,2026-10-13T01:00:20.000Z,0dd27aee,
+stf_0003,소방 영업 A,fire,영업,checked,2026-10-13T01:00:20.000Z,acc13748,
+stf_0004,통신 점검원 A,telecom,점검원,checked,2026-10-13T01:00:20.000Z,2f6d54c8,
+stf_0005,통신 점검원 B,telecom,점검원,checked,2026-10-13T01:00:20.000Z,1899caf8,
+stf_0006,통신 영업 A,telecom,영업,checked,2026-10-13T01:00:20.000Z,960ae6ea,
+stf_0007,기계 점검원 A,mechanical,점검원,checked,2026-10-13T01:00:20.000Z,b79d6e14,
+stf_0008,기계 점검원 B,mechanical,점검원,checked,2026-10-13T01:00:20.000Z,0ddead2a,
+stf_0009,기계 영업 A,mechanical,영업,checked,2026-10-13T01:00:20.000Z,a203f76a,
+stf_0010,운영 관리자,,관리자,checked,2026-10-13T01:00:20.000Z,505679ec,

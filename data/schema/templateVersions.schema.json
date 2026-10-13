@@ -6,7 +6,7 @@
   "type": "object",
   "x-table": "templateVersions",
   "x-idPrefix": "tpl",
-  "x-airtable": { "table": "양식 버전", "primaryField": "id", "jsonFields": ["testReport"] },
+  "x-airtable": { "table": "양식 버전", "base": "division", "primaryField": "id", "jsonFields": ["testReport"] },
   "x-links": {},
   "required": ["id", "divisionId", "version", "status", "sha256", "filePath", "uploadedAt"],
   "additionalProperties": false,

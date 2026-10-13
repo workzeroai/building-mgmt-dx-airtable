@@ -6,6 +6,7 @@ import { loadDivisions } from './core/registry.js';
 import { loadSchemas } from './core/store/schema.js';
 import { createLocalAdapter } from './core/store/local.js';
 import { createAirtableAdapter } from './core/store/airtable.js';
+import { basesFromEnv, createMultiBaseAirtableAdapter } from './core/store/airtable-multi.js';
 import { loadIdMap, withStagingGuard } from './core/store/guard.js';
 import { seedLocalStore, syncDivisions, syncPricing } from './core/store/seed.js';
 import { createPricingService } from './core/pricing.js';
@@ -44,7 +45,11 @@ export async function createContext(options = {}) {
 
   let base;
   if ((options.adapter ?? env.STORE_ADAPTER) === 'airtable') {
-    base = createAirtableAdapter({ token: env.AIRTABLE_TOKEN, baseId: env.AIRTABLE_BASE_ID, schemas, fetchImpl, idNamespace });
+    // 허브 Base ID가 있으면 허브 + 사업부 Base 구성(airtable/ 설계), 없으면 Base 하나에 7개 테이블
+    const bases = basesFromEnv(env, registry.ids());
+    base = bases
+      ? createMultiBaseAirtableAdapter({ token: env.AIRTABLE_TOKEN, bases, schemas, fetchImpl, idNamespace })
+      : createAirtableAdapter({ token: env.AIRTABLE_TOKEN, baseId: env.AIRTABLE_BASE_ID, schemas, fetchImpl, idNamespace });
   } else {
     await seedLocalStore({ storeDir, target, schemas, registry, pricingDir, ...(seedDir ? { seedDir } : {}) });
     base = createLocalAdapter({ dir: path.join(storeDir, target), schemas, idNamespace });

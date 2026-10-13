@@ -1,0 +1,398 @@
+# 그리드웰 빌딩서비스(가상 회사) 에어테이블 스키마 — 단일 출처
+#
+# 이 파일 하나에서 아래가 만들어진다(npm run airtable:build).
+#   - docs/schema.md                     테이블·필드 표
+#   - docs/diagrams/erd-*.yaml           ERD 도면 사양(→ excalidraw·svg·png)
+#   - airtable/create-base.mjs           Meta API 생성 요청(--dry-run으로 확인)
+#   - data/seed/csv/<base>/<table>.csv   CSV 가져오기용 시드
+#   - airtable/automations/scripts/*.js  스크립트의 설정 블록(상태 전이·동기화 규칙)
+#   - n8n/sync-safety.json               n8n Code 노드의 동기화 규칙
+# 견적 엔진의 데이터 계약(data/schema/*.schema.json)과 겹치는 테이블은 contract로 연결하고,
+# 일관성 검사(airtable/lib/contract.js, npm test)가 필드·타입·선택지·연결을 대조한다.
+#
+# 필드 소유(owner) — 생략하면 contract 테이블은 contract, 그 밖은 ops
+#   contract  데이터 계약 필드. 견적 엔진과 같은 이름·타입(영문 camelCase)
+#   ops       운영 필드. 자동화·사람이 쓰고 읽는다(영문 camelCase)
+#   copy      허브 사본 필드. 동기화만 쓴다(copyOf로 자동 생성)
+#   link      연결 레코드(정방향은 영문, 역방향은 자동 생성되는 한국어 이름)
+#   computed  수식·룩업·롤업·개수. 사람이 보는 파생 필드(한국어). Meta API로 만들 수 없어 수동 추가
+#
+# 다른 레코드를 가리키는 텍스트 ID는 연결 필드의 from으로 묶거나(ref 자동), 연결 없이 ref: <테이블>로 표시한다.
+# 스테이징 복제(clone-staging.mjs)가 이 정보로 ID를 바꾼다. divisionId는 코드가 정한 ID라 바꾸지 않는다.
+#
+# 필드 타입은 에어테이블 이름을 쓴다. link·lookup은 각각 multipleRecordLinks·multipleLookupValues의 줄임.
+
+version: 1
+title: 그리드웰 빌딩서비스(가상) 에어테이블 스키마
+company: 그리드웰 빌딩서비스(가상)
+timeZone: Asia/Seoul
+
+divisions:
+  - {id: fire, code: FIRE, name: 소방시설 점검, order: 1, visitsPerYear: 2}
+  - {id: telecom, code: TEL, name: 통신설비 점검, order: 2, visitsPerYear: 4}
+  - {id: mechanical, code: MECH, name: 기계설비 유지관리, order: 3, visitsPerYear: null}   # 견적 조건(cycle)에 따라 월 12회·분기 4회
+
+# 모든 Base에 들어가는 운영 테이블
+commonTables:
+  - key: automationErrors
+    name: 자동화 오류
+    idPrefix: err
+    primary: id
+    description: 자동화·동기화에서 난 실패를 모아 두는 곳. 오류 알림 스크립트가 notified=false인 건을 묶어 웹훅으로 보낸다.
+    required: [id, automation, stage, message, occurredAt]
+    fields:
+      - {name: id, type: singleLineText, desc: "err_ + 시각·난수"}
+      - {name: automation, type: singleLineText, desc: "자동화 이름(statusGuard, duplicateDetect, syncSafety, n8n:syncSafety …)"}
+      - {name: stage, type: singleSelect, choices: [skipped, failed, aborted, error], desc: "skipped=검증 실패로 건너뜀, failed=반영 실패, aborted=반영 중단, error=스크립트 예외"}
+      - {name: tableName, type: singleLineText, desc: 대상 테이블}
+      - {name: recordId, type: singleLineText, desc: 대상 레코드의 id(계약 ID). 없으면 비움}
+      - {name: message, type: multilineText}
+      - {name: occurredAt, type: dateTime}
+      - {name: notified, type: checkbox, desc: 알림 발송 여부}
+      - {name: notifiedAt, type: dateTime}
+
+bases:
+  # ------------------------------------------------------------------ 허브
+  - key: hub
+    kind: hub
+    name: GW 허브
+    description: 모든 사업부가 함께 쓰는 공통 엔티티(사업부·고객·건물·담당자)의 원본. 사업부 Base는 이 Base의 사본을 받는다.
+    tables:
+      - key: divisions
+        name: 사업부
+        contract: divisions
+        primary: id
+        description: 견적 엔진 레지스트리(divisions/*/config.js)의 사본. 코드가 원본이다.
+        fields:
+          - {name: id, type: singleLineText}
+          - {name: code, type: singleLineText}
+          - {name: name, type: singleLineText}
+          - {name: order, type: number, integer: true}
+          - {name: description, type: multilineText}
+          - {name: createdAt, type: dateTime}
+          - {name: updatedAt, type: dateTime}
+          - {name: 담당자 수, type: count, via: 담당자}
+
+      - key: customers
+        name: 고객
+        contract: customers
+        primary: id
+        description: 견적·계약의 상대방. 사업부와 무관하게 한 번만 등록한다.
+        fields:
+          - {name: id, type: singleLineText}
+          - {name: name, type: singleLineText}
+          - {name: type, type: singleSelect, choices: [법인, 관리단, 관리사무소, 개인사업자]}
+          - {name: region, type: singleSelect, choices: [서울특별시, 부산광역시, 대구광역시, 인천광역시, 대전광역시, 경기도]}
+          - {name: contactEmail, type: email}
+          - {name: note, type: multilineText}
+          - {name: createdAt, type: dateTime}
+          - {name: updatedAt, type: dateTime}
+          - {name: businessNo, type: singleLineText, owner: ops, desc: "사업자등록번호(가상, 000-으로 시작). 중복 감지 키"}
+          - {name: dupCandidates, type: link, to: customers, desc: 중복 후보(자동 표시만, 병합은 사람이)}
+          - {name: dupStatus, type: singleSelect, owner: ops, choices: [후보 없음, 후보 있음, 검토 완료]}
+          - {name: dupCheckedAt, type: dateTime, owner: ops}
+          - {name: 건물 수, type: count, via: 건물}
+
+      - key: buildings
+        name: 건물
+        contract: buildings
+        primary: id
+        description: 주소 1건 = 건물 1건. 건축물대장 표제부 요약. 견적 엔진이 새 주소를 조회하면 여기에 추가한다.
+        fields:
+          - {name: id, type: singleLineText}
+          - {name: customerId, type: singleLineText}
+          - {name: roadAddress, type: singleLineText}
+          - {name: jibunAddress, type: singleLineText}
+          - {name: admCd, type: singleLineText}
+          - {name: registerKey, type: singleLineText}
+          - {name: adminCodeFallback, type: multilineText, json: true}
+          - {name: name, type: singleLineText}
+          - {name: mainPurpose, type: singleLineText}
+          - {name: totalArea, type: number}
+          - {name: groundFloors, type: number, integer: true}
+          - {name: undergroundFloors, type: number, integer: true}
+          - {name: dongCount, type: number, integer: true}
+          - {name: approvalDate, type: singleLineText}
+          - {name: source, type: singleSelect, choices: [fixture, live, seed]}
+          - {name: createdAt, type: dateTime}
+          - {name: updatedAt, type: dateTime}
+          - {name: customer, type: link, to: customers, from: customerId, inverse: 건물}
+          - {name: addressKey, type: singleLineText, owner: ops, desc: 정규화 주소 키(공백 제거). 중복 감지 스크립트가 채운다}
+          - {name: dupCandidates, type: link, to: buildings, desc: 중복 후보(자동 표시만, 병합은 사람이)}
+          - {name: dupStatus, type: singleSelect, owner: ops, choices: [후보 없음, 후보 있음, 검토 완료]}
+          - {name: dupCheckedAt, type: dateTime, owner: ops}
+          - {name: 고객명, type: lookup, via: customer, field: name}
+
+      - key: staff
+        name: 담당자
+        idPrefix: stf
+        primary: id
+        description: 점검원·영업·관리자. 이름은 역할 표기만 쓴 가상 값.
+        required: [id, name, role, active, createdAt]
+        fields:
+          - {name: id, type: singleLineText, desc: stf_ + 4자리}
+          - {name: name, type: singleLineText}
+          - {name: divisionId, type: singleLineText, desc: "→ 사업부.id (관리자는 비움)"}
+          - {name: role, type: singleSelect, choices: [점검원, 영업, 관리자]}
+          - {name: email, type: email, desc: example.com만}
+          - {name: active, type: checkbox}
+          - {name: createdAt, type: dateTime}
+          - {name: division, type: link, to: divisions, from: divisionId, inverse: 담당자}
+
+  # ------------------------------------------------------------------ 사업부 Base 틀(사업부마다 1개)
+  - key: division
+    kind: division
+    name: "GW {divisionName}"
+    description: 사업부 1개의 업무 데이터(견적→계약→점검→청구). 공통 틀은 같고 사업부 고유 값은 extensions로 붙인다.
+    tables:
+      - key: customers
+        name: 고객
+        copyOf: {table: customers, fields: [id, name, type, region]}
+        description: 허브 고객의 읽기 전용 사본. 동기화만 쓴다.
+        fields: &syncFields
+          - {name: syncedAt, type: dateTime, desc: 마지막 반영 시각}
+          - {name: syncHash, type: singleLineText, desc: 반영한 원본 값의 지문(변경 감지)}
+          - {name: hubMissing, type: checkbox, desc: 허브에서 사라짐(지우지 않고 표시만)}
+
+      - key: buildings
+        name: 건물
+        copyOf: {table: buildings, fields: [id, customerId, roadAddress, name, mainPurpose, totalArea, groundFloors, undergroundFloors]}
+        description: 허브 건물의 읽기 전용 사본. 동기화만 쓴다.
+        fields:
+          - {name: syncedAt, type: dateTime, desc: 마지막 반영 시각}
+          - {name: syncHash, type: singleLineText, desc: 반영한 원본 값의 지문(변경 감지)}
+          - {name: hubMissing, type: checkbox, desc: 허브에서 사라짐(지우지 않고 표시만)}
+          - {name: customer, type: link, to: customers, from: customerId, inverse: 건물}
+
+      - key: staff
+        name: 담당자
+        copyOf: {table: staff, fields: [id, name, divisionId, role, active]}
+        description: 허브 담당자의 사본(이 사업부 담당자만 쓰지만 전체를 받는다).
+        fields: *syncFields
+
+      - key: quotes
+        name: 견적
+        contract: quotes
+        primary: quoteNo
+        description: 견적 엔진이 만드는 견적. 공통 필드 + 사업부별 conditions·items(JSON).
+        statusFlow:
+          field: status
+          transitions: {draft: [sent, lost], sent: [won, lost, draft], won: [], lost: [draft]}
+        fields:
+          - {name: quoteNo, type: singleLineText}
+          - {name: id, type: singleLineText}
+          - {name: divisionId, type: singleLineText}
+          - {name: customerId, type: singleLineText}
+          - {name: buildingId, type: singleLineText}
+          - {name: conditions, type: multilineText, json: true}
+          - {name: items, type: multilineText, json: true}
+          - {name: subtotal, type: currency}
+          - {name: vat, type: currency}
+          - {name: total, type: currency}
+          - {name: pricingSource, type: singleSelect, choices: [store, cache, fallback]}
+          - {name: pricingVersion, type: singleLineText}
+          - {name: templateVersionId, type: singleLineText}
+          - {name: templateVersion, type: number, integer: true}
+          - {name: files, type: multilineText, json: true}
+          - {name: pdfStatus, type: singleSelect, choices: [ok, skipped, circuit-open, failed]}
+          - {name: status, type: singleSelect, choices: [draft, sent, won, lost]}
+          - {name: createdAt, type: dateTime}
+          - {name: updatedAt, type: dateTime}
+          - {name: customer, type: link, to: customers, from: customerId, inverse: 견적}
+          - {name: building, type: link, to: buildings, from: buildingId, inverse: 견적}
+          - {name: template, type: link, to: templateVersions, from: templateVersionId, inverse: 견적}
+          - {name: 고객명, type: lookup, via: customer, field: name}
+          - {name: 건물명, type: lookup, via: building, field: name}
+
+      - key: contracts
+        name: 계약
+        contract: contracts
+        primary: contractNo
+        description: 수주(won) 견적에서 만든 계약. 점검 일정·청구의 기준.
+        statusFlow:
+          field: status
+          transitions: {pending: [active, terminated], active: [expired, terminated], expired: [], terminated: []}
+        fields:
+          - {name: contractNo, type: singleLineText}
+          - {name: id, type: singleLineText}
+          - {name: quoteId, type: singleLineText}
+          - {name: customerId, type: singleLineText}
+          - {name: buildingId, type: singleLineText}
+          - {name: divisionId, type: singleLineText}
+          - {name: startDate, type: date}
+          - {name: endDate, type: date}
+          - {name: annualAmount, type: currency}
+          - {name: status, type: singleSelect, choices: [pending, active, expired, terminated]}
+          - {name: createdAt, type: dateTime}
+          - {name: updatedAt, type: dateTime}
+          - {name: visitsPerYear, type: number, integer: true, owner: ops, desc: "연간 방문 횟수. 점검 일정 생성 자동화가 읽는다(소방 2·통신 4·기계 월 12/분기 4)"}
+          - {name: quote, type: link, to: quotes, from: quoteId, inverse: 계약}
+          - {name: customer, type: link, to: customers, from: customerId, inverse: 계약}
+          - {name: building, type: link, to: buildings, from: buildingId, inverse: 계약}
+          - {name: 점검 횟수, type: count, via: 점검 일정}
+          - {name: 청구 합계, type: rollup, via: 청구, field: amount, fn: "SUM(values)"}
+          - {name: 입금 합계, type: rollup, via: 청구, field: paidAmount, fn: "SUM(values)"}
+          - {name: 미수금, type: formula, formula: "{청구 합계} - {입금 합계}"}
+
+      - key: pricing
+        name: 단가
+        contract: pricing
+        primary: id
+        description: 사업부 단가표 1건. 현업이 코드 수정 없이 고친다(견적 엔진 5분 캐시).
+        fields:
+          - {name: id, type: singleLineText}
+          - {name: divisionId, type: singleLineText}
+          - {name: version, type: singleLineText}
+          - {name: source, type: singleSelect, choices: [가상]}
+          - {name: data, type: multilineText, json: true}
+          - {name: updatedBy, type: singleLineText}
+          - {name: createdAt, type: dateTime}
+          - {name: updatedAt, type: dateTime}
+
+      - key: templateVersions
+        name: 양식 버전
+        contract: templateVersions
+        primary: id
+        description: 엑셀 견적 양식 버전(업로드 → 테스트 → 활성화). 사업부별 active는 1개.
+        fields:
+          - {name: id, type: singleLineText}
+          - {name: divisionId, type: singleLineText}
+          - {name: version, type: number, integer: true}
+          - {name: status, type: singleSelect, choices: [uploaded, tested, failed, active, inactive]}
+          - {name: sha256, type: singleLineText}
+          - {name: size, type: number, integer: true}
+          - {name: filePath, type: singleLineText}
+          - {name: note, type: multilineText}
+          - {name: uploadedBy, type: singleLineText}
+          - {name: uploadedAt, type: dateTime}
+          - {name: testReport, type: multilineText, json: true}
+          - {name: activatedAt, type: dateTime}
+          - {name: deactivatedAt, type: dateTime}
+          - {name: createdAt, type: dateTime}
+          - {name: updatedAt, type: dateTime}
+
+      - key: inspections
+        name: 점검 일정
+        idPrefix: ins
+        primary: id
+        description: 계약에서 만든 방문 일정. 계약 활성화 시 연간 방문 횟수만큼 생성한다.
+        required: [id, divisionId, contractId, buildingId, scheduledDate, visitNo, status, createdAt]
+        statusFlow:
+          field: status
+          transitions: {scheduled: [done, missed, cancelled], missed: [scheduled, cancelled], done: [], cancelled: []}
+        fields:
+          - {name: id, type: singleLineText, desc: ins_ + 4자리}
+          - {name: divisionId, type: singleLineText}
+          - {name: contractId, type: singleLineText}
+          - {name: buildingId, type: singleLineText}
+          - {name: assigneeId, type: singleLineText, desc: → 담당자.id}
+          - {name: scheduledDate, type: date}
+          - {name: visitNo, type: number, integer: true, desc: 계약 안에서 몇 번째 방문인지}
+          - {name: status, type: singleSelect, choices: [scheduled, done, missed, cancelled]}
+          - {name: createdAt, type: dateTime}
+          - {name: contract, type: link, to: contracts, from: contractId, inverse: 점검 일정}
+          - {name: building, type: link, to: buildings, from: buildingId, inverse: 점검 일정}
+          - {name: assignee, type: link, to: staff, from: assigneeId, inverse: 점검 일정}
+          - {name: 건물명, type: lookup, via: building, field: name}
+          - {name: D-day, type: formula, formula: "IF({status} = 'scheduled', DATETIME_DIFF({scheduledDate}, TODAY(), 'days'), BLANK())"}
+
+      - key: inspectionResults
+        name: 점검 결과
+        idPrefix: res
+        primary: id
+        description: 방문 1회의 결과. 공통 필드 + 사업부 확장 필드(extensions).
+        required: [id, divisionId, inspectionId, contractId, inspectedAt, result, createdAt]
+        fields:
+          - {name: id, type: singleLineText, desc: res_ + 4자리}
+          - {name: divisionId, type: singleLineText}
+          - {name: inspectionId, type: singleLineText}
+          - {name: contractId, type: singleLineText, ref: contracts, desc: "→ 계약.id (연결 없이 텍스트로만 참조: 점검 일정을 거쳐 이어진다)"}
+          - {name: inspectedAt, type: date}
+          - {name: result, type: singleSelect, choices: [pass, actionRequired, fail], desc: "적합 · 조치 필요 · 부적합"}
+          - {name: defects, type: number, integer: true, desc: 지적 사항 수}
+          - {name: findings, type: multilineText}
+          - {name: createdAt, type: dateTime}
+          - {name: inspection, type: link, to: inspections, from: inspectionId, inverse: 점검 결과}
+
+      - key: invoices
+        name: 청구
+        idPrefix: inv
+        primary: invoiceNo
+        description: 점검 결과 1건 = 청구 1건(연간 금액 ÷ 방문 횟수). 입금되면 paid.
+        required: [id, invoiceNo, divisionId, contractId, amount, issuedAt, dueDate, status, createdAt]
+        statusFlow:
+          field: status
+          transitions: {issued: [paid, overdue, void], overdue: [paid, void], paid: [], void: []}
+        fields:
+          - {name: invoiceNo, type: singleLineText, desc: "GW-INV-{사업부코드}-{YYYY}-{일련번호}"}
+          - {name: id, type: singleLineText, desc: inv_ + 4자리}
+          - {name: divisionId, type: singleLineText}
+          - {name: contractId, type: singleLineText}
+          - {name: resultId, type: singleLineText, desc: → 점검 결과.id}
+          - {name: amount, type: currency}
+          - {name: issuedAt, type: date}
+          - {name: dueDate, type: date}
+          - {name: paidAt, type: date}
+          - {name: paidAmount, type: currency}
+          - {name: status, type: singleSelect, choices: [issued, paid, overdue, void]}
+          - {name: createdAt, type: dateTime}
+          - {name: contract, type: link, to: contracts, from: contractId, inverse: 청구}
+          - {name: result, type: link, to: inspectionResults, from: resultId, inverse: 청구}
+          - {name: 미수액, type: formula, formula: "{amount} - {paidAmount}"}
+          - {name: 경과일, type: formula, formula: "IF(OR({status} = 'issued', {status} = 'overdue'), DATETIME_DIFF(TODAY(), {dueDate}, 'days'), BLANK())"}
+
+      - key: syncRuns
+        name: 동기화 기록
+        idPrefix: syn
+        primary: id
+        description: 허브 → 사업부 동기화 1회 × 테이블 1개 = 1행. 다음 실행이 직전 원본 건수와 비교하는 기준.
+        required: [id, divisionId, runner, tableKey, startedAt, sourceCount, status]
+        fields:
+          - {name: id, type: singleLineText, desc: "syn_ + 시각·난수"}
+          - {name: divisionId, type: singleLineText}
+          - {name: runner, type: singleSelect, choices: [airtable-script, n8n]}
+          - {name: tableKey, type: singleLineText, desc: "동기화한 테이블(customers·buildings·staff)"}
+          - {name: startedAt, type: dateTime}
+          - {name: finishedAt, type: dateTime}
+          - {name: sourceCount, type: number, integer: true, desc: 이번 원본 건수}
+          - {name: previousCount, type: number, integer: true, desc: 직전 정상 실행의 원본 건수}
+          - {name: created, type: number, integer: true}
+          - {name: updated, type: number, integer: true}
+          - {name: unchanged, type: number, integer: true}
+          - {name: skipped, type: number, integer: true, desc: 검증 실패로 건너뜀}
+          - {name: failed, type: number, integer: true, desc: 반영 실패}
+          - {name: missing, type: number, integer: true, desc: 허브에서 사라져 hubMissing 표시}
+          - {name: status, type: singleSelect, choices: [ok, partial, aborted]}
+          - {name: note, type: multilineText}
+
+# 사업부 고유 필드: 공통 틀에 사업부별로 덧붙인다(공통 테이블을 사업부마다 다르게 고치지 않는다).
+extensions:
+  fire:
+    quotes:
+      - {name: 점검 등급, type: formula, formula: "REGEX_EXTRACT({conditions}, '\"grade\":\"([^\"]*)\"')"}
+    inspectionResults:
+      - {name: extinguisherCount, type: number, integer: true, desc: 점검한 소화기 수}
+      - {name: detectorFaults, type: number, integer: true, desc: 감지기 불량 수}
+  telecom:
+    quotes:
+      - {name: 회선 수, type: formula, formula: "VALUE(REGEX_EXTRACT({conditions}, '\"lines\":([0-9]+)'))"}
+      - {name: 계약 형태, type: formula, formula: "REGEX_EXTRACT({conditions}, '\"contract\":\"([^\"]*)\"')"}
+    inspectionResults:
+      - {name: linesTested, type: number, integer: true, desc: 시험한 회선 수}
+      - {name: linePassRate, type: percent, desc: 회선 시험 통과율}
+  mechanical:
+    quotes:
+      - {name: 방문 주기, type: formula, formula: "REGEX_EXTRACT({conditions}, '\"cycle\":\"([^\"]*)\"')"}
+    inspectionResults:
+      - {name: filterReplaced, type: checkbox, desc: 필터 교체}
+      - {name: refrigerantChecked, type: checkbox, desc: 냉매 점검}
+      - {name: boilerEfficiency, type: percent, desc: 보일러 효율 측정값}
+
+# 허브 → 사업부 동기화(단방향). 사업부 Base는 사본을 고치지 않는다.
+sync:
+  direction: hub-to-division
+  key: id
+  tables: [customers, buildings, staff]
+  maxDropRatio: 0.3        # 원본 건수가 직전 정상 실행 대비 30% 넘게 줄면 반영 중단
+  batchSize: 50            # Airtable 스크립트 updateRecordsAsync 한 번의 최대 건수
+  onMissing: mark          # 허브에서 사라진 레코드는 지우지 않고 hubMissing만 표시

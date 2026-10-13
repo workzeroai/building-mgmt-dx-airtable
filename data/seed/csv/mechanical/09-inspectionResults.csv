@@ -1,0 +1,4 @@
+id,divisionId,inspectionId,contractId,inspectedAt,result,defects,findings,createdAt,filterReplaced,refrigerantChecked,boilerEfficiency,inspection
+res_0024,mechanical,ins_0037,con_0020,2026-07-22,pass,1,펌프 진동 증가,2026-07-22T09:00:00.000Z,checked,checked,0.901,ins_0037
+res_0025,mechanical,ins_0038,con_0020,2026-08-22,pass,1,냉각수 수질 기준 초과,2026-08-22T09:00:00.000Z,checked,checked,0.856,ins_0038
+res_0026,mechanical,ins_0039,con_0020,2026-09-22,pass,1,필터 오염,2026-09-22T09:00:00.000Z,checked,checked,0.885,ins_0039

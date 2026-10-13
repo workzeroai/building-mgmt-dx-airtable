@@ -1,0 +1,11 @@
+id,name,divisionId,role,email,active,createdAt,division
+stf_0001,소방 점검원 A,fire,점검원,staff+stf0001@example.com,checked,2026-10-01T00:00:00.000Z,fire
+stf_0002,소방 점검원 B,fire,점검원,staff+stf0002@example.com,checked,2026-10-01T00:00:00.000Z,fire
+stf_0003,소방 영업 A,fire,영업,staff+stf0003@example.com,checked,2026-10-01T00:00:00.000Z,fire
+stf_0004,통신 점검원 A,telecom,점검원,staff+stf0004@example.com,checked,2026-10-01T00:00:00.000Z,telecom
+stf_0005,통신 점검원 B,telecom,점검원,staff+stf0005@example.com,checked,2026-10-01T00:00:00.000Z,telecom
+stf_0006,통신 영업 A,telecom,영업,staff+stf0006@example.com,checked,2026-10-01T00:00:00.000Z,telecom
+stf_0007,기계 점검원 A,mechanical,점검원,staff+stf0007@example.com,checked,2026-10-01T00:00:00.000Z,mechanical
+stf_0008,기계 점검원 B,mechanical,점검원,staff+stf0008@example.com,checked,2026-10-01T00:00:00.000Z,mechanical
+stf_0009,기계 영업 A,mechanical,영업,staff+stf0009@example.com,checked,2026-10-01T00:00:00.000Z,mechanical
+stf_0010,운영 관리자,,관리자,staff+stf0010@example.com,checked,2026-10-01T00:00:00.000Z,

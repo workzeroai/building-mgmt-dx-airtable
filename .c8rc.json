@@ -1,7 +1,20 @@
 {
   "all": true,
-  "include": ["quote-engine/src/**/*.js"],
-  "exclude": ["quote-engine/src/public/**", "quote-engine/test/**"],
-  "reporter": ["text", "text-summary"],
+  "include": [
+    "quote-engine/src/**/*.js",
+    "airtable/lib/**/*.js",
+    "airtable/automations/lib/**/*.js",
+    "airtable/*.mjs"
+  ],
+  "exclude": [
+    "quote-engine/src/public/**",
+    "quote-engine/test/**",
+    "airtable/test/**",
+    "n8n/test/**"
+  ],
+  "reporter": [
+    "text",
+    "text-summary"
+  ],
   "report-dir": "coverage"
 }

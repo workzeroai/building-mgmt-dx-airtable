@@ -1,0 +1,171 @@
+{
+  "customers": {
+    "cus_0001": {
+      "businessNo": "000-47-07919"
+    },
+    "cus_0002": {
+      "businessNo": "000-84-15838"
+    },
+    "cus_0003": {
+      "businessNo": "000-31-23757"
+    },
+    "cus_0004": {
+      "businessNo": "000-68-31676"
+    },
+    "cus_0005": {
+      "businessNo": "000-15-39595"
+    },
+    "cus_0006": {
+      "businessNo": "000-52-47514"
+    },
+    "cus_0007": {
+      "businessNo": "000-89-55433"
+    },
+    "cus_0008": {
+      "businessNo": "000-36-63352"
+    },
+    "cus_0009": {
+      "businessNo": "000-73-71271"
+    },
+    "cus_0010": {
+      "businessNo": "000-20-79190"
+    },
+    "cus_0011": {
+      "businessNo": "000-57-87109"
+    },
+    "cus_0012": {
+      "businessNo": "000-94-95028"
+    },
+    "cus_0013": {
+      "businessNo": "000-41-02947"
+    },
+    "cus_0014": {
+      "businessNo": "000-78-10866"
+    },
+    "cus_0015": {
+      "businessNo": "000-25-18785"
+    },
+    "cus_0016": {
+      "businessNo": "000-62-26704"
+    },
+    "cus_0017": {
+      "businessNo": "000-99-34623"
+    },
+    "cus_0018": {
+      "businessNo": "000-46-42542"
+    },
+    "cus_0019": {
+      "businessNo": "000-83-50461"
+    },
+    "cus_0020": {
+      "businessNo": "000-30-58380"
+    },
+    "cus_0021": {
+      "businessNo": "000-67-66299"
+    },
+    "cus_0022": {
+      "businessNo": "000-14-74218"
+    },
+    "cus_0023": {
+      "businessNo": "000-51-82137"
+    },
+    "cus_0024": {
+      "businessNo": "000-88-90056"
+    }
+  },
+  "contracts": {
+    "con_0001": {
+      "visitsPerYear": 2
+    },
+    "con_0002": {
+      "visitsPerYear": 2
+    },
+    "con_0003": {
+      "visitsPerYear": 2
+    },
+    "con_0004": {
+      "visitsPerYear": 2
+    },
+    "con_0005": {
+      "visitsPerYear": 2
+    },
+    "con_0006": {
+      "visitsPerYear": 2
+    },
+    "con_0007": {
+      "visitsPerYear": 2
+    },
+    "con_0008": {
+      "visitsPerYear": 2
+    },
+    "con_0009": {
+      "visitsPerYear": 2
+    },
+    "con_0010": {
+      "visitsPerYear": 2
+    },
+    "con_0011": {
+      "visitsPerYear": 2
+    },
+    "con_0012": {
+      "visitsPerYear": 4
+    },
+    "con_0013": {
+      "visitsPerYear": 4
+    },
+    "con_0014": {
+      "visitsPerYear": 2
+    },
+    "con_0015": {
+      "visitsPerYear": 4
+    },
+    "con_0016": {
+      "visitsPerYear": 2
+    },
+    "con_0017": {
+      "visitsPerYear": 2
+    },
+    "con_0018": {
+      "visitsPerYear": 4
+    },
+    "con_0019": {
+      "visitsPerYear": 2
+    },
+    "con_0020": {
+      "visitsPerYear": 12
+    },
+    "con_0021": {
+      "visitsPerYear": 4
+    },
+    "con_0022": {
+      "visitsPerYear": 4
+    },
+    "con_0023": {
+      "visitsPerYear": 4
+    },
+    "con_0024": {
+      "visitsPerYear": 2
+    },
+    "con_0025": {
+      "visitsPerYear": 4
+    },
+    "con_0026": {
+      "visitsPerYear": 2
+    },
+    "con_0027": {
+      "visitsPerYear": 2
+    },
+    "con_0028": {
+      "visitsPerYear": 2
+    },
+    "con_0029": {
+      "visitsPerYear": 4
+    },
+    "con_0030": {
+      "visitsPerYear": 2
+    },
+    "con_0031": {
+      "visitsPerYear": 2
+    }
+  }
+}

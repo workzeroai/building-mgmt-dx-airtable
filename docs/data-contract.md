@@ -161,10 +161,13 @@ pricing (사업부별 1건)
 | 시드 | `data/seed/{customers,buildings,quotes,contracts}.json` | 생성 스크립트 산출물(커밋) |
 | 번들 단가 | `data/pricing/<division>.json` | 저장소 단가 조회 실패 시 폴백 |
 
-## 6. 6-2(에어테이블)에 넘기는 것
+## 6. 에어테이블 설계(airtable/)와의 관계
 
-1. 위 7개 테이블을 같은 이름·필드로 만든다(`x-airtable.table`, 필드 이름은 계약의 키 그대로). 연결 필드(`x-links`)는 에어테이블 연결 레코드로 바꾸되, 어댑터가 쓰는 텍스트 ID 필드(`customerId` 등)도 남기거나 어댑터를 그에 맞게 확장한다.
-2. JSON 필드(`x-airtable.jsonFields`)는 긴 텍스트로 만든다.
-3. 상태 필드(`status`, `pdfStatus`, `pricingSource`)는 단일 선택, 허용 값은 계약의 `enum`과 같게.
-4. 스테이징 베이스 복제 시 §4 형식의 매핑표를 함께 만든다.
-5. 시드 적재는 `data/seed/*.json`을 그대로 쓴다(계약 검사 통과가 보장된 데이터).
+6-2에서 이 계약을 그대로 이어 에어테이블 구조를 만들었다. 단일 출처는 [`airtable/schema/gridwell.yaml`](../airtable/schema/gridwell.yaml)이고, 표는 [`docs/schema.md`](schema.md)(자동 생성).
+
+1. **같은 이름·필드.** 7개 계약 테이블은 YAML에 `contract:`로 연결돼 있고, `airtable/lib/contract.js`가 테이블 이름(`x-airtable.table`)·기본 필드·필드 집합·타입·선택지(`enum`)·JSON 필드(`x-airtable.jsonFields`)·연결(`x-links` ↔ 연결 필드의 `from`)을 대조한다. 어긋나면 `npm test`가 실패한다.
+2. **Base 배치(`x-airtable.base`).** `hub`(사업부·고객·건물)는 허브 Base, `division`(견적·계약·단가·양식 버전)은 사업부별 Base에 둔다. 견적 엔진은 `AIRTABLE_HUB_BASE_ID`·`AIRTABLE_BASE_ID_<사업부>`를 주면 이 배치대로 읽고 쓴다(`quote-engine/src/core/store/airtable-multi.js`). `AIRTABLE_BASE_ID` 하나만 주면 예전처럼 Base 하나에 7개 테이블.
+3. **텍스트 ID + 연결.** 어댑터가 쓰는 텍스트 ID 필드(`customerId` 등)는 그대로 두고, 같은 Base 안에서 사람이 따라가는 연결 필드(`customer` 등)를 따로 둔다. 연결은 자동화가 텍스트 ID로 채운다.
+4. **에어테이블 전용 필드.** 연결·룩업·수식·운영 필드(`businessNo`, `statusConfirmed` 등)는 계약 밖이다. 에어테이블 어댑터는 읽을 때 계약에 없는 필드를 버린다(그래야 `update`의 계약 검사를 통과한다).
+5. **스테이징 매핑표.** `airtable/clone-staging.mjs`가 복제한 스테이징 Base의 ID에 `stg_`를 붙이고 §4와 같은 형식의 매핑표를 만든다(운영 rec ID가 아니라 이 계약의 `id` 값을 키로). 값이 `toStaging()`과 같은지 테스트로 확인한다.
+6. **시드.** `data/seed/*.json`(이 계약을 지키는 가상 데이터)을 그대로 쓰고, 에어테이블 CSV(`data/seed/csv/`)와 운영 테이블 시드(`data/seed/ops/`)는 여기서 이어 만든다.

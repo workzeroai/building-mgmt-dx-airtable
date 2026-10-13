@@ -1,0 +1,7 @@
+id,divisionId,runner,tableKey,startedAt,finishedAt,sourceCount,previousCount,created,updated,unchanged,skipped,failed,missing,status,note
+syn_0001,fire,airtable-script,customers,2026-10-13T00:00:00.000Z,2026-10-13T00:00:20.000Z,24,,24,0,0,0,0,0,ok,첫 동기화(가상 시드)
+syn_0002,fire,airtable-script,buildings,2026-10-13T00:00:00.000Z,2026-10-13T00:00:20.000Z,36,,36,0,0,0,0,0,ok,첫 동기화(가상 시드)
+syn_0003,fire,airtable-script,staff,2026-10-13T00:00:00.000Z,2026-10-13T00:00:20.000Z,10,,10,0,0,0,0,0,ok,첫 동기화(가상 시드)
+syn_0004,fire,airtable-script,customers,2026-10-13T01:00:00.000Z,2026-10-13T01:00:20.000Z,24,24,0,0,24,0,0,0,ok,변경 없음(가상 시드)
+syn_0005,fire,airtable-script,buildings,2026-10-13T01:00:00.000Z,2026-10-13T01:00:20.000Z,36,36,0,0,36,0,0,0,ok,변경 없음(가상 시드)
+syn_0006,fire,airtable-script,staff,2026-10-13T01:00:00.000Z,2026-10-13T01:00:20.000Z,10,10,0,0,10,0,0,0,ok,변경 없음(가상 시드)

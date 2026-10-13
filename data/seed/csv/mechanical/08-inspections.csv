@@ -1,0 +1,7 @@
+id,divisionId,contractId,buildingId,assigneeId,scheduledDate,visitNo,status,createdAt,statusConfirmed,statusNote,contract,building,assignee
+ins_0037,mechanical,con_0020,bld_0001,stf_0007,2026-07-22,1,done,2026-07-18T01:00:00.000Z,done,,GW-C-2026-020,bld_0001,stf_0007
+ins_0038,mechanical,con_0020,bld_0001,stf_0008,2026-08-22,2,done,2026-07-18T01:00:00.000Z,done,,GW-C-2026-020,bld_0001,stf_0008
+ins_0039,mechanical,con_0020,bld_0001,stf_0007,2026-09-22,3,done,2026-07-18T01:00:00.000Z,done,,GW-C-2026-020,bld_0001,stf_0007
+ins_0040,mechanical,con_0020,bld_0001,stf_0008,2026-10-22,4,scheduled,2026-07-18T01:00:00.000Z,scheduled,,GW-C-2026-020,bld_0001,stf_0008
+ins_0041,mechanical,con_0020,bld_0001,stf_0007,2026-11-22,5,scheduled,2026-07-18T01:00:00.000Z,scheduled,,GW-C-2026-020,bld_0001,stf_0007
+ins_0042,mechanical,con_0020,bld_0001,stf_0008,2026-12-22,6,scheduled,2026-07-18T01:00:00.000Z,scheduled,,GW-C-2026-020,bld_0001,stf_0008

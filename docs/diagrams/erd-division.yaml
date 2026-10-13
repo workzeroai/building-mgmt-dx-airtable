@@ -1,0 +1,182 @@
+# 자동 생성: npm run airtable:build (airtable/lib/erd.js ← airtable/schema/gridwell.yaml). 직접 고치지 않는다.
+# 그림: python ../../../_design/excalidraw_kit.py erd-division.yaml --out . --export
+name: erd-division
+title: 사업부 Base 상세 — 12개 테이블 (fire·telecom·mechanical 공통 틀)
+subtitle: 화살표 = 연결(부모 → 자식, 1:N). 계약·점검 일정의 고객·건물 연결은 선이 겹쳐 생략. "+ 확장 n" = 소방시설 점검 확장 필드
+layout: manual
+nodes:
+  - id: customers
+    label: |-
+      고객 · customers
+      id (기본)
+      name · type
+    role: info
+    x: 0
+    y: 0
+    width: 280
+    fontSize: 16
+  - id: buildings
+    label: |-
+      건물 · buildings
+      id (기본)
+      roadAddress · totalArea
+      연결 customer
+    role: info
+    x: 380
+    y: 0
+    width: 280
+    fontSize: 16
+  - id: staff
+    label: |-
+      담당자 · staff
+      id (기본)
+      role · divisionId
+    role: info
+    x: 950
+    y: 0
+    width: 280
+    fontSize: 16
+  - id: quotes
+    label: |-
+      견적 · quotes
+      quoteNo (기본)
+      status · total · conditions
+      연결 customer · building · template
+      + 확장 1
+    role: secondary
+    x: 190
+    y: 260
+    width: 280
+    fontSize: 16
+  - id: contracts
+    label: |-
+      계약 · contracts
+      contractNo (기본)
+      status · startDate · annualAmount
+      연결 quote · customer · building
+    role: secondary
+    x: 570
+    y: 260
+    width: 280
+    fontSize: 16
+  - id: pricing
+    label: |-
+      단가 · pricing
+      id (기본)
+      version · data
+    role: secondary
+    x: -190
+    y: 520
+    width: 280
+    fontSize: 16
+  - id: templateVersions
+    label: |-
+      양식 버전 · templateVersions
+      id (기본)
+      version · status
+    role: secondary
+    x: -190
+    y: 260
+    width: 280
+    fontSize: 16
+  - id: inspections
+    label: |-
+      점검 일정 · inspections
+      id (기본)
+      scheduledDate · status
+      연결 contract · building · assignee
+    role: secondary
+    x: 950
+    y: 260
+    width: 280
+    fontSize: 16
+  - id: inspectionResults
+    label: |-
+      점검 결과 · inspectionResults
+      id (기본)
+      result · defects
+      연결 inspection
+      + 확장 2
+    role: secondary
+    x: 1330
+    y: 260
+    width: 280
+    fontSize: 16
+  - id: invoices
+    label: |-
+      청구 · invoices
+      invoiceNo (기본)
+      status · amount · dueDate
+      연결 contract · result
+    role: secondary
+    x: 570
+    y: 520
+    width: 280
+    fontSize: 16
+  - id: syncRuns
+    label: |-
+      동기화 기록 · syncRuns
+      id (기본)
+      sourceCount · status
+    role: neutral
+    x: -190
+    y: 780
+    width: 280
+    fontSize: 16
+  - id: automationErrors
+    label: |-
+      자동화 오류 · automationErrors
+      id (기본)
+      stage · notified
+    role: neutral
+    x: 190
+    y: 780
+    width: 280
+    fontSize: 16
+edges:
+  - from: customers
+    to: buildings
+  - from: customers
+    to: quotes
+  - from: buildings
+    to: quotes
+  - from: templateVersions
+    to: quotes
+  - from: quotes
+    to: contracts
+  - from: contracts
+    to: inspections
+  - from: staff
+    to: inspections
+  - from: inspections
+    to: inspectionResults
+  - from: contracts
+    to: invoices
+  - from: inspectionResults
+    to: invoices
+    curve: 0.2
+zones:
+  - id: copies
+    label: 허브 사본(읽기 전용, 동기화만 씀)
+    nodes:
+      - customers
+      - buildings
+      - staff
+    role: info
+  - id: work
+    label: "업무: 견적 → 계약 → 점검 → 청구"
+    nodes:
+      - quotes
+      - contracts
+      - pricing
+      - templateVersions
+      - inspections
+      - inspectionResults
+      - invoices
+    role: secondary
+  - id: ops
+    label: 운영 기록
+    nodes:
+      - syncRuns
+      - automationErrors
+    role: neutral

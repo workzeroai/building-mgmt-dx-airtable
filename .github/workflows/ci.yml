@@ -26,8 +26,14 @@ jobs:
       - name: 린트 (ESLint)
         run: npm run lint
 
+      - name: 에어테이블 스키마 파생 산출물 최신 여부 (문서·시드·스크립트·n8n)
+        run: npm run airtable:check
+
       - name: 테스트 + 커버리지 (node:test, c8 80% 기준)
         run: npm run coverage
+
+      - name: 에어테이블 Base 생성 요청 (dry-run만)
+        run: node airtable/create-base.mjs --dry-run | grep -E "^(■|합계)"
 
       # LibreOffice 설치가 실패해도 데모는 xlsx만 만들고 통과한다
       - name: LibreOffice·한글 글꼴 설치 (PDF 시연용)

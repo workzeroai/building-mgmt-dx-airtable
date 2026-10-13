@@ -1,0 +1,92 @@
+[
+  {
+    "id": "stf_0001",
+    "name": "소방 점검원 A",
+    "divisionId": "fire",
+    "role": "점검원",
+    "email": "staff+stf0001@example.com",
+    "active": true,
+    "createdAt": "2026-10-01T00:00:00.000Z"
+  },
+  {
+    "id": "stf_0002",
+    "name": "소방 점검원 B",
+    "divisionId": "fire",
+    "role": "점검원",
+    "email": "staff+stf0002@example.com",
+    "active": true,
+    "createdAt": "2026-10-01T00:00:00.000Z"
+  },
+  {
+    "id": "stf_0003",
+    "name": "소방 영업 A",
+    "divisionId": "fire",
+    "role": "영업",
+    "email": "staff+stf0003@example.com",
+    "active": true,
+    "createdAt": "2026-10-01T00:00:00.000Z"
+  },
+  {
+    "id": "stf_0004",
+    "name": "통신 점검원 A",
+    "divisionId": "telecom",
+    "role": "점검원",
+    "email": "staff+stf0004@example.com",
+    "active": true,
+    "createdAt": "2026-10-01T00:00:00.000Z"
+  },
+  {
+    "id": "stf_0005",
+    "name": "통신 점검원 B",
+    "divisionId": "telecom",
+    "role": "점검원",
+    "email": "staff+stf0005@example.com",
+    "active": true,
+    "createdAt": "2026-10-01T00:00:00.000Z"
+  },
+  {
+    "id": "stf_0006",
+    "name": "통신 영업 A",
+    "divisionId": "telecom",
+    "role": "영업",
+    "email": "staff+stf0006@example.com",
+    "active": true,
+    "createdAt": "2026-10-01T00:00:00.000Z"
+  },
+  {
+    "id": "stf_0007",
+    "name": "기계 점검원 A",
+    "divisionId": "mechanical",
+    "role": "점검원",
+    "email": "staff+stf0007@example.com",
+    "active": true,
+    "createdAt": "2026-10-01T00:00:00.000Z"
+  },
+  {
+    "id": "stf_0008",
+    "name": "기계 점검원 B",
+    "divisionId": "mechanical",
+    "role": "점검원",
+    "email": "staff+stf0008@example.com",
+    "active": true,
+    "createdAt": "2026-10-01T00:00:00.000Z"
+  },
+  {
+    "id": "stf_0009",
+    "name": "기계 영업 A",
+    "divisionId": "mechanical",
+    "role": "영업",
+    "email": "staff+stf0009@example.com",
+    "active": true,
+    "createdAt": "2026-10-01T00:00:00.000Z"
+  },
+  {
+    "id": "stf_0010",
+    "name": "운영 관리자",
+    "divisionId": null,
+    "role": "관리자",
+    "email": "staff+stf0010@example.com",
+    "active": true,
+    "createdAt": "2026-10-01T00:00:00.000Z"
+  }
+]

@@ -6,7 +6,7 @@
   "type": "object",
   "x-table": "customers",
   "x-idPrefix": "cus",
-  "x-airtable": { "table": "고객", "primaryField": "id" },
+  "x-airtable": { "table": "고객", "base": "hub", "primaryField": "id" },
   "x-links": {},
   "required": ["id", "name", "type", "createdAt"],
   "additionalProperties": false,

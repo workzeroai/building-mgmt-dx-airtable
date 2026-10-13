@@ -1,0 +1,2316 @@
+---
+excalidraw-plugin: parsed
+tags: [excalidraw]
+---
+==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
+# Drawing
+```json
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "https://github.com/zsviczian/obsidian-excalidraw-plugin/releases/tag/2.0.0",
+  "elements": [
+    {
+      "id": "zone-hub",
+      "type": "rectangle",
+      "x": 0,
+      "y": 137.0,
+      "width": 660,
+      "height": 732.0,
+      "angle": 0,
+      "strokeColor": "#3730a3",
+      "backgroundColor": "#f8fafc",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "dashed",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": {
+        "type": 3
+      },
+      "seed": 639235475,
+      "version": 1,
+      "versionNonce": 356135306,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1760000000000,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "zone-hub-label",
+      "type": "text",
+      "x": 16,
+      "y": 147.0,
+      "width": 196.0,
+      "height": 20.0,
+      "angle": 0,
+      "strokeColor": "#3730a3",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 1527986440,
+      "version": 1,
+      "versionNonce": 844736927,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1760000000000,
+      "link": null,
+      "locked": false,
+      "text": "GW 허브 — 원본(공통 엔티티)",
+      "fontSize": 16,
+      "fontFamily": 2,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "baseline": 13.12,
+      "containerId": null,
+      "originalText": "GW 허브 — 원본(공통 엔티티)",
+      "lineHeight": 1.25
+    },
+    {
+      "id": "zone-zone-fire",
+      "type": "rectangle",
+      "x": 1180,
+      "y": 97.0,
+      "width": 1080,
+      "height": 212.0,
+      "angle": 0,
+      "strokeColor": "#0f766e",
+      "backgroundColor": "#f8fafc",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "dashed",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": {
+        "type": 3
+      },
+      "seed": 522309454,
+      "version": 1,
+      "versionNonce": 1764894730,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1760000000000,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "zone-zone-fire-label",
+      "type": "text",
+      "x": 1196,
+      "y": 107.0,
+      "width": 235.0,
+      "height": 20.0,
+      "angle": 0,
+      "strokeColor": "#0f766e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 217325980,
+      "version": 1,
+      "versionNonce": 1172738755,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1760000000000,
+      "link": null,
+      "locked": false,
+      "text": "GW 소방시설 점검 — 사업부 Base 1",
+      "fontSize": 16,
+      "fontFamily": 2,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "baseline": 13.12,
+      "containerId": null,
+      "originalText": "GW 소방시설 점검 — 사업부 Base 1",
+      "lineHeight": 1.25
+    },
+    {
+      "id": "zone-zone-telecom",
+      "type": "rectangle",
+      "x": 1180,
+      "y": 397.0,
+      "width": 1080,
+      "height": 212.0,
+      "angle": 0,
+      "strokeColor": "#0f766e",
+      "backgroundColor": "#f8fafc",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "dashed",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": {
+        "type": 3
+      },
+      "seed": 1840090462,
+      "version": 1,
+      "versionNonce": 1517405137,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1760000000000,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "zone-zone-telecom-label",
+      "type": "text",
+      "x": 1196,
+      "y": 407.0,
+      "width": 237.0,
+      "height": 20.0,
+      "angle": 0,
+      "strokeColor": "#0f766e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 981608675,
+      "version": 1,
+      "versionNonce": 829374859,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1760000000000,
+      "link": null,
+      "locked": false,
+      "text": "GW 통신설비 점검 — 사업부 Base 2",
+      "fontSize": 16,
+      "fontFamily": 2,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "baseline": 13.12,
+      "containerId": null,
+      "originalText": "GW 통신설비 점검 — 사업부 Base 2",
+      "lineHeight": 1.25
+    },
+    {
+      "id": "zone-zone-mechanical",
+      "type": "rectangle",
+      "x": 1180,
+      "y": 697.0,
+      "width": 1080,
+      "height": 212.0,
+      "angle": 0,
+      "strokeColor": "#0f766e",
+      "backgroundColor": "#f8fafc",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "dashed",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": {
+        "type": 3
+      },
+      "seed": 1057492672,
+      "version": 1,
+      "versionNonce": 1228442860,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1760000000000,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "zone-zone-mechanical-label",
+      "type": "text",
+      "x": 1196,
+      "y": 707.0,
+      "width": 265.0,
+      "height": 20.0,
+      "angle": 0,
+      "strokeColor": "#0f766e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 228946415,
+      "version": 1,
+      "versionNonce": 71771378,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1760000000000,
+      "link": null,
+      "locked": false,
+      "text": "GW 기계설비 유지관리 — 사업부 Base 3",
+      "fontSize": 16,
+      "fontFamily": 2,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "baseline": 13.12,
+      "containerId": null,
+      "originalText": "GW 기계설비 유지관리 — 사업부 Base 3",
+      "lineHeight": 1.25
+    },
+    {
+      "id": "node-hub-customers",
+      "type": "rectangle",
+      "x": 370,
+      "y": 199.0,
+      "width": 260,
+      "height": 100,
+      "angle": 0,
+      "strokeColor": "#3730a3",
+      "backgroundColor": "#e0e7ff",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": {
+        "type": 3
+      },
+      "seed": 1929736400,
+      "version": 1,
+      "versionNonce": 168425532,
+      "isDeleted": false,
+      "boundElements": [
+        {
+          "type": "text",
+          "id": "text-hub-customers"
+        },
+        {
+          "type": "arrow",
+          "id": "edge-hub-customers-hub-buildings-0"
+        },
+        {
+          "type": "arrow",
+          "id": "edge-hub-customers-sync-2"
+        }
+      ],
+      "updated": 1760000000000,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "node-hub-buildings",
+      "type": "rectangle",
+      "x": 370,
+      "y": 459.0,
+      "width": 260,
+      "height": 120,
+      "angle": 0,
+      "strokeColor": "#3730a3",
+      "backgroundColor": "#e0e7ff",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": {
+        "type": 3
+      },
+      "seed": 696294427,
+      "version": 1,
+      "versionNonce": 1213622620,
+      "isDeleted": false,
+      "boundElements": [
+        {
+          "type": "text",
+          "id": "text-hub-buildings"
+        },
+        {
+          "type": "arrow",
+          "id": "edge-hub-customers-hub-buildings-0"
+        },
+        {
+          "type": "arrow",
+          "id": "edge-hub-buildings-sync-3"
+        }
+      ],
+      "updated": 1760000000000,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "node-hub-staff",
+      "type": "rectangle",
+      "x": 370,
+      "y": 719.0,
+      "width": 260,
+      "height": 120,
+      "angle": 0,
+      "strokeColor": "#3730a3",
+      "backgroundColor": "#e0e7ff",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": {
+        "type": 3
+      },
+      "seed": 1436419324,
+      "version": 1,
+      "versionNonce": 585368545,
+      "isDeleted": false,
+      "boundElements": [
+        {
+          "type": "text",
+          "id": "text-hub-staff"
+        },
+        {
+          "type": "arrow",
+          "id": "edge-hub-divisions-hub-staff-1"
+        },
+        {
+          "type": "arrow",
+          "id": "edge-hub-staff-sync-4"
+        }
+      ],
+      "updated": 1760000000000,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "node-hub-divisions",
+      "type": "rectangle",
+      "x": 30,
+      "y": 719.0,
+      "width": 260,
+      "height": 100,
+      "angle": 0,
+      "strokeColor": "#3730a3",
+      "backgroundColor": "#e0e7ff",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": {
+        "type": 3
+      },
+      "seed": 249770513,
+      "version": 1,
+      "versionNonce": 1333318374,
+      "isDeleted": false,
+      "boundElements": [
+        {
+          "type": "text",
+          "id": "text-hub-divisions"
+        },
+        {
+          "type": "arrow",
+          "id": "edge-hub-divisions-hub-staff-1"
+        }
+      ],
+      "updated": 1760000000000,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "node-sync",
+      "type": "rectangle",
+      "x": 750,
+      "y": 439.0,
+      "width": 280,
+      "height": 120,
+      "angle": 0,
+      "strokeColor": "#0369a1",
+      "backgroundColor": "#e0f2fe",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": {
+        "type": 3
+      },
+      "seed": 1832629115,
+      "version": 1,
+      "versionNonce": 1741445498,
+      "isDeleted": false,
+      "boundElements": [
+        {
+          "type": "text",
+          "id": "text-sync"
+        },
+        {
+          "type": "arrow",
+          "id": "edge-hub-customers-sync-2"
+        },
+        {
+          "type": "arrow",
+          "id": "edge-hub-buildings-sync-3"
+        },
+        {
+          "type": "arrow",
+          "id": "edge-hub-staff-sync-4"
+        },
+        {
+          "type": "arrow",
+          "id": "edge-sync-fire-copy-5"
+        },
+        {
+          "type": "arrow",
+          "id": "edge-sync-telecom-copy-8"
+        },
+        {
+          "type": "arrow",
+          "id": "edge-sync-mechanical-copy-11"
+        }
+      ],
+      "updated": 1760000000000,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "node-fire-copy",
+      "type": "rectangle",
+      "x": 1210,
+      "y": 159.0,
+      "width": 260,
+      "height": 100,
+      "angle": 0,
+      "strokeColor": "#0369a1",
+      "backgroundColor": "#e0f2fe",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": {
+        "type": 3
+      },
+      "seed": 536898388,
+      "version": 1,
+      "versionNonce": 753807061,
+      "isDeleted": false,
+      "boundElements": [
+        {
+          "type": "text",
+          "id": "text-fire-copy"
+        },
+        {
+          "type": "arrow",
+          "id": "edge-sync-fire-copy-5"
+        },
+        {
+          "type": "arrow",
+          "id": "edge-fire-copy-fire-work-6"
+        }
+      ],
+      "updated": 1760000000000,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "node-fire-work",
+      "type": "rectangle",
+      "x": 1570,
+      "y": 159.0,
+      "width": 300,
+      "height": 120,
+      "angle": 0,
+      "strokeColor": "#0f766e",
+      "backgroundColor": "#ccfbf1",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": {
+        "type": 3
+      },
+      "seed": 809180486,
+      "version": 1,
+      "versionNonce": 1915986498,
+      "isDeleted": false,
+      "boundElements": [
+        {
+          "type": "text",
+          "id": "text-fire-work"
+        },
+        {
+          "type": "arrow",
+          "id": "edge-fire-copy-fire-work-6"
+        },
+        {
+          "type": "arrow",
+          "id": "edge-fire-work-fire-ext-7"
+        }
+      ],
+      "updated": 1760000000000,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "node-fire-ext",
+      "type": "rectangle",
+      "x": 1970,
+      "y": 159.0,
+      "width": 260,
+      "height": 100,
+      "angle": 0,
+      "strokeColor": "#6d28d9",
+      "backgroundColor": "#ede9fe",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": {
+        "type": 3
+      },
+      "seed": 1397473395,
+      "version": 1,
+      "versionNonce": 302902021,
+      "isDeleted": false,
+      "boundElements": [
+        {
+          "type": "text",
+          "id": "text-fire-ext"
+        },
+        {
+          "type": "arrow",
+          "id": "edge-fire-work-fire-ext-7"
+        }
+      ],
+      "updated": 1760000000000,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "node-telecom-copy",
+      "type": "rectangle",
+      "x": 1210,
+      "y": 459.0,
+      "width": 260,
+      "height": 100,
+      "angle": 0,
+      "strokeColor": "#0369a1",
+      "backgroundColor": "#e0f2fe",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": {
+        "type": 3
+      },
+      "seed": 149153974,
+      "version": 1,
+      "versionNonce": 1264875561,
+      "isDeleted": false,
+      "boundElements": [
+        {
+          "type": "text",
+          "id": "text-telecom-copy"
+        },
+        {
+          "type": "arrow",
+          "id": "edge-sync-telecom-copy-8"
+        },
+        {
+          "type": "arrow",
+          "id": "edge-telecom-copy-telecom-work-9"
+        }
+      ],
+      "updated": 1760000000000,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "node-telecom-work",
+      "type": "rectangle",
+      "x": 1570,
+      "y": 459.0,
+      "width": 300,
+      "height": 120,
+      "angle": 0,
+      "strokeColor": "#0f766e",
+      "backgroundColor": "#ccfbf1",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": {
+        "type": 3
+      },
+      "seed": 95871584,
+      "version": 1,
+      "versionNonce": 524498153,
+      "isDeleted": false,
+      "boundElements": [
+        {
+          "type": "text",
+          "id": "text-telecom-work"
+        },
+        {
+          "type": "arrow",
+          "id": "edge-telecom-copy-telecom-work-9"
+        },
+        {
+          "type": "arrow",
+          "id": "edge-telecom-work-telecom-ext-10"
+        }
+      ],
+      "updated": 1760000000000,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "node-telecom-ext",
+      "type": "rectangle",
+      "x": 1970,
+      "y": 459.0,
+      "width": 260,
+      "height": 120,
+      "angle": 0,
+      "strokeColor": "#6d28d9",
+      "backgroundColor": "#ede9fe",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": {
+        "type": 3
+      },
+      "seed": 1846141633,
+      "version": 1,
+      "versionNonce": 1785021160,
+      "isDeleted": false,
+      "boundElements": [
+        {
+          "type": "text",
+          "id": "text-telecom-ext"
+        },
+        {
+          "type": "arrow",
+          "id": "edge-telecom-work-telecom-ext-10"
+        }
+      ],
+      "updated": 1760000000000,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "node-mechanical-copy",
+      "type": "rectangle",
+      "x": 1210,
+      "y": 759.0,
+      "width": 260,
+      "height": 100,
+      "angle": 0,
+      "strokeColor": "#0369a1",
+      "backgroundColor": "#e0f2fe",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": {
+        "type": 3
+      },
+      "seed": 783095729,
+      "version": 1,
+      "versionNonce": 480035248,
+      "isDeleted": false,
+      "boundElements": [
+        {
+          "type": "text",
+          "id": "text-mechanical-copy"
+        },
+        {
+          "type": "arrow",
+          "id": "edge-sync-mechanical-copy-11"
+        },
+        {
+          "type": "arrow",
+          "id": "edge-mechanical-copy-mechanical-work-12"
+        }
+      ],
+      "updated": 1760000000000,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "node-mechanical-work",
+      "type": "rectangle",
+      "x": 1570,
+      "y": 759.0,
+      "width": 300,
+      "height": 120,
+      "angle": 0,
+      "strokeColor": "#0f766e",
+      "backgroundColor": "#ccfbf1",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": {
+        "type": 3
+      },
+      "seed": 932282646,
+      "version": 1,
+      "versionNonce": 1578987411,
+      "isDeleted": false,
+      "boundElements": [
+        {
+          "type": "text",
+          "id": "text-mechanical-work"
+        },
+        {
+          "type": "arrow",
+          "id": "edge-mechanical-copy-mechanical-work-12"
+        },
+        {
+          "type": "arrow",
+          "id": "edge-mechanical-work-mechanical-ext-13"
+        }
+      ],
+      "updated": 1760000000000,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "node-mechanical-ext",
+      "type": "rectangle",
+      "x": 1970,
+      "y": 759.0,
+      "width": 260,
+      "height": 120,
+      "angle": 0,
+      "strokeColor": "#6d28d9",
+      "backgroundColor": "#ede9fe",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": {
+        "type": 3
+      },
+      "seed": 282057419,
+      "version": 1,
+      "versionNonce": 80134305,
+      "isDeleted": false,
+      "boundElements": [
+        {
+          "type": "text",
+          "id": "text-mechanical-ext"
+        },
+        {
+          "type": "arrow",
+          "id": "edge-mechanical-work-mechanical-ext-13"
+        }
+      ],
+      "updated": 1760000000000,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "edge-hub-customers-hub-buildings-0",
+      "type": "arrow",
+      "x": 500.0,
+      "y": 307.0,
+      "width": 0.0,
+      "height": 144.0,
+      "angle": 0,
+      "strokeColor": "#334155",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 903826854,
+      "version": 1,
+      "versionNonce": 756404615,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1760000000000,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          144.0
+        ]
+      ],
+      "lastCommittedPoint": null,
+      "startBinding": {
+        "elementId": "node-hub-customers",
+        "focus": 0,
+        "gap": 8
+      },
+      "endBinding": {
+        "elementId": "node-hub-buildings",
+        "focus": 0,
+        "gap": 8
+      },
+      "startArrowhead": null,
+      "endArrowhead": "arrow"
+    },
+    {
+      "id": "edge-hub-divisions-hub-staff-1",
+      "type": "arrow",
+      "x": 298.0,
+      "y": 774.0,
+      "width": 64.0,
+      "height": 0.0,
+      "angle": 0,
+      "strokeColor": "#334155",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 691941038,
+      "version": 1,
+      "versionNonce": 1197077616,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1760000000000,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          64.0,
+          0.0
+        ]
+      ],
+      "lastCommittedPoint": null,
+      "startBinding": {
+        "elementId": "node-hub-divisions",
+        "focus": 0,
+        "gap": 8
+      },
+      "endBinding": {
+        "elementId": "node-hub-staff",
+        "focus": 0,
+        "gap": 8
+      },
+      "startArrowhead": null,
+      "endArrowhead": "arrow"
+    },
+    {
+      "id": "edge-hub-customers-sync-2",
+      "type": "arrow",
+      "x": 638.0,
+      "y": 249.0,
+      "width": 252.0,
+      "height": 182.0,
+      "angle": 0,
+      "strokeColor": "#334155",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "dashed",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": {
+        "type": 2
+      },
+      "seed": 678776736,
+      "version": 1,
+      "versionNonce": 1283027998,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1760000000000,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          188.0,
+          0.0
+        ],
+        [
+          252.0,
+          64.0
+        ],
+        [
+          252.0,
+          182.0
+        ]
+      ],
+      "lastCommittedPoint": null,
+      "startBinding": {
+        "elementId": "node-hub-customers",
+        "focus": 0,
+        "gap": 8
+      },
+      "endBinding": {
+        "elementId": "node-sync",
+        "focus": 0,
+        "gap": 8
+      },
+      "startArrowhead": null,
+      "endArrowhead": "arrow"
+    },
+    {
+      "id": "edge-hub-buildings-sync-3",
+      "type": "arrow",
+      "x": 638.0,
+      "y": 509.0,
+      "width": 104.0,
+      "height": 0.0,
+      "angle": 0,
+      "strokeColor": "#334155",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "dashed",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 1744568399,
+      "version": 1,
+      "versionNonce": 186009868,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1760000000000,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          104.0,
+          0.0
+        ]
+      ],
+      "lastCommittedPoint": null,
+      "startBinding": {
+        "elementId": "node-hub-buildings",
+        "focus": 0,
+        "gap": 8
+      },
+      "endBinding": {
+        "elementId": "node-sync",
+        "focus": 0,
+        "gap": 8
+      },
+      "startArrowhead": null,
+      "endArrowhead": "arrow"
+    },
+    {
+      "id": "edge-hub-staff-sync-4",
+      "type": "arrow",
+      "x": 638.0,
+      "y": 779.0,
+      "width": 252.0,
+      "height": 212.0,
+      "angle": 0,
+      "strokeColor": "#334155",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "dashed",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": {
+        "type": 2
+      },
+      "seed": 463646082,
+      "version": 1,
+      "versionNonce": 1685333568,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1760000000000,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          188.0,
+          0.0
+        ],
+        [
+          252.0,
+          -64.0
+        ],
+        [
+          252.0,
+          -212.0
+        ]
+      ],
+      "lastCommittedPoint": null,
+      "startBinding": {
+        "elementId": "node-hub-staff",
+        "focus": 0,
+        "gap": 8
+      },
+      "endBinding": {
+        "elementId": "node-sync",
+        "focus": 0,
+        "gap": 8
+      },
+      "startArrowhead": null,
+      "endArrowhead": "arrow"
+    },
+    {
+      "id": "edge-sync-fire-copy-5",
+      "type": "arrow",
+      "x": 929.61,
+      "y": 432.12,
+      "width": 272.44,
+      "height": 208.05,
+      "angle": 0,
+      "strokeColor": "#334155",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": {
+        "type": 2
+      },
+      "seed": 1023548037,
+      "version": 1,
+      "versionNonce": 1374988909,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1760000000000,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          112.89,
+          -190.62
+        ],
+        [
+          272.44,
+          -208.05
+        ]
+      ],
+      "lastCommittedPoint": null,
+      "startBinding": {
+        "elementId": "node-sync",
+        "focus": 0,
+        "gap": 8
+      },
+      "endBinding": {
+        "elementId": "node-fire-copy",
+        "focus": 0,
+        "gap": 8
+      },
+      "startArrowhead": null,
+      "endArrowhead": "arrow"
+    },
+    {
+      "id": "edge-fire-copy-fire-work-6",
+      "type": "arrow",
+      "x": 1478.0,
+      "y": 214.0,
+      "width": 84.0,
+      "height": 0.0,
+      "angle": 0,
+      "strokeColor": "#334155",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [
+        "grp-edge-fire-copy-fire-work-6"
+      ],
+      "frameId": null,
+      "roundness": null,
+      "seed": 1461804496,
+      "version": 1,
+      "versionNonce": 53695688,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1760000000000,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          84.0,
+          0.0
+        ]
+      ],
+      "lastCommittedPoint": null,
+      "startBinding": {
+        "elementId": "node-fire-copy",
+        "focus": 0,
+        "gap": 8
+      },
+      "endBinding": {
+        "elementId": "node-fire-work",
+        "focus": 0,
+        "gap": 8
+      },
+      "startArrowhead": null,
+      "endArrowhead": "arrow"
+    },
+    {
+      "id": "label-edge-fire-copy-fire-work-6",
+      "type": "text",
+      "x": 1506.0,
+      "y": 186.0,
+      "width": 28.0,
+      "height": 20.0,
+      "angle": 0,
+      "strokeColor": "#334155",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "groupIds": [
+        "grp-edge-fire-copy-fire-work-6"
+      ],
+      "frameId": null,
+      "roundness": null,
+      "seed": 1583069970,
+      "version": 1,
+      "versionNonce": 1222386893,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1760000000000,
+      "link": null,
+      "locked": false,
+      "text": "연결",
+      "fontSize": 16,
+      "fontFamily": 2,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "baseline": 13.12,
+      "containerId": null,
+      "originalText": "연결",
+      "lineHeight": 1.25
+    },
+    {
+      "id": "edge-fire-work-fire-ext-7",
+      "type": "arrow",
+      "x": 1878.0,
+      "y": 214.0,
+      "width": 84.0,
+      "height": 0.0,
+      "angle": 0,
+      "strokeColor": "#334155",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "dashed",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 1848667594,
+      "version": 1,
+      "versionNonce": 1920105498,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1760000000000,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          84.0,
+          0.0
+        ]
+      ],
+      "lastCommittedPoint": null,
+      "startBinding": {
+        "elementId": "node-fire-work",
+        "focus": 0,
+        "gap": 8
+      },
+      "endBinding": {
+        "elementId": "node-fire-ext",
+        "focus": 0,
+        "gap": 8
+      },
+      "startArrowhead": null,
+      "endArrowhead": "arrow"
+    },
+    {
+      "id": "edge-sync-telecom-copy-8",
+      "type": "arrow",
+      "x": 1038.0,
+      "y": 504.0,
+      "width": 164.0,
+      "height": 0.0,
+      "angle": 0,
+      "strokeColor": "#334155",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [
+        "grp-edge-sync-telecom-copy-8"
+      ],
+      "frameId": null,
+      "roundness": null,
+      "seed": 1574503879,
+      "version": 1,
+      "versionNonce": 1745553375,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1760000000000,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          164.0,
+          0.0
+        ]
+      ],
+      "lastCommittedPoint": null,
+      "startBinding": {
+        "elementId": "node-sync",
+        "focus": 0,
+        "gap": 8
+      },
+      "endBinding": {
+        "elementId": "node-telecom-copy",
+        "focus": 0,
+        "gap": 8
+      },
+      "startArrowhead": null,
+      "endArrowhead": "arrow"
+    },
+    {
+      "id": "label-edge-sync-telecom-copy-8",
+      "type": "text",
+      "x": 1106.0,
+      "y": 476.0,
+      "width": 28.0,
+      "height": 20.0,
+      "angle": 0,
+      "strokeColor": "#334155",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "groupIds": [
+        "grp-edge-sync-telecom-copy-8"
+      ],
+      "frameId": null,
+      "roundness": null,
+      "seed": 78977068,
+      "version": 1,
+      "versionNonce": 939969653,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1760000000000,
+      "link": null,
+      "locked": false,
+      "text": "사본",
+      "fontSize": 16,
+      "fontFamily": 2,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "baseline": 13.12,
+      "containerId": null,
+      "originalText": "사본",
+      "lineHeight": 1.25
+    },
+    {
+      "id": "edge-telecom-copy-telecom-work-9",
+      "type": "arrow",
+      "x": 1478.0,
+      "y": 514.0,
+      "width": 84.0,
+      "height": 0.0,
+      "angle": 0,
+      "strokeColor": "#334155",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 1824868794,
+      "version": 1,
+      "versionNonce": 1903872446,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1760000000000,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          84.0,
+          0.0
+        ]
+      ],
+      "lastCommittedPoint": null,
+      "startBinding": {
+        "elementId": "node-telecom-copy",
+        "focus": 0,
+        "gap": 8
+      },
+      "endBinding": {
+        "elementId": "node-telecom-work",
+        "focus": 0,
+        "gap": 8
+      },
+      "startArrowhead": null,
+      "endArrowhead": "arrow"
+    },
+    {
+      "id": "edge-telecom-work-telecom-ext-10",
+      "type": "arrow",
+      "x": 1878.0,
+      "y": 519.0,
+      "width": 84.0,
+      "height": 0.0,
+      "angle": 0,
+      "strokeColor": "#334155",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "dashed",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 1141879688,
+      "version": 1,
+      "versionNonce": 1538556813,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1760000000000,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          84.0,
+          0.0
+        ]
+      ],
+      "lastCommittedPoint": null,
+      "startBinding": {
+        "elementId": "node-telecom-work",
+        "focus": 0,
+        "gap": 8
+      },
+      "endBinding": {
+        "elementId": "node-telecom-ext",
+        "focus": 0,
+        "gap": 8
+      },
+      "startArrowhead": null,
+      "endArrowhead": "arrow"
+    },
+    {
+      "id": "edge-sync-mechanical-copy-11",
+      "type": "arrow",
+      "x": 926.95,
+      "y": 566.01,
+      "width": 275.13,
+      "height": 223.62,
+      "angle": 0,
+      "strokeColor": "#334155",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": {
+        "type": 2
+      },
+      "seed": 223551474,
+      "version": 1,
+      "versionNonce": 196713468,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1760000000000,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          110.55,
+          200.49
+        ],
+        [
+          275.13,
+          223.62
+        ]
+      ],
+      "lastCommittedPoint": null,
+      "startBinding": {
+        "elementId": "node-sync",
+        "focus": 0,
+        "gap": 8
+      },
+      "endBinding": {
+        "elementId": "node-mechanical-copy",
+        "focus": 0,
+        "gap": 8
+      },
+      "startArrowhead": null,
+      "endArrowhead": "arrow"
+    },
+    {
+      "id": "edge-mechanical-copy-mechanical-work-12",
+      "type": "arrow",
+      "x": 1478.0,
+      "y": 814.0,
+      "width": 84.0,
+      "height": 0.0,
+      "angle": 0,
+      "strokeColor": "#334155",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 560776794,
+      "version": 1,
+      "versionNonce": 231209429,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1760000000000,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          84.0,
+          0.0
+        ]
+      ],
+      "lastCommittedPoint": null,
+      "startBinding": {
+        "elementId": "node-mechanical-copy",
+        "focus": 0,
+        "gap": 8
+      },
+      "endBinding": {
+        "elementId": "node-mechanical-work",
+        "focus": 0,
+        "gap": 8
+      },
+      "startArrowhead": null,
+      "endArrowhead": "arrow"
+    },
+    {
+      "id": "edge-mechanical-work-mechanical-ext-13",
+      "type": "arrow",
+      "x": 1878.0,
+      "y": 819.0,
+      "width": 84.0,
+      "height": 0.0,
+      "angle": 0,
+      "strokeColor": "#334155",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "dashed",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 1634441779,
+      "version": 1,
+      "versionNonce": 207994242,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1760000000000,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          84.0,
+          0.0
+        ]
+      ],
+      "lastCommittedPoint": null,
+      "startBinding": {
+        "elementId": "node-mechanical-work",
+        "focus": 0,
+        "gap": 8
+      },
+      "endBinding": {
+        "elementId": "node-mechanical-ext",
+        "focus": 0,
+        "gap": 8
+      },
+      "startArrowhead": null,
+      "endArrowhead": "arrow"
+    },
+    {
+      "id": "text-hub-customers",
+      "type": "text",
+      "x": 436.0,
+      "y": 219.0,
+      "width": 128.0,
+      "height": 60.0,
+      "angle": 0,
+      "strokeColor": "#0f172a",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 1325005192,
+      "version": 1,
+      "versionNonce": 1170884182,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1760000000000,
+      "link": null,
+      "locked": false,
+      "text": "고객 · customers\nid (기본)\nbusinessNo · type",
+      "fontSize": 16,
+      "fontFamily": 2,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "baseline": 53.12,
+      "containerId": "node-hub-customers",
+      "originalText": "고객 · customers\nid (기본)\nbusinessNo · type",
+      "lineHeight": 1.25
+    },
+    {
+      "id": "text-hub-buildings",
+      "type": "text",
+      "x": 416.5,
+      "y": 479.0,
+      "width": 167.0,
+      "height": 80.0,
+      "angle": 0,
+      "strokeColor": "#0f172a",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 143419344,
+      "version": 1,
+      "versionNonce": 1591569354,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1760000000000,
+      "link": null,
+      "locked": false,
+      "text": "건물 · buildings\nid (기본)\nroadAddress · totalArea\n연결 customer",
+      "fontSize": 16,
+      "fontFamily": 2,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "baseline": 73.12,
+      "containerId": "node-hub-buildings",
+      "originalText": "건물 · buildings\nid (기본)\nroadAddress · totalArea\n연결 customer",
+      "lineHeight": 1.25
+    },
+    {
+      "id": "text-hub-staff",
+      "type": "text",
+      "x": 449.0,
+      "y": 739.0,
+      "width": 102.0,
+      "height": 80.0,
+      "angle": 0,
+      "strokeColor": "#0f172a",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 424499029,
+      "version": 1,
+      "versionNonce": 347964651,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1760000000000,
+      "link": null,
+      "locked": false,
+      "text": "담당자 · staff\nid (기본)\nrole · divisionId\n연결 division",
+      "fontSize": 16,
+      "fontFamily": 2,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "baseline": 73.12,
+      "containerId": "node-hub-staff",
+      "originalText": "담당자 · staff\nid (기본)\nrole · divisionId\n연결 division",
+      "lineHeight": 1.25
+    },
+    {
+      "id": "text-hub-divisions",
+      "type": "text",
+      "x": 103.5,
+      "y": 739.0,
+      "width": 113.0,
+      "height": 60.0,
+      "angle": 0,
+      "strokeColor": "#0f172a",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 863400179,
+      "version": 1,
+      "versionNonce": 1920719633,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1760000000000,
+      "link": null,
+      "locked": false,
+      "text": "사업부 · divisions\nid (기본)\ncode · name",
+      "fontSize": 16,
+      "fontFamily": 2,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "baseline": 53.12,
+      "containerId": "node-hub-divisions",
+      "originalText": "사업부 · divisions\nid (기본)\ncode · name",
+      "lineHeight": 1.25
+    },
+    {
+      "id": "text-sync",
+      "type": "text",
+      "x": 814.0,
+      "y": 459.0,
+      "width": 152.0,
+      "height": 80.0,
+      "angle": 0,
+      "strokeColor": "#0f172a",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 1799057985,
+      "version": 1,
+      "versionNonce": 1833194669,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1760000000000,
+      "link": null,
+      "locked": false,
+      "text": "동기화 안전장치\n허브 → 사업부 단방향\n급감 30% 초과 시 중단\n실패 건은 건너뛰고 기록",
+      "fontSize": 16,
+      "fontFamily": 2,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "baseline": 73.12,
+      "containerId": "node-sync",
+      "originalText": "동기화 안전장치\n허브 → 사업부 단방향\n급감 30% 초과 시 중단\n실패 건은 건너뛰고 기록",
+      "lineHeight": 1.25
+    },
+    {
+      "id": "text-fire-copy",
+      "type": "text",
+      "x": 1279.0,
+      "y": 179.0,
+      "width": 122.0,
+      "height": 60.0,
+      "angle": 0,
+      "strokeColor": "#0f172a",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 1190439580,
+      "version": 1,
+      "versionNonce": 616013106,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1760000000000,
+      "link": null,
+      "locked": false,
+      "text": "허브 사본 3\n고객 · 건물 · 담당자\n읽기 전용",
+      "fontSize": 16,
+      "fontFamily": 2,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "baseline": 53.12,
+      "containerId": "node-fire-copy",
+      "originalText": "허브 사본 3\n고객 · 건물 · 담당자\n읽기 전용",
+      "lineHeight": 1.25
+    },
+    {
+      "id": "text-fire-work",
+      "type": "text",
+      "x": 1639.0,
+      "y": 179.0,
+      "width": 162.0,
+      "height": 80.0,
+      "angle": 0,
+      "strokeColor": "#0f172a",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 1209033332,
+      "version": 1,
+      "versionNonce": 29932987,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1760000000000,
+      "link": null,
+      "locked": false,
+      "text": "업무 7\n견적 → 계약 → 점검 일정\n→ 점검 결과 → 청구\n단가 · 양식 버전",
+      "fontSize": 16,
+      "fontFamily": 2,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "baseline": 73.12,
+      "containerId": "node-fire-work",
+      "originalText": "업무 7\n견적 → 계약 → 점검 일정\n→ 점검 결과 → 청구\n단가 · 양식 버전",
+      "lineHeight": 1.25
+    },
+    {
+      "id": "text-fire-ext",
+      "type": "text",
+      "x": 1999.5,
+      "y": 179.0,
+      "width": 201.0,
+      "height": 60.0,
+      "angle": 0,
+      "strokeColor": "#0f172a",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 1637652328,
+      "version": 1,
+      "versionNonce": 1219016198,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1760000000000,
+      "link": null,
+      "locked": false,
+      "text": "확장 필드 3\n점검 등급 · extinguisherCount\ndetectorFaults",
+      "fontSize": 16,
+      "fontFamily": 2,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "baseline": 53.12,
+      "containerId": "node-fire-ext",
+      "originalText": "확장 필드 3\n점검 등급 · extinguisherCount\ndetectorFaults",
+      "lineHeight": 1.25
+    },
+    {
+      "id": "text-telecom-copy",
+      "type": "text",
+      "x": 1279.0,
+      "y": 479.0,
+      "width": 122.0,
+      "height": 60.0,
+      "angle": 0,
+      "strokeColor": "#0f172a",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 1516496804,
+      "version": 1,
+      "versionNonce": 167942108,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1760000000000,
+      "link": null,
+      "locked": false,
+      "text": "허브 사본 3\n고객 · 건물 · 담당자\n읽기 전용",
+      "fontSize": 16,
+      "fontFamily": 2,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "baseline": 53.12,
+      "containerId": "node-telecom-copy",
+      "originalText": "허브 사본 3\n고객 · 건물 · 담당자\n읽기 전용",
+      "lineHeight": 1.25
+    },
+    {
+      "id": "text-telecom-work",
+      "type": "text",
+      "x": 1639.0,
+      "y": 479.0,
+      "width": 162.0,
+      "height": 80.0,
+      "angle": 0,
+      "strokeColor": "#0f172a",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 1559440085,
+      "version": 1,
+      "versionNonce": 936148779,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1760000000000,
+      "link": null,
+      "locked": false,
+      "text": "업무 7\n견적 → 계약 → 점검 일정\n→ 점검 결과 → 청구\n단가 · 양식 버전",
+      "fontSize": 16,
+      "fontFamily": 2,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "baseline": 73.12,
+      "containerId": "node-telecom-work",
+      "originalText": "업무 7\n견적 → 계약 → 점검 일정\n→ 점검 결과 → 청구\n단가 · 양식 버전",
+      "lineHeight": 1.25
+    },
+    {
+      "id": "text-telecom-ext",
+      "type": "text",
+      "x": 2037.0,
+      "y": 479.0,
+      "width": 126.0,
+      "height": 80.0,
+      "angle": 0,
+      "strokeColor": "#0f172a",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 133862182,
+      "version": 1,
+      "versionNonce": 901082811,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1760000000000,
+      "link": null,
+      "locked": false,
+      "text": "확장 필드 4\n회선 수 · 계약 형태 ·\nlinesTested\nlinePassRate",
+      "fontSize": 16,
+      "fontFamily": 2,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "baseline": 73.12,
+      "containerId": "node-telecom-ext",
+      "originalText": "확장 필드 4\n회선 수 · 계약 형태 · linesTested\nlinePassRate",
+      "lineHeight": 1.25
+    },
+    {
+      "id": "text-mechanical-copy",
+      "type": "text",
+      "x": 1279.0,
+      "y": 779.0,
+      "width": 122.0,
+      "height": 60.0,
+      "angle": 0,
+      "strokeColor": "#0f172a",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 108613447,
+      "version": 1,
+      "versionNonce": 686204843,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1760000000000,
+      "link": null,
+      "locked": false,
+      "text": "허브 사본 3\n고객 · 건물 · 담당자\n읽기 전용",
+      "fontSize": 16,
+      "fontFamily": 2,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "baseline": 53.12,
+      "containerId": "node-mechanical-copy",
+      "originalText": "허브 사본 3\n고객 · 건물 · 담당자\n읽기 전용",
+      "lineHeight": 1.25
+    },
+    {
+      "id": "text-mechanical-work",
+      "type": "text",
+      "x": 1639.0,
+      "y": 779.0,
+      "width": 162.0,
+      "height": 80.0,
+      "angle": 0,
+      "strokeColor": "#0f172a",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 1738346973,
+      "version": 1,
+      "versionNonce": 259722540,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1760000000000,
+      "link": null,
+      "locked": false,
+      "text": "업무 7\n견적 → 계약 → 점검 일정\n→ 점검 결과 → 청구\n단가 · 양식 버전",
+      "fontSize": 16,
+      "fontFamily": 2,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "baseline": 73.12,
+      "containerId": "node-mechanical-work",
+      "originalText": "업무 7\n견적 → 계약 → 점검 일정\n→ 점검 결과 → 청구\n단가 · 양식 버전",
+      "lineHeight": 1.25
+    },
+    {
+      "id": "text-mechanical-ext",
+      "type": "text",
+      "x": 2014.0,
+      "y": 779.0,
+      "width": 172.0,
+      "height": 80.0,
+      "angle": 0,
+      "strokeColor": "#0f172a",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 1885602501,
+      "version": 1,
+      "versionNonce": 25889384,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1760000000000,
+      "link": null,
+      "locked": false,
+      "text": "확장 필드 4\n방문 주기 · filterReplaced\nrefrigerantChecked\nboilerEfficiency",
+      "fontSize": 16,
+      "fontFamily": 2,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "baseline": 73.12,
+      "containerId": "node-mechanical-ext",
+      "originalText": "확장 필드 4\n방문 주기 · filterReplaced\nrefrigerantChecked\nboilerEfficiency",
+      "lineHeight": 1.25
+    },
+    {
+      "id": "title",
+      "type": "text",
+      "x": 0,
+      "y": 0.0,
+      "width": 588.0,
+      "height": 35.0,
+      "angle": 0,
+      "strokeColor": "#0f172a",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 159451258,
+      "version": 1,
+      "versionNonce": 1971650405,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1760000000000,
+      "link": null,
+      "locked": false,
+      "text": "허브 1 + 사업부 Base 3 — 공통 엔티티와 사업부 확장",
+      "fontSize": 28,
+      "fontFamily": 2,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "baseline": 22.96,
+      "containerId": null,
+      "originalText": "허브 1 + 사업부 Base 3 — 공통 엔티티와 사업부 확장",
+      "lineHeight": 1.25
+    },
+    {
+      "id": "subtitle",
+      "type": "text",
+      "x": 0,
+      "y": 41.0,
+      "width": 626.0,
+      "height": 20.0,
+      "angle": 0,
+      "strokeColor": "#64748b",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 1919961959,
+      "version": 1,
+      "versionNonce": 869340623,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1760000000000,
+      "link": null,
+      "locked": false,
+      "text": "Base 4 · 테이블 41 (가상 회사 그리드웰 빌딩서비스). 사업부 Base는 같은 틀 + 확장 필드만 다르다",
+      "fontSize": 16,
+      "fontFamily": 2,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "baseline": 13.12,
+      "containerId": null,
+      "originalText": "Base 4 · 테이블 41 (가상 회사 그리드웰 빌딩서비스). 사업부 Base는 같은 틀 + 확장 필드만 다르다",
+      "lineHeight": 1.25
+    }
+  ],
+  "appState": {
+    "gridSize": null,
+    "viewBackgroundColor": "#ffffff"
+  },
+  "files": {}
+}
+```
+%%
+# Text Elements
+GW 허브 — 원본(공통 엔티티) ^zone-hub-label
+GW 소방시설 점검 — 사업부 Base 1 ^zone-zone-fire-label
+GW 통신설비 점검 — 사업부 Base 2 ^zone-zone-telecom-label
+GW 기계설비 유지관리 — 사업부 Base 3 ^zone-zone-mechanical-label
+연결 ^label-edge-fire-copy-fire-work-6
+사본 ^label-edge-sync-telecom-copy-8
+고객 · customers
+id (기본)
+businessNo · type ^text-hub-customers
+건물 · buildings
+id (기본)
+roadAddress · totalArea
+연결 customer ^text-hub-buildings
+담당자 · staff
+id (기본)
+role · divisionId
+연결 division ^text-hub-staff
+사업부 · divisions
+id (기본)
+code · name ^text-hub-divisions
+동기화 안전장치
+허브 → 사업부 단방향
+급감 30% 초과 시 중단
+실패 건은 건너뛰고 기록 ^text-sync
+허브 사본 3
+고객 · 건물 · 담당자
+읽기 전용 ^text-fire-copy
+업무 7
+견적 → 계약 → 점검 일정
+→ 점검 결과 → 청구
+단가 · 양식 버전 ^text-fire-work
+확장 필드 3
+점검 등급 · extinguisherCount
+detectorFaults ^text-fire-ext
+허브 사본 3
+고객 · 건물 · 담당자
+읽기 전용 ^text-telecom-copy
+업무 7
+견적 → 계약 → 점검 일정
+→ 점검 결과 → 청구
+단가 · 양식 버전 ^text-telecom-work
+확장 필드 4
+회선 수 · 계약 형태 · linesTested
+linePassRate ^text-telecom-ext
+허브 사본 3
+고객 · 건물 · 담당자
+읽기 전용 ^text-mechanical-copy
+업무 7
+견적 → 계약 → 점검 일정
+→ 점검 결과 → 청구
+단가 · 양식 버전 ^text-mechanical-work
+확장 필드 4
+방문 주기 · filterReplaced
+refrigerantChecked
+boilerEfficiency ^text-mechanical-ext
+허브 1 + 사업부 Base 3 — 공통 엔티티와 사업부 확장 ^title
+Base 4 · 테이블 41 (가상 회사 그리드웰 빌딩서비스). 사업부 Base는 같은 틀 + 확장 필드만 다르다 ^subtitle
+%%

@@ -1,0 +1,35 @@
+# n8n 판: 같은 안전장치를 노코드 흐름으로(n8n/sync-safety.json)
+# 그림: python ../../../_design/excalidraw_kit.py n8n-flow.yaml --out . --export
+name: n8n-flow
+title: n8n 판 — 같은 판정을 노코드 흐름으로
+subtitle: Code 노드의 판정이 에어테이블 스크립트와 같은지 테스트한다. 쓰기 실패는 HTTP 노드의 오류 출력으로 갈라져 나머지는 계속 반영
+layout: grid
+gapX: 90
+gapY: 80
+maxTextWidth: 170
+nodes:
+  - {id: sched, label: "Schedule\n매시 실행", role: info, col: 0, row: 0}
+  - {id: cfg, label: "Code\n동기화 설정", role: primary, col: 1, row: 0}
+  - {id: get, label: "HTTP ×3\n직전 기록·허브 원본\n·사본 조회", role: info, col: 2, row: 0}
+  - {id: plan, label: "Code\n반영 계획\n급감 검사·planSync", role: primary, col: 3, row: 0}
+  - {id: gate, label: "반영 중단?", role: warning, shape: diamond, col: 4, row: 0}
+  - {id: abort, label: "HTTP ×3\n중단 기록·오류·알림", role: danger, col: 5, row: 0}
+  - {id: loop, label: "Loop\n건별 반영", role: primary, col: 4, row: 1}
+  - {id: write, label: "HTTP PATCH\n사본 반영\n실패 → 오류 출력", role: info, col: 5, row: 1}
+  - {id: mark, label: "Set\n완료·실패 표시", role: primary, col: 6, row: 1}
+  - {id: summary, label: "Code\n결과 요약", role: primary, col: 4, row: 2}
+  - {id: save, label: "HTTP\n동기화 기록 + 알림", role: info, col: 5, row: 2}
+  - {id: errs, label: "Code + HTTP\n자동화 오류 기록", role: info, col: 4, row: 3}
+edges:
+  - {from: sched, to: cfg}
+  - {from: cfg, to: get}
+  - {from: get, to: plan}
+  - {from: plan, to: gate}
+  - {from: gate, to: abort, label: 예, role: danger}
+  - {from: gate, to: loop, label: 아니오}
+  - {from: loop, to: write, label: 쓸 건}
+  - {from: write, to: mark}
+  - {from: mark, to: loop, curve: -0.25, style: dashed}
+  - {from: loop, to: summary, label: 끝}
+  - {from: summary, to: save}
+  - {from: summary, to: errs}

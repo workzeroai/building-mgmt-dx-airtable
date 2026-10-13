@@ -1,0 +1,4 @@
+invoiceNo,id,divisionId,contractId,resultId,amount,issuedAt,dueDate,paidAt,paidAmount,status,createdAt,statusConfirmed,statusNote,contract,result
+GW-INV-MECH-2026-001,inv_0024,mechanical,con_0020,res_0024,479140,2026-07-25,2026-08-24,2026-08-14,479140,paid,2026-07-25T01:00:00.000Z,paid,,GW-C-2026-020,res_0024
+GW-INV-MECH-2026-002,inv_0025,mechanical,con_0020,res_0025,479140,2026-08-25,2026-09-24,2026-09-19,479140,paid,2026-08-25T01:00:00.000Z,paid,,GW-C-2026-020,res_0025
+GW-INV-MECH-2026-003,inv_0026,mechanical,con_0020,res_0026,479140,2026-09-25,2026-10-25,,0,issued,2026-09-25T01:00:00.000Z,issued,,GW-C-2026-020,res_0026

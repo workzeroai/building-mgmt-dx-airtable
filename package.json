@@ -14,13 +14,18 @@
     "quote:demo": "node quote-engine/scripts/demo.js",
     "data:generate": "node quote-engine/scripts/generate-data.js",
     "lint": "eslint .",
-    "test": "node --test \"quote-engine/test/**/*.test.js\"",
-    "coverage": "c8 --check-coverage --lines 80 --functions 80 --branches 70 node --test \"quote-engine/test/**/*.test.js\""
+    "test": "node --test \"quote-engine/test/**/*.test.js\" \"airtable/test/**/*.test.js\" \"n8n/test/**/*.test.js\"",
+    "coverage": "c8 --check-coverage --lines 80 --functions 80 --branches 70 node --test \"quote-engine/test/**/*.test.js\" \"airtable/test/**/*.test.js\" \"n8n/test/**/*.test.js\"",
+    "airtable:build": "node airtable/build.mjs",
+    "airtable:check": "node airtable/build.mjs --check",
+    "airtable:create-base": "node airtable/create-base.mjs",
+    "airtable:clone-staging": "node airtable/clone-staging.mjs --dry-run"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.133.0",
     "exceljs": "^4.4.0",
-    "express": "^4.22.3"
+    "express": "^4.22.3",
+    "yaml": "^2.9.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.5",

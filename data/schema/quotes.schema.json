@@ -6,7 +6,7 @@
   "type": "object",
   "x-table": "quotes",
   "x-idPrefix": "quo",
-  "x-airtable": { "table": "견적", "primaryField": "quoteNo", "jsonFields": ["conditions", "items", "files"] },
+  "x-airtable": { "table": "견적", "base": "division", "primaryField": "quoteNo", "jsonFields": ["conditions", "items", "files"] },
   "x-links": { "customerId": "customers", "buildingId": "buildings", "templateVersionId": "templateVersions" },
   "required": ["id", "quoteNo", "divisionId", "buildingId", "conditions", "items", "subtotal", "vat", "total", "pricingSource", "status", "createdAt"],
   "additionalProperties": false,

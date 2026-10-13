@@ -1,0 +1,790 @@
+{
+  "name": "허브 → 사업부 동기화 안전장치 (가상: 그리드웰 빌딩서비스)",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## 허브 → 사업부 동기화 안전장치 (그리드웰 빌딩서비스, 가상)\n일정 → 허브 원본 조회 → **건수 급감 검사** → **건 단위 반영**(실패 건은 별도 분기) → 동기화 기록 + 결과 요약 알림\n\n가져온 뒤 할 일: ① \"동기화 설정\" Code 노드의 SETTINGS(Base ID·사업부·테이블) ② 에어테이블을 부르는 HTTP 노드 8개에 Airtable Personal Access Token 자격증명 ③ 알림 노드 2개의 웹훅 URL\n\n판정 코드는 에어테이블 스크립트(airtable/automations/scripts/sync-safety.js)와 같다.",
+        "height": 240,
+        "width": 820,
+        "color": 5
+      },
+      "id": "b489900a-b228-5e3a-9151-498ecdf93822",
+      "name": "안내",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -40,
+        -500
+      ]
+    },
+    {
+      "parameters": {
+        "content": "### 안전장치\n- 원본 건수가 직전 정상 실행 대비 **30% 넘게 줄면 반영 중단** + 기록 + 알림\n- 검증 실패 건은 쓰지 않고 건너뜀으로 기록\n- 쓰기 실패 건은 **오류 출력**으로 빠져 나머지는 계속 반영\n- 허브에서 사라진 건은 지우지 않고 hubMissing 표시\n- 결과는 동기화 기록(다음 실행의 비교 기준)과 자동화 오류에 남김",
+        "height": 240,
+        "width": 640,
+        "color": 3
+      },
+      "id": "784b67ee-c1db-5611-8a87-15d89e7fa590",
+      "name": "안전장치",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1240,
+        -500
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 1
+            }
+          ]
+        }
+      },
+      "id": "8c3205ad-83da-5f5c-8a2e-cd925e839bbc",
+      "name": "매시 실행",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "// n8n Code 노드 \"동기화 설정\" (Run Once for All Items)\n// 가져온 뒤 아래 SETTINGS만 고친다. 다른 테이블(customers·staff)을 동기화하려면 워크플로를 복제해 tableKey만 바꾼다.\n\n// ---- 여기만 고친다 ----\nconst SETTINGS = {\n  hubBaseId: 'REPLACE_WITH_HUB_BASE_ID',\n  divisionBaseId: 'REPLACE_WITH_DIVISION_BASE_ID',\n  divisionId: 'fire',\n  tableKey: 'buildings',\n  label: 'GW 소방시설 점검',\n};\n// ---- 여기까지 ----\n\n// ---- BEGIN GENERATED: config (npm run airtable:build) ----\nconst RULES = {\n  \"customers\": {\n    \"key\": \"customers\",\n    \"name\": \"고객\",\n    \"sourceName\": \"고객\",\n    \"fields\": [\n      \"id\",\n      \"name\",\n      \"type\",\n      \"region\"\n    ],\n    \"required\": [\n      \"id\",\n      \"name\",\n      \"type\"\n    ],\n    \"idPattern\": \"^(stg_)?cus_[0-9a-z]+$\",\n    \"kinds\": {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"type\": \"select\",\n      \"region\": \"select\"\n    },\n    \"choices\": {\n      \"type\": [\n        \"법인\",\n        \"관리단\",\n        \"관리사무소\",\n        \"개인사업자\"\n      ],\n      \"region\": [\n        \"서울특별시\",\n        \"부산광역시\",\n        \"대구광역시\",\n        \"인천광역시\",\n        \"대전광역시\",\n        \"경기도\"\n      ]\n    },\n    \"links\": {}\n  },\n  \"buildings\": {\n    \"key\": \"buildings\",\n    \"name\": \"건물\",\n    \"sourceName\": \"건물\",\n    \"fields\": [\n      \"id\",\n      \"customerId\",\n      \"roadAddress\",\n      \"name\",\n      \"mainPurpose\",\n      \"totalArea\",\n      \"groundFloors\",\n      \"undergroundFloors\"\n    ],\n    \"required\": [\n      \"id\",\n      \"roadAddress\",\n      \"name\",\n      \"mainPurpose\",\n      \"totalArea\",\n      \"groundFloors\",\n      \"undergroundFloors\"\n    ],\n    \"idPattern\": \"^(stg_)?bld_[0-9a-z]+$\",\n    \"kinds\": {\n      \"id\": \"string\",\n      \"customerId\": \"string\",\n      \"roadAddress\": \"string\",\n      \"name\": \"string\",\n      \"mainPurpose\": \"string\",\n      \"totalArea\": \"number\",\n      \"groundFloors\": \"integer\",\n      \"undergroundFloors\": \"integer\"\n    },\n    \"choices\": {},\n    \"links\": {\n      \"customer\": {\n        \"from\": \"customerId\",\n        \"table\": \"customers\"\n      }\n    }\n  },\n  \"staff\": {\n    \"key\": \"staff\",\n    \"name\": \"담당자\",\n    \"sourceName\": \"담당자\",\n    \"fields\": [\n      \"id\",\n      \"name\",\n      \"divisionId\",\n      \"role\",\n      \"active\"\n    ],\n    \"required\": [\n      \"id\",\n      \"name\",\n      \"role\",\n      \"active\"\n    ],\n    \"idPattern\": \"^(stg_)?stf_[0-9a-z]+$\",\n    \"kinds\": {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"divisionId\": \"string\",\n      \"role\": \"select\",\n      \"active\": \"boolean\"\n    },\n    \"choices\": {\n      \"role\": [\n        \"점검원\",\n        \"영업\",\n        \"관리자\"\n      ]\n    },\n    \"links\": {}\n  }\n};\n// ---- END GENERATED: config ----\n\nconst rule = RULES[SETTINGS.tableKey];\nif (!rule) throw new Error(`동기화 규칙이 없는 테이블: ${SETTINGS.tableKey} (가능: ${Object.keys(RULES).join(', ')})`);\nreturn [{\n  json: {\n    ...SETTINGS,\n    sourceTable: rule.sourceName,\n    targetTable: rule.name,\n    runsTable: '동기화 기록',\n    errorsTable: '자동화 오류',\n    startedAt: new Date().toISOString(),\n  },\n}];\n"
+      },
+      "id": "b7020c65-c9e1-507d-8444-49b2f8468220",
+      "name": "동기화 설정",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        220,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "={{ 'https://api.airtable.com/v0/' + $('동기화 설정').first().json.divisionBaseId + '/' + encodeURIComponent($('동기화 설정').first().json.runsTable) }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "airtableTokenApi",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "filterByFormula",
+              "value": "={{ \"AND({tableKey}='\" + $('동기화 설정').first().json.tableKey + \"', OR({status}='ok', {status}='partial'))\" }}"
+            },
+            {
+              "name": "sort[0][field]",
+              "value": "startedAt"
+            },
+            {
+              "name": "sort[0][direction]",
+              "value": "desc"
+            },
+            {
+              "name": "maxRecords",
+              "value": "1"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "7b24ea9a-6322-5e20-aa7e-9129aa9b7e6c",
+      "name": "직전 동기화 기록 조회",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        440,
+        0
+      ],
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "={{ 'https://api.airtable.com/v0/' + $('동기화 설정').first().json.hubBaseId + '/' + encodeURIComponent($('동기화 설정').first().json.sourceTable) }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "airtableTokenApi",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "pageSize",
+              "value": "100"
+            }
+          ]
+        },
+        "options": {
+          "pagination": {
+            "pagination": {
+              "parameters": {
+                "parameters": [
+                  {
+                    "type": "qs",
+                    "name": "offset",
+                    "value": "={{ $response.body.offset }}"
+                  }
+                ]
+              },
+              "paginationCompleteWhen": "other",
+              "completeExpression": "={{ $response.body.offset === undefined }}"
+            }
+          }
+        }
+      },
+      "id": "6ec22c22-73f6-5770-ba0e-41d92bc45d1f",
+      "name": "허브 원본 조회",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        660,
+        0
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "={{ 'https://api.airtable.com/v0/' + $('동기화 설정').first().json.divisionBaseId + '/' + encodeURIComponent($('동기화 설정').first().json.targetTable) }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "airtableTokenApi",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "pageSize",
+              "value": "100"
+            },
+            {
+              "name": "fields[]",
+              "value": "id"
+            },
+            {
+              "name": "fields[]",
+              "value": "syncHash"
+            },
+            {
+              "name": "fields[]",
+              "value": "hubMissing"
+            }
+          ]
+        },
+        "options": {
+          "pagination": {
+            "pagination": {
+              "parameters": {
+                "parameters": [
+                  {
+                    "type": "qs",
+                    "name": "offset",
+                    "value": "={{ $response.body.offset }}"
+                  }
+                ]
+              },
+              "paginationCompleteWhen": "other",
+              "completeExpression": "={{ $response.body.offset === undefined }}"
+            }
+          }
+        }
+      },
+      "id": "aa9d0b55-87c6-5d03-80c6-613d6af1a4f7",
+      "name": "사본 조회",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        880,
+        0
+      ],
+      "executeOnce": true,
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "// n8n Code 노드 \"반영 계획\" (Run Once for All Items)\n// 입력: \"허브 원본 조회\"·\"사본 조회\"(REST 응답 페이지들), \"직전 동기화 기록 조회\"(최근 정상 실행 1건)\n// 출력:\n//   - 원본 급감이면 {kind: 'abort'} 1건 → 반영하지 않고 중단 기록·알림\n//   - 아니면 쓸 건마다 {kind: create|update|missing, body} + 마지막에 {kind: 'marker'}(변경 없음·건너뜀 집계, 결과 요약이 항상 돌게)\n// 판정 코드(checkVolume·planSync)는 Airtable 스크립트(sync-safety.js)와 같은 lib/sync-core.js다.\n\n// ---- BEGIN GENERATED: config (npm run airtable:build) ----\nconst SYNC = {\n  \"direction\": \"hub-to-division\",\n  \"key\": \"id\",\n  \"order\": [\n    \"customers\",\n    \"buildings\",\n    \"staff\"\n  ],\n  \"maxDropRatio\": 0.3,\n  \"batchSize\": 50,\n  \"onMissing\": \"mark\"\n};\nconst RULES = {\n  \"customers\": {\n    \"key\": \"customers\",\n    \"name\": \"고객\",\n    \"sourceName\": \"고객\",\n    \"fields\": [\n      \"id\",\n      \"name\",\n      \"type\",\n      \"region\"\n    ],\n    \"required\": [\n      \"id\",\n      \"name\",\n      \"type\"\n    ],\n    \"idPattern\": \"^(stg_)?cus_[0-9a-z]+$\",\n    \"kinds\": {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"type\": \"select\",\n      \"region\": \"select\"\n    },\n    \"choices\": {\n      \"type\": [\n        \"법인\",\n        \"관리단\",\n        \"관리사무소\",\n        \"개인사업자\"\n      ],\n      \"region\": [\n        \"서울특별시\",\n        \"부산광역시\",\n        \"대구광역시\",\n        \"인천광역시\",\n        \"대전광역시\",\n        \"경기도\"\n      ]\n    },\n    \"links\": {}\n  },\n  \"buildings\": {\n    \"key\": \"buildings\",\n    \"name\": \"건물\",\n    \"sourceName\": \"건물\",\n    \"fields\": [\n      \"id\",\n      \"customerId\",\n      \"roadAddress\",\n      \"name\",\n      \"mainPurpose\",\n      \"totalArea\",\n      \"groundFloors\",\n      \"undergroundFloors\"\n    ],\n    \"required\": [\n      \"id\",\n      \"roadAddress\",\n      \"name\",\n      \"mainPurpose\",\n      \"totalArea\",\n      \"groundFloors\",\n      \"undergroundFloors\"\n    ],\n    \"idPattern\": \"^(stg_)?bld_[0-9a-z]+$\",\n    \"kinds\": {\n      \"id\": \"string\",\n      \"customerId\": \"string\",\n      \"roadAddress\": \"string\",\n      \"name\": \"string\",\n      \"mainPurpose\": \"string\",\n      \"totalArea\": \"number\",\n      \"groundFloors\": \"integer\",\n      \"undergroundFloors\": \"integer\"\n    },\n    \"choices\": {},\n    \"links\": {\n      \"customer\": {\n        \"from\": \"customerId\",\n        \"table\": \"customers\"\n      }\n    }\n  },\n  \"staff\": {\n    \"key\": \"staff\",\n    \"name\": \"담당자\",\n    \"sourceName\": \"담당자\",\n    \"fields\": [\n      \"id\",\n      \"name\",\n      \"divisionId\",\n      \"role\",\n      \"active\"\n    ],\n    \"required\": [\n      \"id\",\n      \"name\",\n      \"role\",\n      \"active\"\n    ],\n    \"idPattern\": \"^(stg_)?stf_[0-9a-z]+$\",\n    \"kinds\": {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"divisionId\": \"string\",\n      \"role\": \"select\",\n      \"active\": \"boolean\"\n    },\n    \"choices\": {\n      \"role\": [\n        \"점검원\",\n        \"영업\",\n        \"관리자\"\n      ]\n    },\n    \"links\": {}\n  }\n};\n// ---- END GENERATED: config ----\n\n// ---- BEGIN GENERATED: lib/sync-core.js ----\n// 허브 → 사업부 동기화 판정(순수 함수). import 없이 이 파일만으로 동작해야 한다.\n// 빌드(npm run airtable:build)가 이 코드를 Airtable 스크립트(sync-safety.js)와 n8n Code 노드에 그대로 넣는다.\n// → 같은 입력이면 두 실행 환경이 같은 판정을 낸다(테스트로 확인).\n\n/** 원본 건수 급감 검사: 직전 정상 실행 대비 maxDropRatio 넘게 줄면 반영을 멈춘다. */\nfunction checkVolume({ current, previous, maxDropRatio }) {\n  if (previous === null || previous === undefined) {\n    return { verdict: 'proceed', current, previous: null, dropRatio: null, reason: '첫 동기화(비교 기준 없음)' };\n  }\n  if (previous > 0 && current === 0) {\n    return { verdict: 'abort', current, previous, dropRatio: 1, reason: `원본 0건(직전 ${previous}건): 원본 조회 오류로 보고 반영 중단` };\n  }\n  const dropRatio = previous > 0 ? Math.max(0, (previous - current) / previous) : 0;\n  const pct = (x) => `${Math.round(x * 1000) / 10}%`;\n  if (dropRatio > maxDropRatio) {\n    return { verdict: 'abort', current, previous, dropRatio, reason: `원본 ${previous}→${current}건(${pct(dropRatio)} 감소, 기준 ${pct(maxDropRatio)}): 반영 중단` };\n  }\n  return { verdict: 'proceed', current, previous, dropRatio, reason: `원본 ${previous}→${current}건(감소 ${pct(dropRatio)}, 기준 ${pct(maxDropRatio)} 이내)` };\n}\n\n/** 원본 값(REST 응답의 fields 등)을 규칙의 필드 목록·종류에 맞춰 정리한다. 없으면 null, 체크박스 없음은 false. */\nfunction normalizeSource(rule, fields) {\n  const out = {};\n  for (const name of rule.fields) {\n    let v = fields ? fields[name] : undefined;\n    if (v && typeof v === 'object' && !Array.isArray(v) && 'name' in v) v = v.name; // 단일 선택 셀 {name}\n    if (v === undefined || v === '') v = null;\n    if (rule.kinds[name] === 'boolean') v = v === true;\n    out[name] = v;\n  }\n  return out;\n}\n\n/** 원본 레코드 1건 검증. @returns {{ok: true} | {ok: false, reason: string}} */\nfunction validateSourceRecord(rule, record) {\n  const id = record ? record.id : null;\n  if (typeof id !== 'string' || !new RegExp(rule.idPattern, 'u').test(id)) {\n    return { ok: false, reason: `id 형식 오류(${id === null || id === undefined ? '없음' : JSON.stringify(id)})` };\n  }\n  for (const name of rule.required) {\n    if (record[name] === null || record[name] === undefined) return { ok: false, reason: `필수 값 없음: ${name}` };\n  }\n  for (const name of rule.fields) {\n    const v = record[name];\n    if (v === null || v === undefined) continue;\n    const kind = rule.kinds[name];\n    if ((kind === 'number' || kind === 'integer') && (typeof v !== 'number' || !Number.isFinite(v))) return { ok: false, reason: `숫자가 아님: ${name}` };\n    if (kind === 'integer' && !Number.isInteger(v)) return { ok: false, reason: `정수가 아님: ${name}` };\n    if (kind === 'number' && v < 0) return { ok: false, reason: `음수: ${name}` };\n    if (kind === 'select' && !(rule.choices[name] || []).includes(v)) return { ok: false, reason: `허용되지 않은 선택지: ${name}=${v}` };\n    if (kind === 'string' && typeof v !== 'string') return { ok: false, reason: `문자열이 아님: ${name}` };\n  }\n  return { ok: true };\n}\n\n/** 변경 감지용 지문(FNV-1a 32비트). 실행 환경(Airtable·n8n·Node)과 무관하게 같은 값. */\nfunction recordHash(rule, record) {\n  const text = JSON.stringify(rule.fields.map((name) => (record[name] === undefined ? null : record[name])));\n  let h = 0x811c9dc5;\n  for (let i = 0; i < text.length; i += 1) {\n    h ^= text.charCodeAt(i);\n    h = Math.imul(h, 0x01000193) >>> 0;\n  }\n  return h.toString(16).padStart(8, '0');\n}\n\n/**\n * 반영 계획. 실제 쓰기는 실행 환경(스크립트·n8n)이 하고, 여기서는 무엇을 할지만 정한다.\n * @param {object} p\n * @param {object} p.rule syncRules().tables[key]\n * @param {Array<object>} p.source 원본 레코드(평평한 객체, normalizeSource 전이어도 됨)\n * @param {Array<{recId: string, fields: object}>} p.target 사본 레코드\n * @returns {{create: object[], update: object[], unchanged: string[], skipped: {id: any, reason: string}[], missing: object[]}}\n */\nfunction planSync({ rule, source, target }) {\n  const plan = { create: [], update: [], unchanged: [], skipped: [], missing: [] };\n  const byId = new Map();\n  for (const t of target) {\n    const id = t.fields ? t.fields.id : null;\n    if (id) byId.set(id, t);\n  }\n  const seen = new Set();\n  for (const raw of source) {\n    const record = normalizeSource(rule, raw);\n    const check = validateSourceRecord(rule, record);\n    if (!check.ok) {\n      plan.skipped.push({ id: record.id, reason: check.reason });\n      continue;\n    }\n    if (seen.has(record.id)) {\n      plan.skipped.push({ id: record.id, reason: '원본에 같은 id가 두 번 있음(두 번째 건 건너뜀)' });\n      continue;\n    }\n    seen.add(record.id);\n    const hash = recordHash(rule, record);\n    const existing = byId.get(record.id);\n    if (!existing) plan.create.push({ id: record.id, fields: record, hash });\n    else if (existing.fields.syncHash !== hash || existing.fields.hubMissing === true) {\n      plan.update.push({ id: record.id, recId: existing.recId, fields: record, hash });\n    } else plan.unchanged.push(record.id);\n  }\n  for (const [id, t] of byId) {\n    if (!seen.has(id) && t.fields.hubMissing !== true && !plan.skipped.some((s) => s.id === id)) plan.missing.push({ id, recId: t.recId });\n  }\n  return plan;\n}\n\n/** 실행 결과 → 상태. aborted > (건너뜀·실패가 있으면) partial > ok */\nfunction summarizeRun({ aborted = false, created = 0, updated = 0, unchanged = 0, skipped = 0, failed = 0, missing = 0 }) {\n  const status = aborted ? 'aborted' : skipped > 0 || failed > 0 ? 'partial' : 'ok';\n  const parts = [`생성 ${created}`, `수정 ${updated}`, `변경 없음 ${unchanged}`, `건너뜀 ${skipped}`, `실패 ${failed}`, `사라짐 표시 ${missing}`];\n  return { status, created, updated, unchanged, skipped, failed, missing, text: aborted ? '반영 중단' : parts.join(' · ') };\n}\n\n/** 배열을 n개씩 자른다(에어테이블 쓰기 한도: 스크립트 50건, REST 10건). */\nfunction chunk(list, n) {\n  const out = [];\n  for (let i = 0; i < list.length; i += n) out.push(list.slice(i, i + n));\n  return out;\n}\n// ---- END GENERATED: lib/sync-core.js ----\n\nconst cfg = $('동기화 설정').first().json;\nconst rule = RULES[cfg.tableKey];\nconst records = (node) => $(node).all().flatMap((page) => (page.json && page.json.records) || []);\n\nconst source = records('허브 원본 조회').map((r) => r.fields || {});\nconst target = records('사본 조회').map((r) => ({\n  recId: r.id,\n  fields: { id: (r.fields || {}).id || null, syncHash: (r.fields || {}).syncHash || '', hubMissing: (r.fields || {}).hubMissing === true },\n}));\nlet previous = null;\nconst runs = records('직전 동기화 기록 조회');\nif (runs.length && typeof runs[0].fields.sourceCount === 'number') previous = runs[0].fields.sourceCount;\n\nconst volume = checkVolume({ current: source.length, previous, maxDropRatio: SYNC.maxDropRatio });\nconst now = new Date().toISOString();\nconst runFields = (extra) => ({\n  id: `syn_${Date.now().toString(36)}${Math.random().toString(36).slice(2, 6)}`,\n  divisionId: cfg.divisionId, runner: 'n8n', tableKey: cfg.tableKey, startedAt: cfg.startedAt, finishedAt: now,\n  sourceCount: source.length, previousCount: previous, ...extra,\n});\n\nif (volume.verdict === 'abort') {\n  return [{\n    json: {\n      kind: 'abort',\n      volume,\n      runBody: { records: [{ fields: runFields({ created: 0, updated: 0, unchanged: 0, skipped: 0, failed: 0, missing: 0, status: 'aborted', note: volume.reason }) }], typecast: true },\n      errorBody: {\n        records: [{ fields: { id: `err_${Date.now().toString(36)}${Math.random().toString(36).slice(2, 6)}`, automation: 'n8n:syncSafety', stage: 'aborted', tableName: rule.name, message: volume.reason, occurredAt: now, notified: false } }],\n        typecast: true,\n      },\n      alertText: `[${cfg.label}] ${rule.name} 동기화 중단 — ${volume.reason}`,\n    },\n  }];\n}\n\nconst plan = planSync({ rule, source, target });\nconst cells = (x) => ({ ...x.fields, syncHash: x.hash, syncedAt: now, hubMissing: false });\nconst upsert = (x) => ({ performUpsert: { fieldsToMergeOn: ['id'] }, records: [{ fields: cells(x) }], typecast: true });\nconst out = [\n  ...plan.create.map((x) => ({ json: { kind: 'create', id: x.id, body: upsert(x) } })),\n  ...plan.update.map((x) => ({ json: { kind: 'update', id: x.id, body: { records: [{ id: x.recId, fields: cells(x) }], typecast: true } } })),\n  ...plan.missing.map((x) => ({ json: { kind: 'missing', id: x.id, body: { records: [{ id: x.recId, fields: { hubMissing: true, syncedAt: now } }] } } })),\n];\nout.push({ json: { kind: 'marker', volume, unchanged: plan.unchanged.length, skipped: plan.skipped, runFields: runFields({}) } });\nreturn out;\n"
+      },
+      "id": "bc454f4a-ed17-522a-aa30-70547d682788",
+      "name": "반영 계획",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1100,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "09dadf14-5ada-529c-a39d-70c0332583b5",
+              "leftValue": "={{ $json.kind }}",
+              "rightValue": "abort",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "26218aaa-7718-5969-be93-3f40ab4f2e3f",
+      "name": "반영 중단?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        1320,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ 'https://api.airtable.com/v0/' + $('동기화 설정').first().json.divisionBaseId + '/' + encodeURIComponent($('동기화 설정').first().json.runsTable) }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "airtableTokenApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.runBody) }}",
+        "options": {}
+      },
+      "id": "80b711cf-8b71-5580-b659-a36f0becc0bb",
+      "name": "중단 기록",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1540,
+        -200
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ 'https://api.airtable.com/v0/' + $('동기화 설정').first().json.divisionBaseId + '/' + encodeURIComponent($('동기화 설정').first().json.errorsTable) }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "airtableTokenApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($('반영 계획').first().json.errorBody) }}",
+        "options": {}
+      },
+      "id": "75216b2d-043f-5d4b-b3b2-b3afed93b527",
+      "name": "중단 오류 기록",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1760,
+        -200
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://hooks.example.com/REPLACE_WITH_YOUR_WEBHOOK",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ content: $('반영 계획').first().json.alertText, text: $('반영 계획').first().json.alertText }) }}",
+        "options": {}
+      },
+      "id": "50db6964-4cb5-5a94-ac86-402f69d3ab8d",
+      "name": "중단 알림",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1980,
+        -200
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "batchSize": 10,
+        "options": {}
+      },
+      "id": "8b739417-2b57-5bea-8d80-4b9e376f2f60",
+      "name": "건별 반영",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        1540,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "9b06cdec-3132-54b7-bac5-6e19a4478417",
+              "leftValue": "={{ $json.kind }}",
+              "rightValue": "marker",
+              "operator": {
+                "type": "string",
+                "operation": "notEquals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "081ac986-4222-5dd1-9f2d-347c172f2c6b",
+      "name": "쓸 건?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        1760,
+        340
+      ]
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "={{ 'https://api.airtable.com/v0/' + $('동기화 설정').first().json.divisionBaseId + '/' + encodeURIComponent($('동기화 설정').first().json.targetTable) }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "airtableTokenApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.body) }}",
+        "options": {
+          "batching": {
+            "batch": {
+              "batchSize": 5,
+              "batchInterval": 1100
+            }
+          }
+        }
+      },
+      "id": "6bf1c44a-d6de-5e2f-a1b3-78fff728cb3e",
+      "name": "사본 반영",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1980,
+        320
+      ],
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "mode": "manual",
+        "assignments": {
+          "assignments": [
+            {
+              "id": "6a8403ca-840c-5f37-83c0-2062a02754ce",
+              "name": "outcome",
+              "value": "done",
+              "type": "string"
+            },
+            {
+              "id": "c29337e7-65d2-58b0-9f00-dfd681627360",
+              "name": "kind",
+              "value": "={{ $('건별 반영').item.json.kind }}",
+              "type": "string"
+            },
+            {
+              "id": "f28eeea4-5d45-58b4-8a07-89fa89e216af",
+              "name": "id",
+              "value": "={{ $('건별 반영').item.json.id }}",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": false,
+        "options": {}
+      },
+      "id": "7a3cf200-dc55-5d0a-8785-f99cd341f956",
+      "name": "반영 완료 표시",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2200,
+        240
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "manual",
+        "assignments": {
+          "assignments": [
+            {
+              "id": "5c2f4eea-49e5-5b2c-b419-fd02d72a17bd",
+              "name": "outcome",
+              "value": "failed",
+              "type": "string"
+            },
+            {
+              "id": "45860ddf-2e55-5bc9-ba2f-db3af32d5d9f",
+              "name": "kind",
+              "value": "={{ $('건별 반영').item.json.kind }}",
+              "type": "string"
+            },
+            {
+              "id": "8e339474-a6a6-5427-b810-8fb15d6a6faa",
+              "name": "id",
+              "value": "={{ $('건별 반영').item.json.id }}",
+              "type": "string"
+            },
+            {
+              "id": "3aad3158-45ea-5dc8-8cb7-cb746faa1995",
+              "name": "reason",
+              "value": "={{ $json.error ? ($json.error.message || JSON.stringify($json.error)) : '쓰기 실패' }}",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": false,
+        "options": {}
+      },
+      "id": "922f7557-f5d4-5d07-9386-dd5882c06fd8",
+      "name": "반영 실패 표시",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2200,
+        420
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "// n8n Code 노드 \"결과 요약\" (Run Once for All Items)\n// 입력: \"건별 반영\" 루프가 끝난 뒤 모인 항목들(outcome: done | failed, kind, id, reason) + marker\n// 출력 1건: 동기화 기록 본문(runBody), 알림 문장(alertText), 자동화 오류로 남길 목록(errors)\n\n// ---- BEGIN GENERATED: config (npm run airtable:build) ----\nconst RULES = {\n  \"customers\": {\n    \"key\": \"customers\",\n    \"name\": \"고객\",\n    \"sourceName\": \"고객\",\n    \"fields\": [\n      \"id\",\n      \"name\",\n      \"type\",\n      \"region\"\n    ],\n    \"required\": [\n      \"id\",\n      \"name\",\n      \"type\"\n    ],\n    \"idPattern\": \"^(stg_)?cus_[0-9a-z]+$\",\n    \"kinds\": {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"type\": \"select\",\n      \"region\": \"select\"\n    },\n    \"choices\": {\n      \"type\": [\n        \"법인\",\n        \"관리단\",\n        \"관리사무소\",\n        \"개인사업자\"\n      ],\n      \"region\": [\n        \"서울특별시\",\n        \"부산광역시\",\n        \"대구광역시\",\n        \"인천광역시\",\n        \"대전광역시\",\n        \"경기도\"\n      ]\n    },\n    \"links\": {}\n  },\n  \"buildings\": {\n    \"key\": \"buildings\",\n    \"name\": \"건물\",\n    \"sourceName\": \"건물\",\n    \"fields\": [\n      \"id\",\n      \"customerId\",\n      \"roadAddress\",\n      \"name\",\n      \"mainPurpose\",\n      \"totalArea\",\n      \"groundFloors\",\n      \"undergroundFloors\"\n    ],\n    \"required\": [\n      \"id\",\n      \"roadAddress\",\n      \"name\",\n      \"mainPurpose\",\n      \"totalArea\",\n      \"groundFloors\",\n      \"undergroundFloors\"\n    ],\n    \"idPattern\": \"^(stg_)?bld_[0-9a-z]+$\",\n    \"kinds\": {\n      \"id\": \"string\",\n      \"customerId\": \"string\",\n      \"roadAddress\": \"string\",\n      \"name\": \"string\",\n      \"mainPurpose\": \"string\",\n      \"totalArea\": \"number\",\n      \"groundFloors\": \"integer\",\n      \"undergroundFloors\": \"integer\"\n    },\n    \"choices\": {},\n    \"links\": {\n      \"customer\": {\n        \"from\": \"customerId\",\n        \"table\": \"customers\"\n      }\n    }\n  },\n  \"staff\": {\n    \"key\": \"staff\",\n    \"name\": \"담당자\",\n    \"sourceName\": \"담당자\",\n    \"fields\": [\n      \"id\",\n      \"name\",\n      \"divisionId\",\n      \"role\",\n      \"active\"\n    ],\n    \"required\": [\n      \"id\",\n      \"name\",\n      \"role\",\n      \"active\"\n    ],\n    \"idPattern\": \"^(stg_)?stf_[0-9a-z]+$\",\n    \"kinds\": {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"divisionId\": \"string\",\n      \"role\": \"select\",\n      \"active\": \"boolean\"\n    },\n    \"choices\": {\n      \"role\": [\n        \"점검원\",\n        \"영업\",\n        \"관리자\"\n      ]\n    },\n    \"links\": {}\n  }\n};\n// ---- END GENERATED: config ----\n\n// ---- BEGIN GENERATED: lib/sync-core.js ----\n// 허브 → 사업부 동기화 판정(순수 함수). import 없이 이 파일만으로 동작해야 한다.\n// 빌드(npm run airtable:build)가 이 코드를 Airtable 스크립트(sync-safety.js)와 n8n Code 노드에 그대로 넣는다.\n// → 같은 입력이면 두 실행 환경이 같은 판정을 낸다(테스트로 확인).\n\n/** 원본 건수 급감 검사: 직전 정상 실행 대비 maxDropRatio 넘게 줄면 반영을 멈춘다. */\nfunction checkVolume({ current, previous, maxDropRatio }) {\n  if (previous === null || previous === undefined) {\n    return { verdict: 'proceed', current, previous: null, dropRatio: null, reason: '첫 동기화(비교 기준 없음)' };\n  }\n  if (previous > 0 && current === 0) {\n    return { verdict: 'abort', current, previous, dropRatio: 1, reason: `원본 0건(직전 ${previous}건): 원본 조회 오류로 보고 반영 중단` };\n  }\n  const dropRatio = previous > 0 ? Math.max(0, (previous - current) / previous) : 0;\n  const pct = (x) => `${Math.round(x * 1000) / 10}%`;\n  if (dropRatio > maxDropRatio) {\n    return { verdict: 'abort', current, previous, dropRatio, reason: `원본 ${previous}→${current}건(${pct(dropRatio)} 감소, 기준 ${pct(maxDropRatio)}): 반영 중단` };\n  }\n  return { verdict: 'proceed', current, previous, dropRatio, reason: `원본 ${previous}→${current}건(감소 ${pct(dropRatio)}, 기준 ${pct(maxDropRatio)} 이내)` };\n}\n\n/** 원본 값(REST 응답의 fields 등)을 규칙의 필드 목록·종류에 맞춰 정리한다. 없으면 null, 체크박스 없음은 false. */\nfunction normalizeSource(rule, fields) {\n  const out = {};\n  for (const name of rule.fields) {\n    let v = fields ? fields[name] : undefined;\n    if (v && typeof v === 'object' && !Array.isArray(v) && 'name' in v) v = v.name; // 단일 선택 셀 {name}\n    if (v === undefined || v === '') v = null;\n    if (rule.kinds[name] === 'boolean') v = v === true;\n    out[name] = v;\n  }\n  return out;\n}\n\n/** 원본 레코드 1건 검증. @returns {{ok: true} | {ok: false, reason: string}} */\nfunction validateSourceRecord(rule, record) {\n  const id = record ? record.id : null;\n  if (typeof id !== 'string' || !new RegExp(rule.idPattern, 'u').test(id)) {\n    return { ok: false, reason: `id 형식 오류(${id === null || id === undefined ? '없음' : JSON.stringify(id)})` };\n  }\n  for (const name of rule.required) {\n    if (record[name] === null || record[name] === undefined) return { ok: false, reason: `필수 값 없음: ${name}` };\n  }\n  for (const name of rule.fields) {\n    const v = record[name];\n    if (v === null || v === undefined) continue;\n    const kind = rule.kinds[name];\n    if ((kind === 'number' || kind === 'integer') && (typeof v !== 'number' || !Number.isFinite(v))) return { ok: false, reason: `숫자가 아님: ${name}` };\n    if (kind === 'integer' && !Number.isInteger(v)) return { ok: false, reason: `정수가 아님: ${name}` };\n    if (kind === 'number' && v < 0) return { ok: false, reason: `음수: ${name}` };\n    if (kind === 'select' && !(rule.choices[name] || []).includes(v)) return { ok: false, reason: `허용되지 않은 선택지: ${name}=${v}` };\n    if (kind === 'string' && typeof v !== 'string') return { ok: false, reason: `문자열이 아님: ${name}` };\n  }\n  return { ok: true };\n}\n\n/** 변경 감지용 지문(FNV-1a 32비트). 실행 환경(Airtable·n8n·Node)과 무관하게 같은 값. */\nfunction recordHash(rule, record) {\n  const text = JSON.stringify(rule.fields.map((name) => (record[name] === undefined ? null : record[name])));\n  let h = 0x811c9dc5;\n  for (let i = 0; i < text.length; i += 1) {\n    h ^= text.charCodeAt(i);\n    h = Math.imul(h, 0x01000193) >>> 0;\n  }\n  return h.toString(16).padStart(8, '0');\n}\n\n/**\n * 반영 계획. 실제 쓰기는 실행 환경(스크립트·n8n)이 하고, 여기서는 무엇을 할지만 정한다.\n * @param {object} p\n * @param {object} p.rule syncRules().tables[key]\n * @param {Array<object>} p.source 원본 레코드(평평한 객체, normalizeSource 전이어도 됨)\n * @param {Array<{recId: string, fields: object}>} p.target 사본 레코드\n * @returns {{create: object[], update: object[], unchanged: string[], skipped: {id: any, reason: string}[], missing: object[]}}\n */\nfunction planSync({ rule, source, target }) {\n  const plan = { create: [], update: [], unchanged: [], skipped: [], missing: [] };\n  const byId = new Map();\n  for (const t of target) {\n    const id = t.fields ? t.fields.id : null;\n    if (id) byId.set(id, t);\n  }\n  const seen = new Set();\n  for (const raw of source) {\n    const record = normalizeSource(rule, raw);\n    const check = validateSourceRecord(rule, record);\n    if (!check.ok) {\n      plan.skipped.push({ id: record.id, reason: check.reason });\n      continue;\n    }\n    if (seen.has(record.id)) {\n      plan.skipped.push({ id: record.id, reason: '원본에 같은 id가 두 번 있음(두 번째 건 건너뜀)' });\n      continue;\n    }\n    seen.add(record.id);\n    const hash = recordHash(rule, record);\n    const existing = byId.get(record.id);\n    if (!existing) plan.create.push({ id: record.id, fields: record, hash });\n    else if (existing.fields.syncHash !== hash || existing.fields.hubMissing === true) {\n      plan.update.push({ id: record.id, recId: existing.recId, fields: record, hash });\n    } else plan.unchanged.push(record.id);\n  }\n  for (const [id, t] of byId) {\n    if (!seen.has(id) && t.fields.hubMissing !== true && !plan.skipped.some((s) => s.id === id)) plan.missing.push({ id, recId: t.recId });\n  }\n  return plan;\n}\n\n/** 실행 결과 → 상태. aborted > (건너뜀·실패가 있으면) partial > ok */\nfunction summarizeRun({ aborted = false, created = 0, updated = 0, unchanged = 0, skipped = 0, failed = 0, missing = 0 }) {\n  const status = aborted ? 'aborted' : skipped > 0 || failed > 0 ? 'partial' : 'ok';\n  const parts = [`생성 ${created}`, `수정 ${updated}`, `변경 없음 ${unchanged}`, `건너뜀 ${skipped}`, `실패 ${failed}`, `사라짐 표시 ${missing}`];\n  return { status, created, updated, unchanged, skipped, failed, missing, text: aborted ? '반영 중단' : parts.join(' · ') };\n}\n\n/** 배열을 n개씩 자른다(에어테이블 쓰기 한도: 스크립트 50건, REST 10건). */\nfunction chunk(list, n) {\n  const out = [];\n  for (let i = 0; i < list.length; i += n) out.push(list.slice(i, i + n));\n  return out;\n}\n// ---- END GENERATED: lib/sync-core.js ----\n\nconst cfg = $('동기화 설정').first().json;\nconst rule = RULES[cfg.tableKey];\nconst marker = $('반영 계획').all().map((i) => i.json).find((x) => x.kind === 'marker');\nlet created = 0;\nlet updated = 0;\nlet missing = 0;\nconst failures = [];\nfor (const { json } of $input.all()) {\n  if (json.outcome === 'failed') failures.push({ id: json.id, reason: json.reason || '쓰기 실패' });\n  else if (json.outcome === 'done') {\n    if (json.kind === 'create') created += 1;\n    else if (json.kind === 'update') updated += 1;\n    else if (json.kind === 'missing') missing += 1;\n  }\n}\nconst summary = summarizeRun({\n  created, updated, unchanged: marker.unchanged, skipped: marker.skipped.length, failed: failures.length, missing,\n});\nconst now = new Date().toISOString();\nconst errors = [\n  ...marker.skipped.map((s) => ({ stage: 'skipped', recordId: s.id === null || s.id === undefined ? null : String(s.id), message: s.reason })),\n  ...failures.map((f) => ({ stage: 'failed', recordId: f.id, message: f.reason })),\n].slice(0, 20).map((e, i) => ({\n  id: `err_${Date.now().toString(36)}${i.toString(36)}${Math.random().toString(36).slice(2, 5)}`,\n  automation: 'n8n:syncSafety', tableName: rule.name, occurredAt: now, notified: false, ...e,\n}));\nconst lines = [`[${cfg.label}] ${rule.name} 동기화 ${summary.status} — ${summary.text}`, marker.volume.reason];\nfor (const e of errors.slice(0, 5)) lines.push(`- ${e.stage} ${e.recordId || '(id 없음)'}: ${e.message}`);\nreturn [{\n  json: {\n    ...summary,\n    runBody: {\n      records: [{ fields: { ...marker.runFields, finishedAt: now, created, updated, unchanged: summary.unchanged, skipped: summary.skipped, failed: summary.failed, missing, status: summary.status, note: `${marker.volume.reason} · ${summary.text}` } }],\n      typecast: true,\n    },\n    errors,\n    alertText: lines.join('\\n'),\n  },\n}];\n"
+      },
+      "id": "9352c299-41a1-5580-9879-9835076faed3",
+      "name": "결과 요약",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1760,
+        620
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ 'https://api.airtable.com/v0/' + $('동기화 설정').first().json.divisionBaseId + '/' + encodeURIComponent($('동기화 설정').first().json.runsTable) }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "airtableTokenApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.runBody) }}",
+        "options": {}
+      },
+      "id": "79e0be26-7d3f-5efa-a4f4-bfc3d72bc6ee",
+      "name": "동기화 기록 저장",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1980,
+        560
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://hooks.example.com/REPLACE_WITH_YOUR_WEBHOOK",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ content: $('결과 요약').first().json.alertText, text: $('결과 요약').first().json.alertText }) }}",
+        "options": {}
+      },
+      "id": "d07cbcb0-6f9f-51df-80df-e36d23f6d125",
+      "name": "결과 알림",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2200,
+        560
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "// n8n Code 노드 \"오류 행 만들기\" (Run Once for All Items)\n// \"결과 요약\"의 errors(건너뜀·실패, 최대 20건)를 자동화 오류 테이블에 쓸 항목으로 펼친다. 없으면 0건 → 다음 노드가 돌지 않는다.\nconst { errors } = $input.first().json;\nreturn (errors || []).map((fields) => ({ json: { body: { records: [{ fields }], typecast: true } } }));\n"
+      },
+      "id": "50111a54-2626-55c9-a014-d9101822c9df",
+      "name": "오류 행 만들기",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1980,
+        720
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ 'https://api.airtable.com/v0/' + $('동기화 설정').first().json.divisionBaseId + '/' + encodeURIComponent($('동기화 설정').first().json.errorsTable) }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "airtableTokenApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.body) }}",
+        "options": {
+          "batching": {
+            "batch": {
+              "batchSize": 5,
+              "batchInterval": 1100
+            }
+          }
+        }
+      },
+      "id": "cd3fcd51-4146-5e30-be91-94f2ad0a9009",
+      "name": "오류 기록",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2200,
+        720
+      ]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "매시 실행": {
+      "main": [
+        [
+          {
+            "node": "동기화 설정",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "동기화 설정": {
+      "main": [
+        [
+          {
+            "node": "직전 동기화 기록 조회",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "직전 동기화 기록 조회": {
+      "main": [
+        [
+          {
+            "node": "허브 원본 조회",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "허브 원본 조회": {
+      "main": [
+        [
+          {
+            "node": "사본 조회",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "사본 조회": {
+      "main": [
+        [
+          {
+            "node": "반영 계획",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "반영 계획": {
+      "main": [
+        [
+          {
+            "node": "반영 중단?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "반영 중단?": {
+      "main": [
+        [
+          {
+            "node": "중단 기록",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "건별 반영",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "중단 기록": {
+      "main": [
+        [
+          {
+            "node": "중단 오류 기록",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "중단 오류 기록": {
+      "main": [
+        [
+          {
+            "node": "중단 알림",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "건별 반영": {
+      "main": [
+        [
+          {
+            "node": "결과 요약",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "쓸 건?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "쓸 건?": {
+      "main": [
+        [
+          {
+            "node": "사본 반영",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "건별 반영",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "사본 반영": {
+      "main": [
+        [
+          {
+            "node": "반영 완료 표시",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "반영 실패 표시",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "반영 완료 표시": {
+      "main": [
+        [
+          {
+            "node": "건별 반영",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "반영 실패 표시": {
+      "main": [
+        [
+          {
+            "node": "건별 반영",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "결과 요약": {
+      "main": [
+        [
+          {
+            "node": "동기화 기록 저장",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "오류 행 만들기",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "동기화 기록 저장": {
+      "main": [
+        [
+          {
+            "node": "결과 알림",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "오류 행 만들기": {
+      "main": [
+        [
+          {
+            "node": "오류 기록",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "tags": []
+}

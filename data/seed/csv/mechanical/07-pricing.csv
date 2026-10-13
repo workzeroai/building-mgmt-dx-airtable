@@ -1,0 +1,2 @@
+id,divisionId,version,source,data,updatedBy,createdAt,updatedAt
+prc_mechanical,mechanical,2026-10-01,가상,"{""divisionId"":""mechanical"",""version"":""2026-10-01"",""source"":""가상"",""note"":""그리드웰 빌딩서비스(가상 회사)의 지어낸 단가. 실제 회사·시장 단가와 무관."",""currency"":""KRW"",""vatRate"":0.1,""rounding"":1000,""unitPerVisit"":{""boilers"":42000,""chillers"":65000,""ahus"":28000,""pumps"":9000,""fans"":6000},""visitFee"":30000,""cycles"":{""월"":{""visitsPerYear"":12,""discountRate"":0.1},""분기"":{""visitsPerYear"":4,""discountRate"":0}}}",seed,2026-10-01T00:00:00.000Z,2026-10-01T00:00:00.000Z

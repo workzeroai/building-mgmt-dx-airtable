@@ -6,7 +6,7 @@
   "type": "object",
   "x-table": "contracts",
   "x-idPrefix": "con",
-  "x-airtable": { "table": "계약", "primaryField": "contractNo" },
+  "x-airtable": { "table": "계약", "base": "division", "primaryField": "contractNo" },
   "x-links": { "quoteId": "quotes", "customerId": "customers", "buildingId": "buildings" },
   "required": ["id", "contractNo", "quoteId", "buildingId", "divisionId", "startDate", "endDate", "annualAmount", "status", "createdAt"],
   "additionalProperties": false,

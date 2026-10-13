@@ -6,7 +6,7 @@
   "type": "object",
   "x-table": "pricing",
   "x-idPrefix": "prc",
-  "x-airtable": { "table": "단가", "primaryField": "id", "jsonFields": ["data"] },
+  "x-airtable": { "table": "단가", "base": "division", "primaryField": "id", "jsonFields": ["data"] },
   "x-links": {},
   "required": ["id", "divisionId", "version", "source", "data", "updatedAt"],
   "additionalProperties": false,
