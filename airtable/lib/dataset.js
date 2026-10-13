@@ -1,4 +1,4 @@
-// Base·테이블별 가상 레코드 묶음. 견적 엔진 시드(data/seed/*.json, 6-1)를 그대로 쓰고
+// Base·테이블별 가상 레코드 묶음. 견적 엔진 시드(data/seed/*.json)를 그대로 쓰고
 // 운영 테이블 시드(lib/seed.js)를 이어 붙인다. CSV·스테이징 복제 계획·테스트가 같은 묶음을 쓴다.
 import fs from 'node:fs';
 import path from 'node:path';

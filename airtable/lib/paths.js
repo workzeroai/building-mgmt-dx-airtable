@@ -1,4 +1,4 @@
-// airtable/ 단계(6-2)의 경로. 견적 엔진(6-1)의 경로 정의를 그대로 이어 쓴다.
+// airtable/의 경로. 견적 엔진의 경로 정의를 그대로 이어 쓴다.
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { DATA_DIR, OUT_DIR, PRICING_DIR, REPO_ROOT, SCHEMA_DIR, SEED_DIR } from '../../quote-engine/src/core/paths.js';

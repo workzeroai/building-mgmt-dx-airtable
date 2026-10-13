@@ -4,6 +4,8 @@
 
 ![n8n 흐름](../docs/diagrams/n8n-flow.png)
 
+*그림은 n8n 편집기 화면이 아니라 `sync-safety.json`의 노드 구성을 그린 도면이다(원본: [`docs/diagrams/n8n-flow.yaml`](../docs/diagrams/n8n-flow.yaml)). 이 워크플로는 실제 n8n 인스턴스에 가져와 실행해 보지 않았다.*
+
 > PDF → LLM → JSON 추출 워크플로는 이 저장소에 다시 만들지 않았다. 공개 저장소 [`llm-doc-extraction-pipeline`](https://github.com/workzeroai/llm-doc-extraction-pipeline)의 `n8n/`을 본다.
 
 ## 가져오기
@@ -13,8 +15,6 @@
 3. 에어테이블을 부르는 **HTTP Request 노드 8개**(직전 동기화 기록 조회·허브 원본 조회·사본 조회·사본 반영·동기화 기록 저장·중단 기록·중단 오류 기록·오류 기록)에 *Airtable Personal Access Token* 자격증명을 고른다. 권한: 허브 `data.records:read`, 사업부 Base `data.records:read`·`data.records:write`.
 4. **결과 알림**·**중단 알림** 노드의 URL(`https://hooks.example.com/REPLACE_WITH_YOUR_WEBHOOK`)을 디스코드·슬랙 수신 웹훅으로 바꾼다. 본문은 `{content, text}` 둘 다 보내므로 어느 쪽이든 받는다.
 5. 사업부 Base에는 [`airtable/create-base.mjs`](../airtable/create-base.mjs)로 만든 `동기화 기록`·`자동화 오류` 테이블과 사본 테이블이 있어야 한다.
-
-<!-- 스크린샷 자리: n8n 편집기에서 가져온 화면(6-3에서 추가) -->
 
 ## 노드별 역할
 

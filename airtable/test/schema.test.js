@@ -1,4 +1,4 @@
-// 스키마 YAML: 구조 검사, 데이터 계약(6-1)과의 일관성, 잘못 고쳤을 때 잡아내는지.
+// 스키마 YAML: 구조 검사, 견적 엔진 데이터 계약과의 일관성, 잘못 고쳤을 때 잡아내는지.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { checkContracts } from '../lib/contract.js';
@@ -74,7 +74,7 @@ test('구조 검사가 잘못된 수정을 잡는다', () => {
   }
 });
 
-test('데이터 계약 검사: 6-1 JSON Schema와 YAML이 어긋나면 잡는다', () => {
+test('데이터 계약 검사: 견적 엔진 JSON Schema와 YAML이 어긋나면 잡는다', () => {
   const withContract = (name, fn) => {
     const c = structuredClone(contracts);
     fn(c[name]);

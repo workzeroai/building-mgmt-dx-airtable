@@ -1,0 +1,32 @@
+# 견적 업무 개선 전/후 (일반화한 예시, 가상 회사 기준)
+# 그림: python ../../../_design/excalidraw_kit.py before-after-quote.yaml --out . --export
+name: before-after-quote
+title: 견적 업무 — 개선 전 / 후
+subtitle: 조회·계산·문서·저장으로 나뉘어 있던 일을 주소 하나에서 시작하는 한 흐름으로
+layout: grid
+gapX: 80
+gapY: 120
+maxTextWidth: 190
+nodes:
+  - {id: b1, label: "건물 정보를\n공공 사이트에서 조회", role: neutral, col: 0, row: 0}
+  - {id: b2, label: "단가표 Excel을 보고\n손으로 계산", role: neutral, col: 1, row: 0}
+  - {id: b3, label: "견적 양식에\n복사·붙여넣기", role: neutral, col: 2, row: 0}
+  - {id: b4, label: "PDF 저장·발송\n파일은 개인 PC에", role: neutral, col: 3, row: 0}
+  - {id: b5, label: "단가·양식이 바뀌면\n사람마다 결과가 다름", role: danger, shape: ellipse, col: 4, row: 0}
+  - {id: a1, label: "견적 화면에\n주소 입력", role: neutral, col: 0, row: 1}
+  - {id: a2, label: "건물 정보 자동 조회\n도로명주소\n→ 건축물대장", role: primary, col: 1, row: 1}
+  - {id: a3, label: "사업부 규칙으로 계산\n단가는 저장소에서", role: primary, col: 2, row: 1}
+  - {id: a4, label: "활성 양식 채움\n→ PDF(직렬 큐)", role: primary, col: 3, row: 1}
+  - {id: a5, label: "견적 기록\n단가 버전·양식 버전\n함께 남김", role: success, col: 4, row: 1}
+edges:
+  - {from: b1, to: b2}
+  - {from: b2, to: b3}
+  - {from: b3, to: b4}
+  - {from: b4, to: b5, style: dashed, role: danger}
+  - {from: a1, to: a2}
+  - {from: a2, to: a3}
+  - {from: a3, to: a4}
+  - {from: a4, to: a5, role: success}
+zones:
+  - {id: before, label: 개선 전 — 일이 네 군데로 나뉨, nodes: [b1, b2, b3, b4, b5], role: danger}
+  - {id: after, label: 개선 후 — 주소 하나로 견적서까지, nodes: [a1, a2, a3, a4, a5], role: primary}

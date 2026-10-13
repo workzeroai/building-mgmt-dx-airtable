@@ -1,4 +1,4 @@
-// 스테이징 Base 준비(clone-staging.mjs): 매핑표가 견적 엔진(6-1)의 형식·값과 같고, 가드가 그대로 쓴다.
+// 스테이징 Base 준비(clone-staging.mjs): 매핑표가 견적 엔진의 형식·값과 같고, 가드가 그대로 쓴다.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -19,7 +19,7 @@ async function allPlans() {
   return model.bases.map((b) => planBaseStaging(b, new Map([...rows.get(b.key)].map(([k, v]) => [k, asRecords(v)]))));
 }
 
-test('매핑표: 견적 엔진 테이블은 6-1 toStaging과 같은 값, 사업부 ID는 그대로', async () => {
+test('매핑표: 견적 엔진 테이블은 견적 엔진 toStaging과 같은 값, 사업부 ID는 그대로', async () => {
   const { rows, seed } = await dataset();
   const idMap = idMapFrom(await allPlans());
   const engine = toStaging(seed, model.contracts).idMap;

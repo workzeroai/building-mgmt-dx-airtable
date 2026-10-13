@@ -1,6 +1,6 @@
 # 데이터 계약 (Data Contract)
 
-견적 엔진(`quote-engine/`)과 에어테이블 데이터 설계(`airtable/`, 6-2)가 **같은 모양의 데이터**를 쓰도록 정한 약속이다.
+견적 엔진(`quote-engine/`)과 에어테이블 데이터 설계(`airtable/`)가 **같은 모양의 데이터**를 쓰도록 정한 약속이다.
 원본은 [`data/schema/*.schema.json`](../data/schema/) (JSON Schema 2020-12 + `x-` 확장)이고, 이 문서는 그 요약이다. 둘이 다르면 스키마 파일이 맞다.
 
 - 모든 데이터는 가상이다. 시드는 [`quote-engine/scripts/generate-data.js`](../quote-engine/scripts/generate-data.js)가 고정 시드로 만든다(`npm run data:generate`).
@@ -85,7 +85,7 @@ pricing (사업부별 1건)
 | `pdfStatus` | enum\|null | `ok` · `skipped`(LibreOffice 없음) · `circuit-open` · `failed` |
 | `status`* | enum | `draft` · `sent` · `won` · `lost` |
 
-에어테이블에서는 `conditions`·`items`·`files`를 **JSON 긴 텍스트**로 저장한다(`x-airtable.jsonFields`). 사업부별로 자주 보는 값(예: fire 점검 등급)은 6-2에서 수식 필드로 꺼내 보는 것을 권한다.
+에어테이블에서는 `conditions`·`items`·`files`를 **JSON 긴 텍스트**로 저장한다(`x-airtable.jsonFields`). 사업부별로 자주 보는 값(예: fire 점검 등급)은 에어테이블 수식 필드로 꺼내 보는 것을 권한다.
 
 ### contracts (계약)
 
@@ -149,7 +149,7 @@ pricing (사업부별 1건)
 - `tables`: 운영 ID → 스테이징 ID. 스테이징 쓰기에서 운영 ID가 오면 변환하고, 없으면 `STAGING_ID_GUARD`(409)로 차단.
 - `created`: 스테이징에서 새로 만든 레코드. 이후 수정을 허용한다.
 - 운영 쓰기에서 스테이징 ID가 섞이면 반대로 차단한다.
-- 6-2의 에어테이블 베이스 복제 스크립트는 같은 형식의 매핑표를 만들어야 한다(운영 rec ID 대신 이 계약의 `id` 필드 값을 키로 쓴다).
+- 에어테이블 Base 복제 스크립트([`airtable/clone-staging.mjs`](../airtable/clone-staging.mjs))가 같은 형식의 매핑표를 만든다(운영 rec ID 대신 이 계약의 `id` 필드 값을 키로 쓴다).
 
 ## 5. 저장 위치
 
@@ -163,7 +163,7 @@ pricing (사업부별 1건)
 
 ## 6. 에어테이블 설계(airtable/)와의 관계
 
-6-2에서 이 계약을 그대로 이어 에어테이블 구조를 만들었다. 단일 출처는 [`airtable/schema/gridwell.yaml`](../airtable/schema/gridwell.yaml)이고, 표는 [`docs/schema.md`](schema.md)(자동 생성).
+이 계약을 그대로 이어 에어테이블 구조를 만들었다. 단일 출처는 [`airtable/schema/gridwell.yaml`](../airtable/schema/gridwell.yaml)이고, 표는 [`docs/schema.md`](schema.md)(자동 생성).
 
 1. **같은 이름·필드.** 7개 계약 테이블은 YAML에 `contract:`로 연결돼 있고, `airtable/lib/contract.js`가 테이블 이름(`x-airtable.table`)·기본 필드·필드 집합·타입·선택지(`enum`)·JSON 필드(`x-airtable.jsonFields`)·연결(`x-links` ↔ 연결 필드의 `from`)을 대조한다. 어긋나면 `npm test`가 실패한다.
 2. **Base 배치(`x-airtable.base`).** `hub`(사업부·고객·건물)는 허브 Base, `division`(견적·계약·단가·양식 버전)은 사업부별 Base에 둔다. 견적 엔진은 `AIRTABLE_HUB_BASE_ID`·`AIRTABLE_BASE_ID_<사업부>`를 주면 이 배치대로 읽고 쓴다(`quote-engine/src/core/store/airtable-multi.js`). `AIRTABLE_BASE_ID` 하나만 주면 예전처럼 Base 하나에 7개 테이블.

@@ -25,7 +25,7 @@ airtable/schema/gridwell.yaml ─┬─ docs/schema.md                       테
                                 ├─ automations/scripts/*.js             스크립트 설정 블록(상태 전이·동기화 규칙)
                                 ├─ automations/catalog.md               자동화 패턴 표(필드 참조 검사)
                                 └─ ../n8n/sync-safety.json              n8n Code 노드 규칙
-data/schema/*.schema.json ──────── 견적 엔진 데이터 계약(6-1) ↔ 일관성 검사(lib/contract.js)
+data/schema/*.schema.json ──────── 견적 엔진 데이터 계약 ↔ 일관성 검사(lib/contract.js)
 ```
 
 - `npm run airtable:build` — 위 산출물을 모두 다시 만든다. `npm run airtable:check` — 최신이 아니면 실패(CI).

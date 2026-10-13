@@ -1,7 +1,7 @@
 // 에어테이블 어댑터(선택). 로컬 어댑터와 같은 인터페이스를 에어테이블 REST API로 구현한다.
 // - 테이블 이름은 데이터 계약의 x-airtable.table, 레코드 키는 우리 ID를 담은 "id" 필드(에어테이블 rec ID와 별개)
 // - 객체·배열 필드(x-airtable.jsonFields)는 긴 텍스트에 JSON 문자열로 저장
-// 베이스 생성·필드 정의는 airtable/(6-2)의 스키마 YAML과 create-base.mjs가 만든다. 이 파일은 그 계약을 따라 읽고 쓴다.
+// 베이스 생성·필드 정의는 airtable/의 스키마 YAML과 create-base.mjs가 만든다. 이 파일은 그 계약을 따라 읽고 쓴다.
 // 허브 + 사업부 Base로 나눈 구성은 airtable-multi.js가 이 어댑터를 Base마다 하나씩 만들어 묶는다.
 import { randomBytes } from 'node:crypto';
 import { ExternalApiError, NotFoundError } from '../errors.js';

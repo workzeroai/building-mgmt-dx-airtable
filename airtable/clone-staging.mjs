@@ -88,7 +88,7 @@ export async function main(argv = process.argv.slice(2), { env = process.env, fe
   fs.mkdirSync(path.dirname(args.out), { recursive: true });
   fs.writeFileSync(args.out, `${JSON.stringify(idMap, null, 2)}\n`, 'utf8');
   const size = Object.values(idMap.tables).reduce((n, m) => n + Object.keys(m).length, 0);
-  log(`매핑표 → ${rel(args.out)} (테이블 ${Object.keys(idMap.tables).length} · ID ${size}개, 견적 엔진 6-1 형식 {tables, created})`);
+  log(`매핑표 → ${rel(args.out)} (테이블 ${Object.keys(idMap.tables).length} · ID ${size}개, 견적 엔진 가드 형식 {tables, created})`);
   return 0;
 }
 

@@ -23,7 +23,7 @@ test('상태 전이 판정: 허용·거부·변경 없음·처음·비움·모�
   assert.ok(note.endsWith('줄 24'));
 });
 
-test('주소 키는 견적 엔진(6-1) normalizeAddress와 같은 규칙이다', () => {
+test('주소 키는 견적 엔진 normalizeAddress와 같은 규칙이다', () => {
   const inputs = [
     '서울 중구 예시로 12, 3층',
     '서울특별시  중구 예시로 12 (가상동)',

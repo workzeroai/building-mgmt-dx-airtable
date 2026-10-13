@@ -32,8 +32,9 @@ export default {
   template: {
     title: '통신설비 점검 견적서',
     fields: [
-      { label: '계약 형태', key: 'contract' },
+      // 값이 긴 '점검 설비'를 넓은 B열에 둔다(D열에 두면 PDF에서 줄바꿈돼 잘린다)
       { label: '점검 설비', key: 'equipmentSummary' },
+      { label: '계약 형태', key: 'contract' },
     ],
     itemRows: 8,
     footnote: '연간 계약은 분기 1회 방문 기준. 장애 긴급 출동은 별도.',

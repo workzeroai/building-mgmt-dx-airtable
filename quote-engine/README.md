@@ -5,9 +5,17 @@
 
 *회사·단가·양식·건물·고객은 모두 지어낸 가상 데이터입니다. 공공 API는 키가 없으면 실제 응답 형식을 따른 가짜 응답(fixtures)을 씁니다.*
 
-| 견적 화면 | 관리자: 양식 업로드 → 테스트 → 활성화 |
+| ① 사업부 선택 | ② 건물 확인 |
 |---|---|
-| ![견적 화면](../docs/shots/01-quote.png) | ![관리자 화면](../docs/shots/03-admin.png) |
+| ![사업부 선택](../docs/shots/steps/quote-step1.png) | ![건물 확인](../docs/shots/steps/quote-step2.png) |
+| **③ 조건 입력** | **④ 견적서 생성** |
+| ![조건 입력](../docs/shots/steps/quote-step3.png) | ![견적서 생성](../docs/shots/steps/quote-step4.png) |
+
+| 관리자: 양식 업로드 → 테스트 → 활성화 | 생성된 PDF 견적서 |
+|---|---|
+| ![관리자 화면](../docs/shots/03-admin.png) | ![PDF 견적서](../docs/shots/05-quote-pdf.png) |
+
+견적 화면 전체: [`docs/shots/01-quote.png`](../docs/shots/01-quote.png) · 행정구역 개편 구 코드 재조회: [`docs/shots/02-legacy-code.png`](../docs/shots/02-legacy-code.png) · 장애와 안전장치의 관계: [docs/incidents.md](../docs/incidents.md)
 
 ## 빠른 실행
 

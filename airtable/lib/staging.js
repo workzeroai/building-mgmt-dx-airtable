@@ -1,11 +1,11 @@
 // 스테이징 Base 준비: 운영 Base를 복제한 뒤 우리 ID(id 필드·텍스트 ID 참조)에 stg_를 붙이고,
-// 견적 엔진(6-1)의 스테이징 ID 가드가 읽는 매핑표(id-map.json)를 같은 형식으로 만든다.
+// 견적 엔진의 스테이징 ID 가드가 읽는 매핑표(id-map.json)를 같은 형식으로 만든다.
 //
 // 에어테이블에서 Base를 복제하면 레코드 ID(rec…)는 새로 생기지만 우리 id 필드 값은 운영과 같다.
 // 그대로 두면 스테이징에서 만든 데이터와 운영 데이터를 ID로 구분할 수 없어 운영 ID가 섞여 들어간다.
 // 그래서 복제 직후 ID를 모두 stg_로 바꾸고 매핑표를 남긴다 → 가드가 매핑 없는 운영 ID 쓰기를 막는다.
 //   { "tables": { "customers": { "cus_0001": "stg_cus_0001" } }, "created": {} }
-// divisionId는 코드가 정한 사업부 ID라 바꾸지 않는다(6-1 규칙과 같음).
+// divisionId는 코드가 정한 사업부 ID라 바꾸지 않는다(견적 엔진 규칙과 같음).
 import { refFields } from './schema.js';
 
 export const STAGING_PREFIX = 'stg_';
@@ -13,7 +13,7 @@ const BATCH = 10; // REST API 한 번에 10건
 
 const stage = (id) => (id === null || id === undefined || String(id).startsWith(STAGING_PREFIX) ? id : `${STAGING_PREFIX}${id}`);
 
-/** 테이블 key → 매핑표의 테이블 이름(6-1 계약 이름. 사본은 원본 테이블과 같은 이름을 쓴다). */
+/** 테이블 key → 매핑표의 테이블 이름(견적 엔진 데이터 계약 이름. 사본은 원본 테이블과 같은 이름을 쓴다). */
 const mapKey = (table) => table.contract ?? table.copyContract ?? table.copyOf?.table ?? table.key;
 
 /**
@@ -60,7 +60,7 @@ export function planBaseStaging(base, recordsByTable) {
   return { base, tables };
 }
 
-/** 여러 Base 계획 → 6-1 형식 매핑표(사본·원본은 같은 테이블 이름으로 합친다). */
+/** 여러 Base 계획 → 견적 엔진 형식 매핑표(사본·원본은 같은 테이블 이름으로 합친다). */
 export function idMapFrom(plans) {
   const tables = {};
   for (const plan of plans) {

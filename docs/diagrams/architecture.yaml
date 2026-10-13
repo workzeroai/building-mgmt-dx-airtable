@@ -1,0 +1,28 @@
+# 전체 구조: 데이터(에어테이블) → 견적 엔진 → 자동화 → 운영. 각 층 아래 칸은 그 층의 핵심 장치
+# 그림: python ../../../_design/excalidraw_kit.py architecture.yaml --out . --export
+name: architecture
+title: 전체 구조 — 데이터 → 견적 엔진 → 자동화 → 운영
+subtitle: 가상 회사 그리드웰 빌딩서비스. 위 줄은 업무가 흐르는 길, 아래 줄은 각 층이 사고를 막는 장치
+layout: grid
+gapX: 90
+gapY: 90
+maxTextWidth: 200
+nodes:
+  - {id: excel, label: "현장 데이터\n사업부별 Excel\n· 공공 API", role: neutral, col: 0, row: 0}
+  - {id: data, label: "에어테이블\n허브 1 + 사업부 Base 3\n고객·건물·견적·계약", role: info, col: 1, row: 0}
+  - {id: engine, label: "견적 엔진\n공통 core\n+ 사업부 설정 3", role: primary, col: 2, row: 0}
+  - {id: auto, label: "자동화\n에어테이블 스크립트\n· n8n", role: secondary, col: 3, row: 0}
+  - {id: ops, label: "운영\n오류 알림 · 스테이징\n· 장애 회고", role: neutral, col: 4, row: 0}
+  - {id: data_d, label: "스키마 YAML 1개\n→ Base 생성·문서\n·시드·ERD", role: info, col: 1, row: 1}
+  - {id: engine_d, label: "단가 외부화·폴백\n양식 버전 관리\nPDF 직렬 큐", role: primary, col: 2, row: 1}
+  - {id: auto_d, label: "상태 전이 가드\n중복 후보 표시\n동기화 급감 시 중단", role: secondary, col: 3, row: 1}
+  - {id: ops_d, label: "스테이징 ID 가드\n오류 3줄 요약 알림\n장애 4건 → 장치", role: neutral, col: 4, row: 1}
+edges:
+  - {from: excel, to: data, label: 정제·이관}
+  - {from: data, to: engine, label: 고객·건물}
+  - {from: engine, to: auto, label: 견적 기록}
+  - {from: auto, to: ops, label: 오류·결과}
+  - {from: data, to: data_d, style: dashed}
+  - {from: engine, to: engine_d, style: dashed}
+  - {from: auto, to: auto_d, style: dashed}
+  - {from: ops, to: ops_d, style: dashed}
